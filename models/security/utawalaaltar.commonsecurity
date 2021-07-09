@@ -1,10 +1,192 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <commonSecurity:Security xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:commonSecurity="http://codebots.com/emf/security">
-  <Authentication/>
-  <Authorization/>
-  <Auditing/>
-  <SecuritySchemes/>
-  <Groups>
-    <Groups Name="Visitors"/>
-  </Groups>
+	<Authentication>
+		<Authentication xsi:type="commonSecurity:LocalAuthentication" Uuid="68511b45-eef5-4def-db96-98cbc7f8be7f" />
+	</Authentication>
+	<Authorization>
+		<Acl Uuid="cfb6b6ad-ecb4-49c4-aec2-303127d36576-409528e3-6d78-430b-8eca-e85ed652b49a" Group="cfb6b6ad-ecb4-49c4-aec2-303127d36576" SecurityScheme="409528e3-6d78-430b-8eca-e85ed652b49a" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="cfb6b6ad-ecb4-49c4-aec2-303127d36576-77fb75f3-41ee-4007-98f6-a50d8daadb69" Group="cfb6b6ad-ecb4-49c4-aec2-303127d36576" SecurityScheme="77fb75f3-41ee-4007-98f6-a50d8daadb69" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="cfb6b6ad-ecb4-49c4-aec2-303127d36576-be7a6d4e-cdb0-4fa3-bc99-b9cd6db143b9" Group="cfb6b6ad-ecb4-49c4-aec2-303127d36576" SecurityScheme="be7a6d4e-cdb0-4fa3-bc99-b9cd6db143b9" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="cfb6b6ad-ecb4-49c4-aec2-303127d36576-f6660f5c-0063-4434-9315-e8533b261b89" Group="cfb6b6ad-ecb4-49c4-aec2-303127d36576" SecurityScheme="f6660f5c-0063-4434-9315-e8533b261b89" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="cfb6b6ad-ecb4-49c4-aec2-303127d36576-32a9c2dd-5e3d-4a81-aa2c-380f5be150be" Group="cfb6b6ad-ecb4-49c4-aec2-303127d36576" SecurityScheme="32a9c2dd-5e3d-4a81-aa2c-380f5be150be" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="cfb6b6ad-ecb4-49c4-aec2-303127d36576-73975888-228f-47f6-ab20-1ab54e388956" Group="cfb6b6ad-ecb4-49c4-aec2-303127d36576" SecurityScheme="73975888-228f-47f6-ab20-1ab54e388956" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="cfb6b6ad-ecb4-49c4-aec2-303127d36576-3daca0b4-457f-4145-9a4f-51e2a88aa2d7" Group="cfb6b6ad-ecb4-49c4-aec2-303127d36576" SecurityScheme="3daca0b4-457f-4145-9a4f-51e2a88aa2d7" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="cfb6b6ad-ecb4-49c4-aec2-303127d36576-e9dcd705-658c-43e7-905e-a857d995e4d4" Group="cfb6b6ad-ecb4-49c4-aec2-303127d36576" SecurityScheme="e9dcd705-658c-43e7-905e-a857d995e4d4" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="cfb6b6ad-ecb4-49c4-aec2-303127d36576-7d6b7e4d-9921-4d80-ae02-c8f480b7d241" Group="cfb6b6ad-ecb4-49c4-aec2-303127d36576" SecurityScheme="7d6b7e4d-9921-4d80-ae02-c8f480b7d241" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="cfb6b6ad-ecb4-49c4-aec2-303127d36576-7f5d6e5f-6307-42cd-b708-60e920fbc712" Group="cfb6b6ad-ecb4-49c4-aec2-303127d36576" SecurityScheme="7f5d6e5f-6307-42cd-b708-60e920fbc712" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="cfb6b6ad-ecb4-49c4-aec2-303127d36576-ef55084b-546a-4808-b0fc-9c18e6b06f2b" Group="cfb6b6ad-ecb4-49c4-aec2-303127d36576" SecurityScheme="ef55084b-546a-4808-b0fc-9c18e6b06f2b" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="cfb6b6ad-ecb4-49c4-aec2-303127d36576-28b888de-8bc4-440f-86e0-aaea33ea2a0c" Group="cfb6b6ad-ecb4-49c4-aec2-303127d36576" SecurityScheme="28b888de-8bc4-440f-86e0-aaea33ea2a0c" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="cfb6b6ad-ecb4-49c4-aec2-303127d36576-28169de1-04e9-4de1-999b-72c7c8d4b1a2" Group="cfb6b6ad-ecb4-49c4-aec2-303127d36576" SecurityScheme="28169de1-04e9-4de1-999b-72c7c8d4b1a2" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="cfb6b6ad-ecb4-49c4-aec2-303127d36576-37452baa-e0cb-4f76-87b2-9e557a41b881" Group="cfb6b6ad-ecb4-49c4-aec2-303127d36576" SecurityScheme="37452baa-e0cb-4f76-87b2-9e557a41b881" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="cfb6b6ad-ecb4-49c4-aec2-303127d36576-22c192d0-75ac-43b1-84af-cfa353e5f7ec" Group="cfb6b6ad-ecb4-49c4-aec2-303127d36576" SecurityScheme="22c192d0-75ac-43b1-84af-cfa353e5f7ec" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="cfb6b6ad-ecb4-49c4-aec2-303127d36576-4eb9750c-980c-43ef-9701-2ece2b2d8781" Group="cfb6b6ad-ecb4-49c4-aec2-303127d36576" SecurityScheme="4eb9750c-980c-43ef-9701-2ece2b2d8781" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="42d13ec8-e731-4356-b97b-2f9d2881ed6c" Group="97dc8964-ca05-4a57-b2ee-37679a42c0e9" SecurityScheme="409528e3-6d78-430b-8eca-e85ed652b49a" Create="true" Read="true" Update="true" Delete="true" />
+		<Acl Uuid="63844603-c6ed-4163-b028-402d5c4d61de" Group="97dc8964-ca05-4a57-b2ee-37679a42c0e9" SecurityScheme="77fb75f3-41ee-4007-98f6-a50d8daadb69" Create="true" Read="true" Update="true" Delete="true" />
+		<Acl Uuid="c3a59e38-b3af-4d60-adeb-ea8889f97fe5" Group="97dc8964-ca05-4a57-b2ee-37679a42c0e9" SecurityScheme="be7a6d4e-cdb0-4fa3-bc99-b9cd6db143b9" Create="true" Read="true" Update="true" Delete="true" />
+		<Acl Uuid="d63799ed-de53-4521-aa45-49c98711b630" Group="97dc8964-ca05-4a57-b2ee-37679a42c0e9" SecurityScheme="f6660f5c-0063-4434-9315-e8533b261b89" Create="true" Read="true" Update="true" Delete="true" />
+		<Acl Uuid="f232d378-fd34-4a2c-884f-3a4bc2a1ae99" Group="97dc8964-ca05-4a57-b2ee-37679a42c0e9" SecurityScheme="32a9c2dd-5e3d-4a81-aa2c-380f5be150be" Create="true" Read="true" Update="true" Delete="true" />
+		<Acl Uuid="4f2df80f-6f41-4fb9-ba6c-4fe07cff9b36" Group="97dc8964-ca05-4a57-b2ee-37679a42c0e9" SecurityScheme="73975888-228f-47f6-ab20-1ab54e388956" Create="true" Read="true" Update="true" Delete="true" />
+		<Acl Uuid="4af235d6-c2b6-41f8-ab5d-420ece063811" Group="97dc8964-ca05-4a57-b2ee-37679a42c0e9" SecurityScheme="3daca0b4-457f-4145-9a4f-51e2a88aa2d7" Create="true" Read="true" Update="true" Delete="true" />
+		<Acl Uuid="97dc8964-ca05-4a57-b2ee-37679a42c0e9-e9dcd705-658c-43e7-905e-a857d995e4d4" Group="97dc8964-ca05-4a57-b2ee-37679a42c0e9" SecurityScheme="e9dcd705-658c-43e7-905e-a857d995e4d4" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="97dc8964-ca05-4a57-b2ee-37679a42c0e9-7d6b7e4d-9921-4d80-ae02-c8f480b7d241" Group="97dc8964-ca05-4a57-b2ee-37679a42c0e9" SecurityScheme="7d6b7e4d-9921-4d80-ae02-c8f480b7d241" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="97dc8964-ca05-4a57-b2ee-37679a42c0e9-7f5d6e5f-6307-42cd-b708-60e920fbc712" Group="97dc8964-ca05-4a57-b2ee-37679a42c0e9" SecurityScheme="7f5d6e5f-6307-42cd-b708-60e920fbc712" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="97dc8964-ca05-4a57-b2ee-37679a42c0e9-ef55084b-546a-4808-b0fc-9c18e6b06f2b" Group="97dc8964-ca05-4a57-b2ee-37679a42c0e9" SecurityScheme="ef55084b-546a-4808-b0fc-9c18e6b06f2b" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="97dc8964-ca05-4a57-b2ee-37679a42c0e9-28b888de-8bc4-440f-86e0-aaea33ea2a0c" Group="97dc8964-ca05-4a57-b2ee-37679a42c0e9" SecurityScheme="28b888de-8bc4-440f-86e0-aaea33ea2a0c" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="97dc8964-ca05-4a57-b2ee-37679a42c0e9-28169de1-04e9-4de1-999b-72c7c8d4b1a2" Group="97dc8964-ca05-4a57-b2ee-37679a42c0e9" SecurityScheme="28169de1-04e9-4de1-999b-72c7c8d4b1a2" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="97dc8964-ca05-4a57-b2ee-37679a42c0e9-37452baa-e0cb-4f76-87b2-9e557a41b881" Group="97dc8964-ca05-4a57-b2ee-37679a42c0e9" SecurityScheme="37452baa-e0cb-4f76-87b2-9e557a41b881" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="97dc8964-ca05-4a57-b2ee-37679a42c0e9-22c192d0-75ac-43b1-84af-cfa353e5f7ec" Group="97dc8964-ca05-4a57-b2ee-37679a42c0e9" SecurityScheme="22c192d0-75ac-43b1-84af-cfa353e5f7ec" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="97dc8964-ca05-4a57-b2ee-37679a42c0e9-4eb9750c-980c-43ef-9701-2ece2b2d8781" Group="97dc8964-ca05-4a57-b2ee-37679a42c0e9" SecurityScheme="4eb9750c-980c-43ef-9701-2ece2b2d8781" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="8d930503-f2a2-4c69-934a-e8488611c251" Group="74039df5-2d2a-482e-87ca-87100237dcce" SecurityScheme="409528e3-6d78-430b-8eca-e85ed652b49a" Create="false" Read="true" Update="true" Delete="false" />
+		<Acl Uuid="4d620faf-2bad-4a18-8b49-f9df8058387c" Group="74039df5-2d2a-482e-87ca-87100237dcce" SecurityScheme="77fb75f3-41ee-4007-98f6-a50d8daadb69" Create="false" Read="true" Update="false" Delete="false" />
+		<Acl Uuid="d391fe88-d6c7-4747-a87b-c9aab0508fd7" Group="74039df5-2d2a-482e-87ca-87100237dcce" SecurityScheme="be7a6d4e-cdb0-4fa3-bc99-b9cd6db143b9" Create="false" Read="true" Update="false" Delete="false" />
+		<Acl Uuid="77a0e61a-cbab-48ee-aedc-68c32e8c9250" Group="74039df5-2d2a-482e-87ca-87100237dcce" SecurityScheme="f6660f5c-0063-4434-9315-e8533b261b89" Create="false" Read="true" Update="false" Delete="false" />
+		<Acl Uuid="9c441932-d633-4e7f-889d-7566dd804373" Group="74039df5-2d2a-482e-87ca-87100237dcce" SecurityScheme="32a9c2dd-5e3d-4a81-aa2c-380f5be150be" Create="false" Read="true" Update="false" Delete="false" />
+		<Acl Uuid="d21500de-85e6-4d65-a9e4-c9f4726e5cbb" Group="74039df5-2d2a-482e-87ca-87100237dcce" SecurityScheme="73975888-228f-47f6-ab20-1ab54e388956" Create="false" Read="true" Update="false" Delete="false" />
+		<Acl Uuid="9799108d-4f77-4727-9dd2-8ba278067b90" Group="74039df5-2d2a-482e-87ca-87100237dcce" SecurityScheme="3daca0b4-457f-4145-9a4f-51e2a88aa2d7" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="74039df5-2d2a-482e-87ca-87100237dcce-e9dcd705-658c-43e7-905e-a857d995e4d4" Group="74039df5-2d2a-482e-87ca-87100237dcce" SecurityScheme="e9dcd705-658c-43e7-905e-a857d995e4d4" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="74039df5-2d2a-482e-87ca-87100237dcce-7d6b7e4d-9921-4d80-ae02-c8f480b7d241" Group="74039df5-2d2a-482e-87ca-87100237dcce" SecurityScheme="7d6b7e4d-9921-4d80-ae02-c8f480b7d241" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="74039df5-2d2a-482e-87ca-87100237dcce-7f5d6e5f-6307-42cd-b708-60e920fbc712" Group="74039df5-2d2a-482e-87ca-87100237dcce" SecurityScheme="7f5d6e5f-6307-42cd-b708-60e920fbc712" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="74039df5-2d2a-482e-87ca-87100237dcce-ef55084b-546a-4808-b0fc-9c18e6b06f2b" Group="74039df5-2d2a-482e-87ca-87100237dcce" SecurityScheme="ef55084b-546a-4808-b0fc-9c18e6b06f2b" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="74039df5-2d2a-482e-87ca-87100237dcce-28b888de-8bc4-440f-86e0-aaea33ea2a0c" Group="74039df5-2d2a-482e-87ca-87100237dcce" SecurityScheme="28b888de-8bc4-440f-86e0-aaea33ea2a0c" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="74039df5-2d2a-482e-87ca-87100237dcce-28169de1-04e9-4de1-999b-72c7c8d4b1a2" Group="74039df5-2d2a-482e-87ca-87100237dcce" SecurityScheme="28169de1-04e9-4de1-999b-72c7c8d4b1a2" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="74039df5-2d2a-482e-87ca-87100237dcce-37452baa-e0cb-4f76-87b2-9e557a41b881" Group="74039df5-2d2a-482e-87ca-87100237dcce" SecurityScheme="37452baa-e0cb-4f76-87b2-9e557a41b881" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="74039df5-2d2a-482e-87ca-87100237dcce-22c192d0-75ac-43b1-84af-cfa353e5f7ec" Group="74039df5-2d2a-482e-87ca-87100237dcce" SecurityScheme="22c192d0-75ac-43b1-84af-cfa353e5f7ec" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="74039df5-2d2a-482e-87ca-87100237dcce-4eb9750c-980c-43ef-9701-2ece2b2d8781" Group="74039df5-2d2a-482e-87ca-87100237dcce" SecurityScheme="4eb9750c-980c-43ef-9701-2ece2b2d8781" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="46369333-50bd-43bb-8e98-9fc8ec186cf7" Group="4e49341b-4429-44cb-8196-86e9a2594e40" SecurityScheme="409528e3-6d78-430b-8eca-e85ed652b49a" Create="false" Read="true" Update="true" Delete="false" />
+		<Acl Uuid="6bb71187-a065-409c-9609-40f2a50bd0a0" Group="4e49341b-4429-44cb-8196-86e9a2594e40" SecurityScheme="77fb75f3-41ee-4007-98f6-a50d8daadb69" Create="false" Read="true" Update="false" Delete="false" />
+		<Acl Uuid="3b3f6593-9362-4214-b968-816f11173487" Group="4e49341b-4429-44cb-8196-86e9a2594e40" SecurityScheme="be7a6d4e-cdb0-4fa3-bc99-b9cd6db143b9" Create="true" Read="true" Update="true" Delete="false" />
+		<Acl Uuid="b9876ec2-9f42-4a8e-8d59-079eec420748" Group="4e49341b-4429-44cb-8196-86e9a2594e40" SecurityScheme="f6660f5c-0063-4434-9315-e8533b261b89" Create="false" Read="true" Update="false" Delete="false" />
+		<Acl Uuid="1332110c-234a-4a78-a5ac-bada3262b6a8" Group="4e49341b-4429-44cb-8196-86e9a2594e40" SecurityScheme="32a9c2dd-5e3d-4a81-aa2c-380f5be150be" Create="false" Read="true" Update="false" Delete="false" />
+		<Acl Uuid="800defdd-bb11-48a8-a3aa-872bd135bde2" Group="4e49341b-4429-44cb-8196-86e9a2594e40" SecurityScheme="73975888-228f-47f6-ab20-1ab54e388956" Create="false" Read="true" Update="false" Delete="false" />
+		<Acl Uuid="4e49341b-4429-44cb-8196-86e9a2594e40-3daca0b4-457f-4145-9a4f-51e2a88aa2d7" Group="4e49341b-4429-44cb-8196-86e9a2594e40" SecurityScheme="3daca0b4-457f-4145-9a4f-51e2a88aa2d7" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="4e49341b-4429-44cb-8196-86e9a2594e40-e9dcd705-658c-43e7-905e-a857d995e4d4" Group="4e49341b-4429-44cb-8196-86e9a2594e40" SecurityScheme="e9dcd705-658c-43e7-905e-a857d995e4d4" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="4e49341b-4429-44cb-8196-86e9a2594e40-7d6b7e4d-9921-4d80-ae02-c8f480b7d241" Group="4e49341b-4429-44cb-8196-86e9a2594e40" SecurityScheme="7d6b7e4d-9921-4d80-ae02-c8f480b7d241" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="4e49341b-4429-44cb-8196-86e9a2594e40-7f5d6e5f-6307-42cd-b708-60e920fbc712" Group="4e49341b-4429-44cb-8196-86e9a2594e40" SecurityScheme="7f5d6e5f-6307-42cd-b708-60e920fbc712" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="4e49341b-4429-44cb-8196-86e9a2594e40-ef55084b-546a-4808-b0fc-9c18e6b06f2b" Group="4e49341b-4429-44cb-8196-86e9a2594e40" SecurityScheme="ef55084b-546a-4808-b0fc-9c18e6b06f2b" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="4e49341b-4429-44cb-8196-86e9a2594e40-28b888de-8bc4-440f-86e0-aaea33ea2a0c" Group="4e49341b-4429-44cb-8196-86e9a2594e40" SecurityScheme="28b888de-8bc4-440f-86e0-aaea33ea2a0c" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="4e49341b-4429-44cb-8196-86e9a2594e40-28169de1-04e9-4de1-999b-72c7c8d4b1a2" Group="4e49341b-4429-44cb-8196-86e9a2594e40" SecurityScheme="28169de1-04e9-4de1-999b-72c7c8d4b1a2" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="4e49341b-4429-44cb-8196-86e9a2594e40-37452baa-e0cb-4f76-87b2-9e557a41b881" Group="4e49341b-4429-44cb-8196-86e9a2594e40" SecurityScheme="37452baa-e0cb-4f76-87b2-9e557a41b881" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="4e49341b-4429-44cb-8196-86e9a2594e40-22c192d0-75ac-43b1-84af-cfa353e5f7ec" Group="4e49341b-4429-44cb-8196-86e9a2594e40" SecurityScheme="22c192d0-75ac-43b1-84af-cfa353e5f7ec" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="4e49341b-4429-44cb-8196-86e9a2594e40-4eb9750c-980c-43ef-9701-2ece2b2d8781" Group="4e49341b-4429-44cb-8196-86e9a2594e40" SecurityScheme="4eb9750c-980c-43ef-9701-2ece2b2d8781" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="b73e99b3-6da0-4418-9643-e3adf4e0cfa3" Group="bf7ccf8a-c927-489e-b99d-510380893df7" SecurityScheme="409528e3-6d78-430b-8eca-e85ed652b49a" Create="false" Read="true" Update="false" Delete="false" />
+		<Acl Uuid="e6d0cd47-6a8d-4391-b4a9-d3bb8f7dc9ea" Group="bf7ccf8a-c927-489e-b99d-510380893df7" SecurityScheme="77fb75f3-41ee-4007-98f6-a50d8daadb69" Create="false" Read="true" Update="false" Delete="false" />
+		<Acl Uuid="bf7ccf8a-c927-489e-b99d-510380893df7-be7a6d4e-cdb0-4fa3-bc99-b9cd6db143b9" Group="bf7ccf8a-c927-489e-b99d-510380893df7" SecurityScheme="be7a6d4e-cdb0-4fa3-bc99-b9cd6db143b9" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="1aa862ab-c8fa-4dbd-8019-cf62b3eee719" Group="bf7ccf8a-c927-489e-b99d-510380893df7" SecurityScheme="f6660f5c-0063-4434-9315-e8533b261b89" Create="false" Read="true" Update="false" Delete="false" />
+		<Acl Uuid="f198c3c1-7487-479c-b57a-21248f4f9968" Group="bf7ccf8a-c927-489e-b99d-510380893df7" SecurityScheme="32a9c2dd-5e3d-4a81-aa2c-380f5be150be" Create="false" Read="true" Update="false" Delete="false" />
+		<Acl Uuid="b04b093a-605a-4b02-a255-8882a64c4ebf" Group="bf7ccf8a-c927-489e-b99d-510380893df7" SecurityScheme="73975888-228f-47f6-ab20-1ab54e388956" Create="false" Read="true" Update="false" Delete="false" />
+		<Acl Uuid="bf7ccf8a-c927-489e-b99d-510380893df7-3daca0b4-457f-4145-9a4f-51e2a88aa2d7" Group="bf7ccf8a-c927-489e-b99d-510380893df7" SecurityScheme="3daca0b4-457f-4145-9a4f-51e2a88aa2d7" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="bf7ccf8a-c927-489e-b99d-510380893df7-e9dcd705-658c-43e7-905e-a857d995e4d4" Group="bf7ccf8a-c927-489e-b99d-510380893df7" SecurityScheme="e9dcd705-658c-43e7-905e-a857d995e4d4" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="bf7ccf8a-c927-489e-b99d-510380893df7-7d6b7e4d-9921-4d80-ae02-c8f480b7d241" Group="bf7ccf8a-c927-489e-b99d-510380893df7" SecurityScheme="7d6b7e4d-9921-4d80-ae02-c8f480b7d241" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="bf7ccf8a-c927-489e-b99d-510380893df7-7f5d6e5f-6307-42cd-b708-60e920fbc712" Group="bf7ccf8a-c927-489e-b99d-510380893df7" SecurityScheme="7f5d6e5f-6307-42cd-b708-60e920fbc712" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="bf7ccf8a-c927-489e-b99d-510380893df7-ef55084b-546a-4808-b0fc-9c18e6b06f2b" Group="bf7ccf8a-c927-489e-b99d-510380893df7" SecurityScheme="ef55084b-546a-4808-b0fc-9c18e6b06f2b" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="bf7ccf8a-c927-489e-b99d-510380893df7-28b888de-8bc4-440f-86e0-aaea33ea2a0c" Group="bf7ccf8a-c927-489e-b99d-510380893df7" SecurityScheme="28b888de-8bc4-440f-86e0-aaea33ea2a0c" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="bf7ccf8a-c927-489e-b99d-510380893df7-28169de1-04e9-4de1-999b-72c7c8d4b1a2" Group="bf7ccf8a-c927-489e-b99d-510380893df7" SecurityScheme="28169de1-04e9-4de1-999b-72c7c8d4b1a2" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="bf7ccf8a-c927-489e-b99d-510380893df7-37452baa-e0cb-4f76-87b2-9e557a41b881" Group="bf7ccf8a-c927-489e-b99d-510380893df7" SecurityScheme="37452baa-e0cb-4f76-87b2-9e557a41b881" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="bf7ccf8a-c927-489e-b99d-510380893df7-22c192d0-75ac-43b1-84af-cfa353e5f7ec" Group="bf7ccf8a-c927-489e-b99d-510380893df7" SecurityScheme="22c192d0-75ac-43b1-84af-cfa353e5f7ec" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="bf7ccf8a-c927-489e-b99d-510380893df7-4eb9750c-980c-43ef-9701-2ece2b2d8781" Group="bf7ccf8a-c927-489e-b99d-510380893df7" SecurityScheme="4eb9750c-980c-43ef-9701-2ece2b2d8781" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="86fece3a-6cfa-4b72-b127-099086592ce8" Group="ada270b2-9462-4520-9bdd-b14e96427f2a" SecurityScheme="409528e3-6d78-430b-8eca-e85ed652b49a" Create="true" Read="true" Update="true" Delete="false" />
+		<Acl Uuid="108789d6-eb44-4292-93d1-0955ea291662" Group="ada270b2-9462-4520-9bdd-b14e96427f2a" SecurityScheme="77fb75f3-41ee-4007-98f6-a50d8daadb69" Create="false" Read="true" Update="false" Delete="false" />
+		<Acl Uuid="7ada2e59-07bb-415a-b03f-d2a4db51ef2e" Group="ada270b2-9462-4520-9bdd-b14e96427f2a" SecurityScheme="be7a6d4e-cdb0-4fa3-bc99-b9cd6db143b9" Create="false" Read="true" Update="false" Delete="false" />
+		<Acl Uuid="30e245bf-aab4-42b6-97f7-d1532353b912" Group="ada270b2-9462-4520-9bdd-b14e96427f2a" SecurityScheme="f6660f5c-0063-4434-9315-e8533b261b89" Create="false" Read="true" Update="false" Delete="false" />
+		<Acl Uuid="433276d2-58d7-453f-b007-2c4ffd5dcc47" Group="ada270b2-9462-4520-9bdd-b14e96427f2a" SecurityScheme="32a9c2dd-5e3d-4a81-aa2c-380f5be150be" Create="false" Read="true" Update="false" Delete="false" />
+		<Acl Uuid="75a84cdd-78e3-4c1c-ad96-4941b113cf2d" Group="ada270b2-9462-4520-9bdd-b14e96427f2a" SecurityScheme="73975888-228f-47f6-ab20-1ab54e388956" Create="false" Read="true" Update="false" Delete="false" />
+		<Acl Uuid="ada270b2-9462-4520-9bdd-b14e96427f2a-3daca0b4-457f-4145-9a4f-51e2a88aa2d7" Group="ada270b2-9462-4520-9bdd-b14e96427f2a" SecurityScheme="3daca0b4-457f-4145-9a4f-51e2a88aa2d7" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="ada270b2-9462-4520-9bdd-b14e96427f2a-e9dcd705-658c-43e7-905e-a857d995e4d4" Group="ada270b2-9462-4520-9bdd-b14e96427f2a" SecurityScheme="e9dcd705-658c-43e7-905e-a857d995e4d4" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="ada270b2-9462-4520-9bdd-b14e96427f2a-7d6b7e4d-9921-4d80-ae02-c8f480b7d241" Group="ada270b2-9462-4520-9bdd-b14e96427f2a" SecurityScheme="7d6b7e4d-9921-4d80-ae02-c8f480b7d241" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="ada270b2-9462-4520-9bdd-b14e96427f2a-7f5d6e5f-6307-42cd-b708-60e920fbc712" Group="ada270b2-9462-4520-9bdd-b14e96427f2a" SecurityScheme="7f5d6e5f-6307-42cd-b708-60e920fbc712" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="ada270b2-9462-4520-9bdd-b14e96427f2a-ef55084b-546a-4808-b0fc-9c18e6b06f2b" Group="ada270b2-9462-4520-9bdd-b14e96427f2a" SecurityScheme="ef55084b-546a-4808-b0fc-9c18e6b06f2b" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="ada270b2-9462-4520-9bdd-b14e96427f2a-28b888de-8bc4-440f-86e0-aaea33ea2a0c" Group="ada270b2-9462-4520-9bdd-b14e96427f2a" SecurityScheme="28b888de-8bc4-440f-86e0-aaea33ea2a0c" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="ada270b2-9462-4520-9bdd-b14e96427f2a-28169de1-04e9-4de1-999b-72c7c8d4b1a2" Group="ada270b2-9462-4520-9bdd-b14e96427f2a" SecurityScheme="28169de1-04e9-4de1-999b-72c7c8d4b1a2" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="ada270b2-9462-4520-9bdd-b14e96427f2a-37452baa-e0cb-4f76-87b2-9e557a41b881" Group="ada270b2-9462-4520-9bdd-b14e96427f2a" SecurityScheme="37452baa-e0cb-4f76-87b2-9e557a41b881" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="ada270b2-9462-4520-9bdd-b14e96427f2a-22c192d0-75ac-43b1-84af-cfa353e5f7ec" Group="ada270b2-9462-4520-9bdd-b14e96427f2a" SecurityScheme="22c192d0-75ac-43b1-84af-cfa353e5f7ec" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="ada270b2-9462-4520-9bdd-b14e96427f2a-4eb9750c-980c-43ef-9701-2ece2b2d8781" Group="ada270b2-9462-4520-9bdd-b14e96427f2a" SecurityScheme="4eb9750c-980c-43ef-9701-2ece2b2d8781" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="f6514682-4017-4a94-85f4-01cbe1c0fd5a-409528e3-6d78-430b-8eca-e85ed652b49a" Group="f6514682-4017-4a94-85f4-01cbe1c0fd5a" SecurityScheme="409528e3-6d78-430b-8eca-e85ed652b49a" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="f6514682-4017-4a94-85f4-01cbe1c0fd5a-77fb75f3-41ee-4007-98f6-a50d8daadb69" Group="f6514682-4017-4a94-85f4-01cbe1c0fd5a" SecurityScheme="77fb75f3-41ee-4007-98f6-a50d8daadb69" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="f6514682-4017-4a94-85f4-01cbe1c0fd5a-be7a6d4e-cdb0-4fa3-bc99-b9cd6db143b9" Group="f6514682-4017-4a94-85f4-01cbe1c0fd5a" SecurityScheme="be7a6d4e-cdb0-4fa3-bc99-b9cd6db143b9" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="f6514682-4017-4a94-85f4-01cbe1c0fd5a-f6660f5c-0063-4434-9315-e8533b261b89" Group="f6514682-4017-4a94-85f4-01cbe1c0fd5a" SecurityScheme="f6660f5c-0063-4434-9315-e8533b261b89" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="f6514682-4017-4a94-85f4-01cbe1c0fd5a-32a9c2dd-5e3d-4a81-aa2c-380f5be150be" Group="f6514682-4017-4a94-85f4-01cbe1c0fd5a" SecurityScheme="32a9c2dd-5e3d-4a81-aa2c-380f5be150be" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="f6514682-4017-4a94-85f4-01cbe1c0fd5a-73975888-228f-47f6-ab20-1ab54e388956" Group="f6514682-4017-4a94-85f4-01cbe1c0fd5a" SecurityScheme="73975888-228f-47f6-ab20-1ab54e388956" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="f6514682-4017-4a94-85f4-01cbe1c0fd5a-3daca0b4-457f-4145-9a4f-51e2a88aa2d7" Group="f6514682-4017-4a94-85f4-01cbe1c0fd5a" SecurityScheme="3daca0b4-457f-4145-9a4f-51e2a88aa2d7" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="f6514682-4017-4a94-85f4-01cbe1c0fd5a-e9dcd705-658c-43e7-905e-a857d995e4d4" Group="f6514682-4017-4a94-85f4-01cbe1c0fd5a" SecurityScheme="e9dcd705-658c-43e7-905e-a857d995e4d4" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="f6514682-4017-4a94-85f4-01cbe1c0fd5a-7d6b7e4d-9921-4d80-ae02-c8f480b7d241" Group="f6514682-4017-4a94-85f4-01cbe1c0fd5a" SecurityScheme="7d6b7e4d-9921-4d80-ae02-c8f480b7d241" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="f6514682-4017-4a94-85f4-01cbe1c0fd5a-7f5d6e5f-6307-42cd-b708-60e920fbc712" Group="f6514682-4017-4a94-85f4-01cbe1c0fd5a" SecurityScheme="7f5d6e5f-6307-42cd-b708-60e920fbc712" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="f6514682-4017-4a94-85f4-01cbe1c0fd5a-ef55084b-546a-4808-b0fc-9c18e6b06f2b" Group="f6514682-4017-4a94-85f4-01cbe1c0fd5a" SecurityScheme="ef55084b-546a-4808-b0fc-9c18e6b06f2b" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="f6514682-4017-4a94-85f4-01cbe1c0fd5a-28b888de-8bc4-440f-86e0-aaea33ea2a0c" Group="f6514682-4017-4a94-85f4-01cbe1c0fd5a" SecurityScheme="28b888de-8bc4-440f-86e0-aaea33ea2a0c" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="f6514682-4017-4a94-85f4-01cbe1c0fd5a-28169de1-04e9-4de1-999b-72c7c8d4b1a2" Group="f6514682-4017-4a94-85f4-01cbe1c0fd5a" SecurityScheme="28169de1-04e9-4de1-999b-72c7c8d4b1a2" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="f6514682-4017-4a94-85f4-01cbe1c0fd5a-37452baa-e0cb-4f76-87b2-9e557a41b881" Group="f6514682-4017-4a94-85f4-01cbe1c0fd5a" SecurityScheme="37452baa-e0cb-4f76-87b2-9e557a41b881" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="f6514682-4017-4a94-85f4-01cbe1c0fd5a-22c192d0-75ac-43b1-84af-cfa353e5f7ec" Group="f6514682-4017-4a94-85f4-01cbe1c0fd5a" SecurityScheme="22c192d0-75ac-43b1-84af-cfa353e5f7ec" Create="false" Read="false" Update="false" Delete="false" />
+		<Acl Uuid="f6514682-4017-4a94-85f4-01cbe1c0fd5a-4eb9750c-980c-43ef-9701-2ece2b2d8781" Group="f6514682-4017-4a94-85f4-01cbe1c0fd5a" SecurityScheme="4eb9750c-980c-43ef-9701-2ece2b2d8781" Create="false" Read="false" Update="false" Delete="false" />
+</Authorization>
+	<Auditing/>
+	<SecuritySchemes>
+		<SecuritySchemes Uuid="409528e3-6d78-430b-8eca-e85ed652b49a" Name="MEMBER Entity">
+			<Object href="../entity/utawalaaltar.csharpbotentity#409528e3-6d78-430b-8eca-e85ed652b49a"/>
+		</SecuritySchemes>
+		<SecuritySchemes Uuid="77fb75f3-41ee-4007-98f6-a50d8daadb69" Name="Home Fellowship Entity">
+			<Object href="../entity/utawalaaltar.csharpbotentity#77fb75f3-41ee-4007-98f6-a50d8daadb69"/>
+		</SecuritySchemes>
+		<SecuritySchemes Uuid="be7a6d4e-cdb0-4fa3-bc99-b9cd6db143b9" Name="Accountability Group Entity">
+			<Object href="../entity/utawalaaltar.csharpbotentity#be7a6d4e-cdb0-4fa3-bc99-b9cd6db143b9"/>
+		</SecuritySchemes>
+		<SecuritySchemes Uuid="f6660f5c-0063-4434-9315-e8533b261b89" Name="Group Category Entity">
+			<Object href="../entity/utawalaaltar.csharpbotentity#f6660f5c-0063-4434-9315-e8533b261b89"/>
+		</SecuritySchemes>
+		<SecuritySchemes Uuid="32a9c2dd-5e3d-4a81-aa2c-380f5be150be" Name="Attendance Entity">
+			<Object href="../entity/utawalaaltar.csharpbotentity#32a9c2dd-5e3d-4a81-aa2c-380f5be150be"/>
+		</SecuritySchemes>
+		<SecuritySchemes Uuid="73975888-228f-47f6-ab20-1ab54e388956" Name="No Of Service Entity">
+			<Object href="../entity/utawalaaltar.csharpbotentity#73975888-228f-47f6-ab20-1ab54e388956"/>
+		</SecuritySchemes>
+		<SecuritySchemes Uuid="3daca0b4-457f-4145-9a4f-51e2a88aa2d7" Name="Admin Entity">
+			<Object href="../entity/utawalaaltar.csharpbotentity#3daca0b4-457f-4145-9a4f-51e2a88aa2d7"/>
+		</SecuritySchemes>
+		<SecuritySchemes Uuid="e9dcd705-658c-43e7-905e-a857d995e4d4" Name="Usher Entity">
+			<Object href="../entity/utawalaaltar.csharpbotentity#e9dcd705-658c-43e7-905e-a857d995e4d4"/>
+		</SecuritySchemes>
+		<SecuritySchemes Uuid="7d6b7e4d-9921-4d80-ae02-c8f480b7d241" Name="Protocol Entity">
+			<Object href="../entity/utawalaaltar.csharpbotentity#7d6b7e4d-9921-4d80-ae02-c8f480b7d241"/>
+		</SecuritySchemes>
+		<SecuritySchemes Uuid="7f5d6e5f-6307-42cd-b708-60e920fbc712" Name="Category Group Leader Entity">
+			<Object href="../entity/utawalaaltar.csharpbotentity#7f5d6e5f-6307-42cd-b708-60e920fbc712"/>
+		</SecuritySchemes>
+		<SecuritySchemes Uuid="ef55084b-546a-4808-b0fc-9c18e6b06f2b" Name="Seats Entity">
+			<Object href="../entity/utawalaaltar.csharpbotentity#ef55084b-546a-4808-b0fc-9c18e6b06f2b"/>
+		</SecuritySchemes>
+		<SecuritySchemes Uuid="28b888de-8bc4-440f-86e0-aaea33ea2a0c" Name="Services Entity">
+			<Object href="../entity/utawalaaltar.csharpbotentity#28b888de-8bc4-440f-86e0-aaea33ea2a0c"/>
+		</SecuritySchemes>
+		<SecuritySchemes Uuid="28169de1-04e9-4de1-999b-72c7c8d4b1a2" Name="Home Page">
+			<Object href="../ui/utawalaaltar.reactbotui#28169de1-04e9-4de1-999b-72c7c8d4b1a2"/>
+		</SecuritySchemes>
+		<SecuritySchemes Uuid="37452baa-e0cb-4f76-87b2-9e557a41b881" Name="Booking Page">
+			<Object href="../ui/utawalaaltar.reactbotui#37452baa-e0cb-4f76-87b2-9e557a41b881"/>
+		</SecuritySchemes>
+		<SecuritySchemes Uuid="22c192d0-75ac-43b1-84af-cfa353e5f7ec" Name="Registered Members Page">
+			<Object href="../ui/utawalaaltar.reactbotui#22c192d0-75ac-43b1-84af-cfa353e5f7ec"/>
+		</SecuritySchemes>
+		<SecuritySchemes Uuid="4eb9750c-980c-43ef-9701-2ece2b2d8781" Name="Service Attendance Page">
+			<Object href="../ui/utawalaaltar.reactbotui#4eb9750c-980c-43ef-9701-2ece2b2d8781"/>
+		</SecuritySchemes>
+</SecuritySchemes>
+	<TwoFactorAuthenticationProviders/>
+	<Groups>
+		<Groups Uuid="cfb6b6ad-ecb4-49c4-aec2-303127d36576" Name="Visitors" Description="Anonymous users who have not been authenticated" IsSpecialGroup="UNAUTHENTICATED" />\n		<Groups Uuid="97dc8964-ca05-4a57-b2ee-37679a42c0e9" Name="Admin" Description="Users who have been created as an Admin entity" IsSpecialGroup="BACKEND_ADMIN">
+			<UserEntities href="../entity/utawalaaltar.csharpbotentity#3daca0b4-457f-4145-9a4f-51e2a88aa2d7"/>
+		</Groups>
+		<Groups Uuid="74039df5-2d2a-482e-87ca-87100237dcce" Name="MEMBER" Description="Users who have been created as a MEMBER entity" IsSpecialGroup="NO">
+			<UserEntities href="../entity/utawalaaltar.csharpbotentity#409528e3-6d78-430b-8eca-e85ed652b49a"/>
+		</Groups>
+		<Groups Uuid="4e49341b-4429-44cb-8196-86e9a2594e40" Name="Category Group Leader" Description="Users who have been created as a Category Group Leader entity" IsSpecialGroup="NO">
+			<UserEntities href="../entity/utawalaaltar.csharpbotentity#7f5d6e5f-6307-42cd-b708-60e920fbc712"/>
+		</Groups>
+		<Groups Uuid="bf7ccf8a-c927-489e-b99d-510380893df7" Name="Usher" Description="Users who have been created as an Usher entity" IsSpecialGroup="NO">
+			<UserEntities href="../entity/utawalaaltar.csharpbotentity#e9dcd705-658c-43e7-905e-a857d995e4d4"/>
+		</Groups>
+		<Groups Uuid="ada270b2-9462-4520-9bdd-b14e96427f2a" Name="Protocol" Description="Users who have been created as a Protocol entity" IsSpecialGroup="NO">
+			<UserEntities href="../entity/utawalaaltar.csharpbotentity#7d6b7e4d-9921-4d80-ae02-c8f480b7d241"/>
+		</Groups>
+		<Groups Uuid="f6514682-4017-4a94-85f4-01cbe1c0fd5a" Name="Group Category" Description="Users who have been created as a Group Category entity" IsSpecialGroup="NO">
+			<UserEntities href="../entity/utawalaaltar.csharpbotentity#f6660f5c-0063-4434-9315-e8533b261b89"/>
+		</Groups>
+</Groups>
 </commonSecurity:Security>
