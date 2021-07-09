@@ -42,7 +42,7 @@ class HomePage extends React.Component<HomePageProps> {
 		// % protected region % [Add logic before rendering contents here] end
 
 		let contents = (
-			<SecuredPage groups={['Super Administrators']}>
+			<SecuredPage groups={['Super Administrators', 'Admin']}>
 				{
 				// % protected region % [Alter navigation here] off begin
 				}

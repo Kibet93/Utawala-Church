@@ -51,8 +51,8 @@ namespace ServersideTests.Tests.Integration.BotWritten.GroupSecurityTests.Create
 					{new NoOfServiceEntity(), null, "Admin"},
 					{new AttendanceEntity(), null, "Admin"},
 					{new HomeFellowshipEntity(), null, "Admin"},
-					{new SeatsEntity(), SecurityStringHelper.UserPermissionDenied, "Admin"},
-					{new ServicesEntity(), SecurityStringHelper.UserPermissionDenied, "Admin"},
+					{new SeatsEntity(), null, "Admin"},
+					{new ServicesEntity(), null, "Admin"},
 					{new WorkflowEntity(), null, "Admin"},
 					{new WorkflowStateEntity(), null, "Admin"},
 					{new WorkflowTransitionEntity(), null, "Admin"},
@@ -84,12 +84,12 @@ namespace ServersideTests.Tests.Integration.BotWritten.GroupSecurityTests.Create
 				var data = new TheoryData<IAbstractModel, object, string, string>
 				{
 					// % protected region % [Configure user theory data for Admin here] off begin
-					{new CategoryGroupLeaderEntity(), new CategoryGroupLeaderEntityGraphQlRegistrationModel(), SecurityStringHelper.UserPermissionDenied, "Admin"},
+					{new CategoryGroupLeaderEntity(), new CategoryGroupLeaderEntityGraphQlRegistrationModel(), null, "Admin"},
 					{new GroupCategoryEntity(), new GroupCategoryEntityGraphQlRegistrationModel(), null, "Admin"},
 					{new MemberEntity(), new MemberEntityGraphQlRegistrationModel(), null, "Admin"},
 					{new AdminEntity(), new AdminEntityGraphQlRegistrationModel(), null, "Admin"},
-					{new ProtocolEntity(), new ProtocolEntityGraphQlRegistrationModel(), SecurityStringHelper.UserPermissionDenied, "Admin"},
-					{new UsherEntity(), new UsherEntityGraphQlRegistrationModel(), SecurityStringHelper.UserPermissionDenied, "Admin"},
+					{new ProtocolEntity(), new ProtocolEntityGraphQlRegistrationModel(), null, "Admin"},
+					{new UsherEntity(), new UsherEntityGraphQlRegistrationModel(), null, "Admin"},
 					// % protected region % [Configure user theory data for Admin here] end
 				};
 				// % protected region % [Add any extra user theory data here] off begin

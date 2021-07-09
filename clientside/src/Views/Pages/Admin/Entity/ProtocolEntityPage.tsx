@@ -44,7 +44,7 @@ export default class ProtocolEntityPage extends React.Component<RouteComponentPr
 		// % protected region % [Override contents here] end
 
 		return (
-			<SecuredPage groups={["Super Administrators", ""]}>
+			<SecuredPage groups={["Super Administrators", "Admin"]}>
 				{contents}
 			</SecuredPage>
 		);

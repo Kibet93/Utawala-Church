@@ -229,7 +229,7 @@ export default class PageLinks extends React.Component<RouteComponentProps> {
 		}
 		// % protected region % [Update the link group for the forms extension here] end
 		// % protected region % [Update the link group for the workflow extension here] off begin
-		const workflowGroups: string[] = ['Super Administrators'];
+		const workflowGroups: string[] = ['Super Administrators','Admin'];
 		if (store.userGroups.some(ug => workflowGroups.some(fg => fg === ug.name))){
 			otherlinkGroup.push(
 				{
