@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modelink threeWay="true" forceExeedL="true" forceExeedM="true" forceExeedR="true">
+  <model path="/f7ef5e77.utawalaaltar.models/ui/utawalaaltar.reactbotui" position="LEFT" />
+  <model path="/f7ef5e77.utawalaaltar.models/entity/utawalaaltar.csharpbotentity" position="MIDDLE" />
+  <model path="/f7ef5e77.utawalaaltar.models/security/utawalaaltar.commonsecurity" position="RIGHT" />
+</modelink>
