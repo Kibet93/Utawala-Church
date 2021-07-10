@@ -46,9 +46,9 @@ namespace ServersideTests.Tests.Integration.BotWritten.GroupSecurityTests.Read
 				var data = new TheoryData<IAbstractModel, bool, string>
 				{
 					// % protected region % [Configure entity theory data for Admin here] off begin
-					{new AccountabilityGroupEntity(), true, "Admin"},
-					{new NoOfServiceEntity(), true, "Admin"},
+					{new AccountabilityGroupsEntity(), true, "Admin"},
 					{new AttendanceEntity(), true, "Admin"},
+					{new NoOfServiceEntity(), true, "Admin"},
 					{new HomeFellowshipEntity(), true, "Admin"},
 					{new SeatsEntity(), true, "Admin"},
 					{new ServicesEntity(), true, "Admin"},
@@ -56,8 +56,8 @@ namespace ServersideTests.Tests.Integration.BotWritten.GroupSecurityTests.Read
 					{new WorkflowStateEntity(), true, "Admin"},
 					{new WorkflowTransitionEntity(), true, "Admin"},
 					{new WorkflowVersionEntity(), true, "Admin"},
-					{new MemberSubmissionEntity(), true, "Admin"},
-					{new MemberEntityFormTileEntity(), true, "Admin"},
+					{new AttendanceSubmissionEntity(), true, "Admin"},
+					{new AttendanceEntityFormTileEntity(), true, "Admin"},
 					// % protected region % [Configure entity theory data for Admin here] end
 				};
 				// % protected region % [Add any extra theory data here] off begin

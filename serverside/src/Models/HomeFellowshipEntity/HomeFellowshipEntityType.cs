@@ -49,8 +49,8 @@ namespace Utawalaaltar.Models
 
 			// Add entity references
 
-			// GraphQL reference to entity MemberEntity via reference Membersfellowship
-			Field<ListGraphType<NonNullGraphType<MemberEntityType>>, IEnumerable<MemberEntity>>()
+			// GraphQL reference to entity MembersEntity via reference Membersfellowship
+			Field<ListGraphType<NonNullGraphType<MembersEntityType>>, IEnumerable<MembersEntity>>()
 				.Name("Membersfellowships")
 				.AddCommonArguments()
 				.ResolveAsync(async context =>
@@ -58,12 +58,12 @@ namespace Utawalaaltar.Models
 					var graphQlContext = (UtawalaaltarGraphQlContext) context.UserContext;
 					var accessor = graphQlContext.ServiceProvider.GetRequiredService<IDataLoaderContextAccessor>();
 
-					var loader = accessor.Context.GetOrAddCollectionBatchLoader<Guid?, MemberEntity>(
+					var loader = accessor.Context.GetOrAddCollectionBatchLoader<Guid?, MembersEntity>(
 						string.Join("-", context.ResponsePath.Where(x => x is string)) + "GetMembersfellowshipsForHomeFellowshipEntity",
 						async keys =>
 						{
 							var args = new CommonArguments(context);
-							var query = QueryHelpers.CreateResolveFunction<MemberEntity>(context, new ReadOptions {DisableAudit = true});
+							var query = QueryHelpers.CreateResolveFunction<MembersEntity>(context, new ReadOptions {DisableAudit = true});
 							var results = await query
 								.Where(x => x.HomeFellowshipId.HasValue && keys.Contains(x.HomeFellowshipId))
 								.Select(x => x.HomeFellowshipId.Value)
@@ -111,7 +111,7 @@ namespace Utawalaaltar.Models
 			// Add entity references
 
 			// Add references to foreign models to allow nested creation
-			Field<ListGraphType<MemberEntityInputType>>("Membersfellowships");
+			Field<ListGraphType<MembersEntityInputType>>("Membersfellowships");
 
 			// % protected region % [Add any extra GraphQL input fields here] off begin
 			// % protected region % [Add any extra GraphQL input fields here] end

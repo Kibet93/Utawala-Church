@@ -45,9 +45,8 @@ namespace ServersideTests.Tests.Integration.BotWritten
 
 			var users = new User[]
 			{
-				CreateUser<CategoryGroupLeaderEntity>(),
-				CreateUser<GroupCategoryEntity>(),
-				CreateUser<MemberEntity>(),
+				CreateUser<CategoryLeadersEntity>(),
+				CreateUser<MembersEntity>(),
 				CreateUser<AdminEntity>(),
 				CreateUser<ProtocolEntity>(),
 				CreateUser<UsherEntity>(),

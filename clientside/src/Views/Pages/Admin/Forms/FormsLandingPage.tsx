@@ -35,7 +35,7 @@ export default class FormsLandingPage extends React.Component<RouteComponentProp
 	// % protected region % [Override getAccordionProps here] off begin
 	private getAccordionProps = () => {
 		const forms = [
-			{displayName: 'MEMBER', name: 'MemberEntity', model: Models.MemberEntity},
+			{displayName: 'Attendance', name: 'AttendanceEntity', model: Models.AttendanceEntity},
 		];
 
 		return forms
@@ -57,7 +57,7 @@ export default class FormsLandingPage extends React.Component<RouteComponentProp
 	// % protected region % [Override render here] off begin
 	public render(){
 		return (
-			<SecuredPage groups={["Usher","Super Administrators","Admin","Protocol","Member","CategoryGroupLeader"]}>
+			<SecuredPage groups={["Usher","Super Administrators","CategoryLeaders","Admin","Protocol","Members"]}>
 				<PageWrapper {...this.props}>
 					<section className={'forms-behaviour forms-behaviour__landing'}>
 						<h2>Forms</h2>

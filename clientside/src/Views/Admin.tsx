@@ -119,13 +119,12 @@ export default class Admin extends React.Component<RouteComponentProps> {
 						<Route path={`${this.path}/User`} component={AllUsersPage} />
 						<Route path={`${this.path}/forms`} component={FormsPage} />
 						<Route path={`${this.path}/workflows`} component={WorkflowsPage} />
-						<Route path={`${this.path}/AccountabilityGroupEntity`} component={AdminPages.AccountabilityGroupEntityPage} />
-						<Route path={`${this.path}/CategoryGroupLeaderEntity`} component={AdminPages.CategoryGroupLeaderEntityPage} />
-						<Route path={`${this.path}/GroupCategoryEntity`} component={AdminPages.GroupCategoryEntityPage} />
-						<Route path={`${this.path}/MemberEntity`} component={AdminPages.MemberEntityPage} />
+						<Route path={`${this.path}/AccountabilityGroupsEntity`} component={AdminPages.AccountabilityGroupsEntityPage} />
+						<Route path={`${this.path}/AttendanceEntity`} component={AdminPages.AttendanceEntityPage} />
+						<Route path={`${this.path}/CategoryLeadersEntity`} component={AdminPages.CategoryLeadersEntityPage} />
+						<Route path={`${this.path}/MembersEntity`} component={AdminPages.MembersEntityPage} />
 						<Route path={`${this.path}/NoOfServiceEntity`} component={AdminPages.NoOfServiceEntityPage} />
 						<Route path={`${this.path}/AdminEntity`} component={AdminPages.AdminEntityPage} />
-						<Route path={`${this.path}/AttendanceEntity`} component={AdminPages.AttendanceEntityPage} />
 						<Route path={`${this.path}/HomeFellowshipEntity`} component={AdminPages.HomeFellowshipEntityPage} />
 						<Route path={`${this.path}/ProtocolEntity`} component={AdminPages.ProtocolEntityPage} />
 						<Route path={`${this.path}/SeatsEntity`} component={AdminPages.SeatsEntityPage} />
@@ -135,8 +134,8 @@ export default class Admin extends React.Component<RouteComponentProps> {
 						<Route path={`${this.path}/WorkflowStateEntity`} component={AdminPages.WorkflowStateEntityPage} />
 						<Route path={`${this.path}/WorkflowTransitionEntity`} component={AdminPages.WorkflowTransitionEntityPage} />
 						<Route path={`${this.path}/WorkflowVersionEntity`} component={AdminPages.WorkflowVersionEntityPage} />
-						<Route path={`${this.path}/MemberSubmissionEntity`} component={AdminPages.MemberSubmissionEntityPage} />
-						<Route path={`${this.path}/MemberEntityFormTileEntity`} component={AdminPages.MemberEntityFormTileEntityPage} />
+						<Route path={`${this.path}/AttendanceSubmissionEntity`} component={AdminPages.AttendanceSubmissionEntityPage} />
+						<Route path={`${this.path}/AttendanceEntityFormTileEntity`} component={AdminPages.AttendanceEntityFormTileEntityPage} />
 
 						{
 						// % protected region % [Add any extra page routes here] off begin

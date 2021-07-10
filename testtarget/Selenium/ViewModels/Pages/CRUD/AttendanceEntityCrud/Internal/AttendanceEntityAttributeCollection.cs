@@ -26,6 +26,7 @@ namespace SeleniumTests.ViewModels.Pages.CRUD.AttendanceEntityCrud.Internal
 	public class AttendanceEntityAttributeCollection : Page
 	{
 		// % protected region % [Override class properties here] off begin
+		public AttributeTextField Name => new(By.CssSelector("div.name"), ContextConfiguration);
 		public AttributeDatePicker DateOfService => new(By.CssSelector("div.dateOfService"), ContextConfiguration);
 		public AttributeTextField ServiceID => new(By.CssSelector("div.serviceID"), ContextConfiguration);
 		public AttributeTextField SeatNoID => new(By.CssSelector("div.seatNoID"), ContextConfiguration);
@@ -33,6 +34,7 @@ namespace SeleniumTests.ViewModels.Pages.CRUD.AttendanceEntityCrud.Internal
 		public AttributeCheckbox AttendedService => new(By.CssSelector("div.attendedService"), ContextConfiguration);
 		public AttributeTextField ReasonForNotAttending => new(By.CssSelector("div.reasonForNotAttending"), ContextConfiguration);
 		public AttributeTextArea Comment => new(By.CssSelector("div.comment"), ContextConfiguration);
+		public AttributeReferenceMultiCombobox FormPageIds => new(By.CssSelector("div.formPages"), ContextConfiguration);
 		// % protected region % [Override class properties here] end
 
 		// % protected region % [Override constructor here] off begin

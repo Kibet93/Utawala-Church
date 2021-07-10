@@ -25,13 +25,12 @@ namespace APITests.TheoryData.BotWritten
 		public EntityNamePluralizedTheoryData()
 		{
 			// % protected region % [Modify EntityNamePluralizedTheoryData entities here] off begin
-			Add("accountabilityGroupEntitys");
-			Add("categoryGroupLeaderEntitys");
-			Add("groupCategoryEntitys");
-			Add("memberEntitys");
+			Add("accountabilityGroupsEntitys");
+			Add("attendanceEntitys");
+			Add("categoryLeadersEntitys");
+			Add("membersEntitys");
 			Add("noOfServiceEntitys");
 			Add("adminEntitys");
-			Add("attendanceEntitys");
 			Add("homeFellowshipEntitys");
 			Add("protocolEntitys");
 			Add("seatsEntitys");
@@ -41,7 +40,7 @@ namespace APITests.TheoryData.BotWritten
 			Add("workflowStateEntitys");
 			Add("workflowTransitionEntitys");
 			Add("workflowVersionEntitys");
-			Add("memberSubmissionEntitys");
+			Add("attendanceSubmissionEntitys");
 			// % protected region % [Modify EntityNamePluralizedTheoryData entities here] end
 		}
 
@@ -52,13 +51,12 @@ namespace APITests.TheoryData.BotWritten
 		public EntityNameTheoryData()
 		{
 			// % protected region % [Modify EntityNameTheoryData entities here] off begin
-			Add("accountabilityGroupEntity");
-			Add("categoryGroupLeaderEntity");
-			Add("groupCategoryEntity");
-			Add("memberEntity");
+			Add("accountabilityGroupsEntity");
+			Add("attendanceEntity");
+			Add("categoryLeadersEntity");
+			Add("membersEntity");
 			Add("noOfServiceEntity");
 			Add("adminEntity");
-			Add("attendanceEntity");
 			Add("homeFellowshipEntity");
 			Add("protocolEntity");
 			Add("seatsEntity");
@@ -68,7 +66,7 @@ namespace APITests.TheoryData.BotWritten
 			Add("workflowStateEntity");
 			Add("workflowTransitionEntity");
 			Add("workflowVersionEntity");
-			Add("memberSubmissionEntity");
+			Add("attendanceSubmissionEntity");
 			// % protected region % [Modify EntityNameTheoryData entities here] end
 		}
 	}
@@ -78,13 +76,12 @@ namespace APITests.TheoryData.BotWritten
 		public VisitorUnauthorisedEntityNameTheoryData()
 		{
 			// % protected region % [Modify EntityNameTheoryData entities here] off begin
-			Add("accountabilityGroupEntity");
-			Add("categoryGroupLeaderEntity");
-			Add("groupCategoryEntity");
-			Add("memberEntity");
+			Add("accountabilityGroupsEntity");
+			Add("attendanceEntity");
+			Add("categoryLeadersEntity");
+			Add("membersEntity");
 			Add("noOfServiceEntity");
 			Add("adminEntity");
-			Add("attendanceEntity");
 			Add("homeFellowshipEntity");
 			Add("protocolEntity");
 			Add("seatsEntity");

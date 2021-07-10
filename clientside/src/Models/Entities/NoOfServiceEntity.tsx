@@ -26,11 +26,10 @@ import {
 } from 'Util/EntityUtils';
 import { VisitorsNoOfServiceEntity } from 'Models/Security/Acl/VisitorsNoOfServiceEntity';
 import { AdminNoOfServiceEntity } from 'Models/Security/Acl/AdminNoOfServiceEntity';
-import { MemberNoOfServiceEntity } from 'Models/Security/Acl/MemberNoOfServiceEntity';
-import { CategoryGroupLeaderNoOfServiceEntity } from 'Models/Security/Acl/CategoryGroupLeaderNoOfServiceEntity';
+import { MembersNoOfServiceEntity } from 'Models/Security/Acl/MembersNoOfServiceEntity';
+import { CategoryLeadersNoOfServiceEntity } from 'Models/Security/Acl/CategoryLeadersNoOfServiceEntity';
 import { UsherNoOfServiceEntity } from 'Models/Security/Acl/UsherNoOfServiceEntity';
 import { ProtocolNoOfServiceEntity } from 'Models/Security/Acl/ProtocolNoOfServiceEntity';
-import { GroupCategoryNoOfServiceEntity } from 'Models/Security/Acl/GroupCategoryNoOfServiceEntity';
 import * as Enums from '../Enums';
 import { EntityFormMode } from 'Views/Components/Helpers/Common';
 import {SuperAdministratorScheme} from '../Security/Acl/SuperAdministratorScheme';
@@ -53,11 +52,10 @@ export default class NoOfServiceEntity extends Model implements INoOfServiceEnti
 		new SuperAdministratorScheme(),
 		new VisitorsNoOfServiceEntity(),
 		new AdminNoOfServiceEntity(),
-		new MemberNoOfServiceEntity(),
-		new CategoryGroupLeaderNoOfServiceEntity(),
+		new MembersNoOfServiceEntity(),
+		new CategoryLeadersNoOfServiceEntity(),
 		new UsherNoOfServiceEntity(),
 		new ProtocolNoOfServiceEntity(),
-		new GroupCategoryNoOfServiceEntity(),
 		// % protected region % [Add any further ACL entries here] off begin
 		// % protected region % [Add any further ACL entries here] end
 	];

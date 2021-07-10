@@ -62,11 +62,10 @@ namespace Utawalaaltar.Models {
 			new SuperAdministratorsScheme(),
 			new VisitorsProtocolEntity(),
 			new AdminProtocolEntity(),
-			new MemberProtocolEntity(),
-			new CategoryGroupLeaderProtocolEntity(),
+			new MembersProtocolEntity(),
+			new CategoryLeadersProtocolEntity(),
 			new UsherProtocolEntity(),
 			new ProtocolProtocolEntity(),
-			new GroupCategoryProtocolEntity(),
 			// % protected region % [Override ACLs here] end
 			// % protected region % [Add any further ACL entries here] off begin
 			// % protected region % [Add any further ACL entries here] end
@@ -76,10 +75,10 @@ namespace Utawalaaltar.Models {
 		/// <summary>
 		/// Outgoing one to one reference
 		/// </summary>
-		/// <see cref="Utawalaaltar.Models.MemberEntity"/>
+		/// <see cref="Utawalaaltar.Models.MembersEntity"/>
 		public Guid MemberId { get; set; }
-		[EntityForeignKey("Member", "Protocol", true, typeof(MemberEntity))]
-		public MemberEntity Member { get; set; }
+		[EntityForeignKey("Member", "Protocol", true, typeof(MembersEntity))]
+		public MembersEntity Member { get; set; }
 		// % protected region % [Customise Member here] end
 
 		public override async Task BeforeSave(

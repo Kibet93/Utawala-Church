@@ -16,11 +16,11 @@
 ###
 # % protected region % [Override feature properties here] off begin
 @BotWritten @associations
-Feature: Reference from CategoryGroupLeaderEntity using Category Group Leader to MemberEntity using MEMBER
+Feature: Reference from CategoryLeadersEntity using Category Group Leader to MembersEntity using MEMBER
 # % protected region % [Override feature properties here] end
-	Scenario: Reference from CategoryGroupLeaderEntity using Category Group Leader to MemberEntity using MEMBER
+	Scenario: Reference from CategoryLeadersEntity using Category Group Leader to MembersEntity using MEMBER
 	Given I login to the site as a user
-	And I navigate to the CategoryGroupLeaderEntity backend page
-	And I create 1 CategoryGroupLeaderEntity's each associated with 1 Member using MEMBER
-	Then I validate each MemberEntity has 1 CategoryGroupLeaderEntity associations using Category Group Leader
-	Then I validate each CategoryGroupLeaderEntity has 1 MemberEntity associations using MEMBER
+	And I navigate to the CategoryLeadersEntity backend page
+	And I create 1 CategoryLeadersEntity's each associated with 1 Member using MEMBER
+	Then I validate each MembersEntity has 1 CategoryLeadersEntity associations using Category Group Leader
+	Then I validate each CategoryLeadersEntity has 1 MembersEntity associations using MEMBER

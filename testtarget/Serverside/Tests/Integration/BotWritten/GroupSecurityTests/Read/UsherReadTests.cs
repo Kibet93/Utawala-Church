@@ -46,18 +46,18 @@ namespace ServersideTests.Tests.Integration.BotWritten.GroupSecurityTests.Read
 				var data = new TheoryData<IAbstractModel, bool, string>
 				{
 					// % protected region % [Configure entity theory data for Usher here] off begin
-					{new AccountabilityGroupEntity(), false, null},
-					{new NoOfServiceEntity(), true, "Usher"},
+					{new AccountabilityGroupsEntity(), true, "Usher"},
 					{new AttendanceEntity(), true, "Usher"},
+					{new NoOfServiceEntity(), true, "Usher"},
 					{new HomeFellowshipEntity(), true, "Usher"},
-					{new SeatsEntity(), false, null},
-					{new ServicesEntity(), false, null},
+					{new SeatsEntity(), true, "Usher"},
+					{new ServicesEntity(), true, "Usher"},
 					{new WorkflowEntity(), true, "Usher"},
 					{new WorkflowStateEntity(), true, "Usher"},
 					{new WorkflowTransitionEntity(), true, "Usher"},
 					{new WorkflowVersionEntity(), true, "Usher"},
-					{new MemberSubmissionEntity(), true, "Usher"},
-					{new MemberEntityFormTileEntity(), true, "Usher"},
+					{new AttendanceSubmissionEntity(), true, "Usher"},
+					{new AttendanceEntityFormTileEntity(), true, "Usher"},
 					// % protected region % [Configure entity theory data for Usher here] end
 				};
 				// % protected region % [Add any extra theory data here] off begin

@@ -82,6 +82,13 @@ export default class Frontend extends React.Component<RouteComponentProps> {
 								// % protected region % [customize the universal public routes] end
 								}
 
+								{
+								// % protected region % [customize the SeatBooking public routes] off begin
+								}
+								<Route path={"/seatbooking"} component={Pages.SeatBookingPage} />
+								{
+								// % protected region % [customize the SeatBooking public routes] end
+								}
 
 								<Route path={`${path}/404`} component={PageNotFound} />
 								<Route path={`${path}/403`} component={PageAccessDenied} />
@@ -102,7 +109,6 @@ export default class Frontend extends React.Component<RouteComponentProps> {
 										}
 										<Redirect exact={true} from={`/`} to={`${path}/home`} />
 										<Route path={`${path}/home`} component={Pages.HomePage} />
-										<Route path={`${path}/booking`} component={Pages.BookingPage} />
 										<Route path={`${path}/registeredmembers`} component={Pages.RegisteredMembersPage} />
 										<Route path={`${path}/serviceattendance`} component={Pages.ServiceAttendancePage} />
 										{

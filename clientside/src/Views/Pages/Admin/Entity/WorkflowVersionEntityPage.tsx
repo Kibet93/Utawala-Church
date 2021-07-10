@@ -44,7 +44,7 @@ export default class WorkflowVersionEntityPage extends React.Component<RouteComp
 		// % protected region % [Override contents here] end
 
 		return (
-			<SecuredPage groups={["Super Administrators", "Admin","Member","CategoryGroupLeader","Usher","Protocol","GroupCategory"]}>
+			<SecuredPage groups={["Super Administrators", "Admin","Members","CategoryLeaders","Usher","Protocol"]}>
 				{contents}
 			</SecuredPage>
 		);

@@ -22,7 +22,8 @@ namespace EntityObject.Enums
 {
 	public enum Membershipstatus
 	{
-		VISITOR,
+		FIRST_TIME_VISITOR,
+		SECOND_TIME_VISITOR,
 		MEMBER,
 	}
 

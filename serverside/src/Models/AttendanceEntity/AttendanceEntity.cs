@@ -45,6 +45,10 @@ namespace Utawalaaltar.Models {
 		public DateTime Created { get; set; }
 		public DateTime Modified { get; set; }
 
+		[Required]
+		[EntityAttribute]
+		public string Name { get; set; }
+
 		// % protected region % [Customise DateOfService here] off begin
 		[EntityAttribute]
 		public DateTime? DateOfService { get; set; }
@@ -100,15 +104,38 @@ namespace Utawalaaltar.Models {
 			new SuperAdministratorsScheme(),
 			new VisitorsAttendanceEntity(),
 			new AdminAttendanceEntity(),
-			new MemberAttendanceEntity(),
-			new CategoryGroupLeaderAttendanceEntity(),
+			new MembersAttendanceEntity(),
+			new CategoryLeadersAttendanceEntity(),
 			new UsherAttendanceEntity(),
 			new ProtocolAttendanceEntity(),
-			new GroupCategoryAttendanceEntity(),
 			// % protected region % [Override ACLs here] end
 			// % protected region % [Add any further ACL entries here] off begin
 			// % protected region % [Add any further ACL entries here] end
 		};
+
+		/// <summary>
+		/// Reference to the versions for this form
+		/// </summary>
+		/// <see cref="Utawalaaltar.Models.AttendanceEntityFormVersion"/>
+		[EntityForeignKey("FormVersions", "Form", false, typeof(AttendanceEntityFormVersion))]
+		public ICollection<AttendanceEntityFormVersion> FormVersions { get; set; }
+
+		/// <summary>
+		/// The current published version for the form
+		/// </summary>
+		/// <see cref="Utawalaaltar.Models.AttendanceEntityFormVersion"/>
+		public Guid? PublishedVersionId { get; set; }
+		[EntityForeignKey("PublishedVersion", "PublishedForm", false, typeof(AttendanceEntityFormVersion))]
+		public AttendanceEntityFormVersion PublishedVersion { get; set; }
+
+		// % protected region % [Customise FormPages here] off begin
+		/// <summary>
+		/// Incoming one to many reference
+		/// </summary>
+		/// <see cref="Utawalaaltar.Models.AttendanceEntityFormTileEntity"/>
+		[EntityForeignKey("FormPages", "Form", false, typeof(AttendanceEntityFormTileEntity))]
+		public ICollection<AttendanceEntityFormTileEntity> FormPages { get; set; }
+		// % protected region % [Customise FormPages here] end
 
 		public async Task BeforeSave(
 			EntityState operation,

@@ -34,29 +34,21 @@ namespace ServersideTests.Tests.Integration.BotWritten
 	[Trait("Category", "Unit")]
 	public class DeactivatedUserTests
 	{
-		// % protected region % [Customize CreateAndValidateUser Test for CategoryGroupLeaderEntity] off begin
+		// % protected region % [Customize CreateAndValidateUser Test for CategoryLeadersEntity] off begin
 		[Fact]
-		public async void CategoryGroupLeaderEntityDeactivatedLoginTest()
+		public async void CategoryLeadersEntityDeactivatedLoginTest()
 		{
-			await CreateAndValidateUser<CategoryGroupLeaderEntity>();
+			await CreateAndValidateUser<CategoryLeadersEntity>();
 		}
-		// % protected region % [Customize CreateAndValidateUser Test for CategoryGroupLeaderEntity] end
+		// % protected region % [Customize CreateAndValidateUser Test for CategoryLeadersEntity] end
 
-		// % protected region % [Customize CreateAndValidateUser Test for GroupCategoryEntity] off begin
+		// % protected region % [Customize CreateAndValidateUser Test for MembersEntity] off begin
 		[Fact]
-		public async void GroupCategoryEntityDeactivatedLoginTest()
+		public async void MembersEntityDeactivatedLoginTest()
 		{
-			await CreateAndValidateUser<GroupCategoryEntity>();
+			await CreateAndValidateUser<MembersEntity>();
 		}
-		// % protected region % [Customize CreateAndValidateUser Test for GroupCategoryEntity] end
-
-		// % protected region % [Customize CreateAndValidateUser Test for MemberEntity] off begin
-		[Fact]
-		public async void MemberEntityDeactivatedLoginTest()
-		{
-			await CreateAndValidateUser<MemberEntity>();
-		}
-		// % protected region % [Customize CreateAndValidateUser Test for MemberEntity] end
+		// % protected region % [Customize CreateAndValidateUser Test for MembersEntity] end
 
 		// % protected region % [Customize CreateAndValidateUser Test for AdminEntity] off begin
 		[Fact]
@@ -122,9 +114,8 @@ namespace ServersideTests.Tests.Integration.BotWritten
 		public static TheoryData<User> DeactivatedUserTheoryData() {
 			return new()
 			{
-				new CategoryGroupLeaderEntity(),
-				new GroupCategoryEntity(),
-				new MemberEntity(),
+				new CategoryLeadersEntity(),
+				new MembersEntity(),
 				new AdminEntity(),
 				new ProtocolEntity(),
 				new UsherEntity(),

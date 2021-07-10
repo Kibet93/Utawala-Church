@@ -54,6 +54,7 @@ namespace SeleniumTests.PageObjects.CRUDPageObject.PageDetails
 		private IWebElement AttendedServiceHeaderTitle => _driver.FindElementExt(By.XPath("//th[text()='Attended Service']"));
 		private IWebElement ReasonForNotAttendingHeaderTitle => _driver.FindElementExt(By.XPath("//th[text()='Reason For Not Attending']"));
 		private IWebElement CommentHeaderTitle => _driver.FindElementExt(By.XPath("//th[text()='Comment']"));
+		private IWebElement NameHeaderTitle => _driver.FindElementExt(By.XPath("//th[text()='Name']"));
 
 		// Datepickers
 		public IWebElement CreateAtDatepickerField => _driver.FindElementExt(By.CssSelector("div.created > input[type='date']"));
@@ -69,7 +70,6 @@ namespace SeleniumTests.PageObjects.CRUDPageObject.PageDetails
 
 			InitializeSelectors();
 			// % protected region % [Add any extra construction requires] off begin
-
 			// % protected region % [Add any extra construction requires] end
 		}
 
@@ -86,6 +86,9 @@ namespace SeleniumTests.PageObjects.CRUDPageObject.PageDetails
 
 			// Reference web elements
 
+			// Form Entity specific web Element
+			selectorDict.Add("NameElement", (selector: "div.name > input", type: SelectorType.CSS));
+
 			// Datepicker
 			selectorDict.Add("CreateAtDatepickerField", (selector: "//div[contains(@class, 'created')]/input", type: SelectorType.XPath));
 			selectorDict.Add("ModifiedAtDatepickerField", (selector: "//div[contains(@class, 'modified')]/input", type: SelectorType.XPath));
@@ -100,6 +103,7 @@ namespace SeleniumTests.PageObjects.CRUDPageObject.PageDetails
 		private IWebElement AttendedServiceElement => FindElementExt("AttendedServiceElement");
 		private IWebElement ReasonForNotAttendingElement => FindElementExt("ReasonForNotAttendingElement");
 		private IWebElement CommentElement => FindElementExt("CommentElement");
+		private IWebElement NameElement => FindElementExt("NameElement");
 
 		// Return an IWebElement that can be used to sort an attribute.
 		public IWebElement GetHeaderTile(string attribute)
@@ -113,6 +117,7 @@ namespace SeleniumTests.PageObjects.CRUDPageObject.PageDetails
 				"Attended Service" => AttendedServiceHeaderTitle,
 				"Reason For Not Attending" => ReasonForNotAttendingHeaderTitle,
 				"Comment" => CommentHeaderTitle,
+				"Name" => NameHeaderTitle,
 				_ => throw new Exception($"Cannot find header tile {attribute}"),
 			};
 		}
@@ -122,6 +127,8 @@ namespace SeleniumTests.PageObjects.CRUDPageObject.PageDetails
 		{
 			switch (attribute)
 			{
+				case "Name":
+					return NameElement;
 				case "DateOfService":
 					return DateOfServiceElement.DateTimePickerElement;
 				case "ServiceID":
@@ -145,6 +152,9 @@ namespace SeleniumTests.PageObjects.CRUDPageObject.PageDetails
 		{
 			switch (attribute)
 			{
+				case "Name":
+					SetName(value);
+					break;
 				case "DateOfService":
 					if (DateTime.TryParse(value, out var dateOfServiceValue))
 					{
@@ -188,6 +198,7 @@ namespace SeleniumTests.PageObjects.CRUDPageObject.PageDetails
 		{
 			return attribute switch
 			{
+				"Name" => WebElementUtils.GetElementAsBy(SelectorPathType.CSS, "//div[contains(@class, 'name')]"),
 				"DateOfService" => WebElementUtils.GetElementAsBy(SelectorPathType.CSS, "div.dateOfService > div > p"),
 				"ServiceID" => WebElementUtils.GetElementAsBy(SelectorPathType.CSS, "div.serviceID > div > p"),
 				"SeatNoID" => WebElementUtils.GetElementAsBy(SelectorPathType.CSS, "div.seatNoID > div > p"),
@@ -213,6 +224,7 @@ namespace SeleniumTests.PageObjects.CRUDPageObject.PageDetails
 		public void Apply()
 		{
 			// % protected region % [Configure entity application here] off begin
+			SetName(_attendanceEntity.Name);
 			SetDateOfService(_attendanceEntity.DateOfService);
 			SetServiceID(_attendanceEntity.ServiceID);
 			SetSeatNoID(_attendanceEntity.SeatNoID);
@@ -321,6 +333,14 @@ namespace SeleniumTests.PageObjects.CRUDPageObject.PageDetails
 			CommentElement.Text;
 
 
+		// Set Name for form entity
+		private void SetName (String value)
+		{
+			TypingUtils.InputEntityAttributeByClass(_driver, "name", value, _isFastText);
+			NameElement.SendKeys(Keys.Tab);
+		}
+
+		private String GetName => NameElement.Text;
 		// % protected region % [Add any additional getters and setters of web elements] off begin
 		// % protected region % [Add any additional getters and setters of web elements] end
 	}

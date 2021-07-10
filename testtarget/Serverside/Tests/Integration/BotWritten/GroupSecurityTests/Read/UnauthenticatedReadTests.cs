@@ -46,9 +46,9 @@ namespace ServersideTests.Tests.Integration.BotWritten.GroupSecurityTests.Read
 				var data = new TheoryData<IAbstractModel, bool, string>
 				{
 					// % protected region % [Configure entity theory data for Unauthenticated here] off begin
-					{new AccountabilityGroupEntity(), false, null},
-					{new NoOfServiceEntity(), false, null},
+					{new AccountabilityGroupsEntity(), false, null},
 					{new AttendanceEntity(), false, null},
+					{new NoOfServiceEntity(), false, null},
 					{new HomeFellowshipEntity(), false, null},
 					{new SeatsEntity(), false, null},
 					{new ServicesEntity(), false, null},
@@ -56,8 +56,8 @@ namespace ServersideTests.Tests.Integration.BotWritten.GroupSecurityTests.Read
 					{new WorkflowStateEntity(), false, null},
 					{new WorkflowTransitionEntity(), false, null},
 					{new WorkflowVersionEntity(), false, null},
-					{new MemberSubmissionEntity(), true, null},
-					{new MemberEntityFormTileEntity(), false, null},
+					{new AttendanceSubmissionEntity(), true, null},
+					{new AttendanceEntityFormTileEntity(), false, null},
 					// % protected region % [Configure entity theory data for Unauthenticated here] end
 				};
 				// % protected region % [Add any extra theory data here] off begin

@@ -16,11 +16,11 @@
 ###
 # % protected region % [Override feature properties here] off begin
 @BotWritten @associations
-Feature: Reference from MemberEntity using MEMBERsFellowship to HomeFellowshipEntity using Home Fellowship
+Feature: Reference from MembersEntity using MEMBERsFellowship to HomeFellowshipEntity using Home Fellowship
 # % protected region % [Override feature properties here] end
-	Scenario: Reference from MemberEntity using MEMBERsFellowship to HomeFellowshipEntity using Home Fellowship
+	Scenario: Reference from MembersEntity using MEMBERsFellowship to HomeFellowshipEntity using Home Fellowship
 	Given I login to the site as a user
-	And I navigate to the MemberEntity backend page
-	And I create 3 MemberEntity's each associated with 1 HomeFellowship using Home Fellowship
-	Then I validate each HomeFellowshipEntity has 3 MemberEntity associations using MEMBERsFellowship
-	Then I validate each MemberEntity has 1 HomeFellowshipEntity associations using Home Fellowship
+	And I navigate to the MembersEntity backend page
+	And I create 3 MembersEntity's each associated with 1 HomeFellowship using Home Fellowship
+	Then I validate each HomeFellowshipEntity has 3 MembersEntity associations using MEMBERsFellowship
+	Then I validate each MembersEntity has 1 HomeFellowshipEntity associations using Home Fellowship

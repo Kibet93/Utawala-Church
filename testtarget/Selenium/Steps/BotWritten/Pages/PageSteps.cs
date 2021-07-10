@@ -59,9 +59,9 @@ namespace SeleniumTests.Steps.BotWritten.Pages
 			return page switch
 			{
 				"HomePage" => new HomePage(_contextConfiguration),
-				"BookingPage" => new BookingPage(_contextConfiguration),
 				"RegisteredMembersPage" => new RegisteredMembersPage(_contextConfiguration),
 				"ServiceAttendancePage" => new ServiceAttendancePage(_contextConfiguration),
+				"SeatBookingPage" => new SeatBookingPage(_contextConfiguration),
 				_ => throw new Exception("Failed to switch on page name.")
 			};
 		}

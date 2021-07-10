@@ -23,7 +23,7 @@ import Collection, {ICollectionItemActionProps} from '../Collection/Collection';
 import {PaginationQueryOptions} from 'Models/PaginationData';
 import axios from 'axios';
 import {SecurityService} from 'Services/SecurityService';
-import { ProtocolEntity,  UsherEntity,  GroupCategoryEntity,  MemberEntity,  AdminEntity,  CategoryGroupLeaderEntity, } from 'Models/Entities';
+import { ProtocolEntity,  UsherEntity,  MembersEntity,  AdminEntity,  CategoryLeadersEntity, } from 'Models/Entities';
 import {RouteComponentProps} from 'react-router';
 import {confirmModal} from '../Modal/ModalUtils';
 import alert from '../../../Util/ToastifyUtils';
@@ -40,10 +40,9 @@ interface IEntityEditRouteParams {
 const userTypes = {
 	"ProtocolEntity" : ProtocolEntity,
 	"UsherEntity" : UsherEntity,
-	"GroupCategoryEntity" : GroupCategoryEntity,
-	"MemberEntity" : MemberEntity,
+	"MembersEntity" : MembersEntity,
 	"AdminEntity" : AdminEntity,
-	"CategoryGroupLeaderEntity" : CategoryGroupLeaderEntity,
+	"CategoryLeadersEntity" : CategoryLeadersEntity,
 };
 
 interface ISearch {

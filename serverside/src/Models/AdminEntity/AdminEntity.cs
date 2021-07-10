@@ -57,11 +57,10 @@ namespace Utawalaaltar.Models {
 			new SuperAdministratorsScheme(),
 			new VisitorsAdminEntity(),
 			new AdminAdminEntity(),
-			new MemberAdminEntity(),
-			new CategoryGroupLeaderAdminEntity(),
+			new MembersAdminEntity(),
+			new CategoryLeadersAdminEntity(),
 			new UsherAdminEntity(),
 			new ProtocolAdminEntity(),
-			new GroupCategoryAdminEntity(),
 			// % protected region % [Override ACLs here] end
 			// % protected region % [Add any further ACL entries here] off begin
 			// % protected region % [Add any further ACL entries here] end

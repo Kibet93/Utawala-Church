@@ -44,7 +44,7 @@ class ServiceAttendancePage extends React.Component<ServiceAttendancePageProps> 
 		// % protected region % [Add logic before rendering contents here] end
 
 		let contents = (
-			<SecuredPage groups={['Super Administrators', 'Admin']}>
+			<SecuredPage groups={['Super Administrators', 'Admin', 'Members', 'CategoryLeaders', 'Usher', 'Protocol']}>
 				{
 				// % protected region % [Alter navigation here] off begin
 				}

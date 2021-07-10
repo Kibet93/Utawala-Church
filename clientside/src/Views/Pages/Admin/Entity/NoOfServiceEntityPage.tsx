@@ -44,7 +44,7 @@ export default class NoOfServiceEntityPage extends React.Component<RouteComponen
 		// % protected region % [Override contents here] end
 
 		return (
-			<SecuredPage groups={["Super Administrators", "Admin","Member","CategoryGroupLeader","Usher","Protocol"]}>
+			<SecuredPage groups={["Super Administrators", "Admin","Members","CategoryLeaders","Usher","Protocol"]}>
 				{contents}
 			</SecuredPage>
 		);

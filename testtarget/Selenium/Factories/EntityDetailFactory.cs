@@ -45,13 +45,12 @@ namespace SeleniumTests.Factories
 		{
 			return entityName switch
 			{
-				"AccountabilityGroupEntity" => new AccountabilityGroupEntityDetailSection(_contextConfiguration, (AccountabilityGroupEntity) entity),
-				"CategoryGroupLeaderEntity" => new CategoryGroupLeaderEntityDetailSection(_contextConfiguration, (CategoryGroupLeaderEntity) entity),
-				"GroupCategoryEntity" => new GroupCategoryEntityDetailSection(_contextConfiguration, (GroupCategoryEntity) entity),
-				"MemberEntity" => new MemberEntityDetailSection(_contextConfiguration, (MemberEntity) entity),
+				"AccountabilityGroupsEntity" => new AccountabilityGroupsEntityDetailSection(_contextConfiguration, (AccountabilityGroupsEntity) entity),
+				"AttendanceEntity" => new AttendanceEntityDetailSection(_contextConfiguration, (AttendanceEntity) entity),
+				"CategoryLeadersEntity" => new CategoryLeadersEntityDetailSection(_contextConfiguration, (CategoryLeadersEntity) entity),
+				"MembersEntity" => new MembersEntityDetailSection(_contextConfiguration, (MembersEntity) entity),
 				"NoOfServiceEntity" => new NoOfServiceEntityDetailSection(_contextConfiguration, (NoOfServiceEntity) entity),
 				"AdminEntity" => new AdminEntityDetailSection(_contextConfiguration, (AdminEntity) entity),
-				"AttendanceEntity" => new AttendanceEntityDetailSection(_contextConfiguration, (AttendanceEntity) entity),
 				"HomeFellowshipEntity" => new HomeFellowshipEntityDetailSection(_contextConfiguration, (HomeFellowshipEntity) entity),
 				"ProtocolEntity" => new ProtocolEntityDetailSection(_contextConfiguration, (ProtocolEntity) entity),
 				"SeatsEntity" => new SeatsEntityDetailSection(_contextConfiguration, (SeatsEntity) entity),
@@ -60,7 +59,8 @@ namespace SeleniumTests.Factories
 				"WorkflowEntity" => new WorkflowEntityDetailSection(_contextConfiguration, (WorkflowEntity) entity),
 				"WorkflowTransitionEntity" => new WorkflowTransitionEntityDetailSection(_contextConfiguration, (WorkflowTransitionEntity) entity),
 				"WorkflowVersionEntity" => new WorkflowVersionEntityDetailSection(_contextConfiguration, (WorkflowVersionEntity) entity),
-				"MemberSubmissionEntity" => new MemberSubmissionEntityDetailSection(_contextConfiguration, (MemberSubmissionEntity) entity),
+				"AttendanceSubmissionEntity" => new AttendanceSubmissionEntityDetailSection(_contextConfiguration, (AttendanceSubmissionEntity) entity),
+				"AttendanceEntityFormTileEntity" => new AttendanceEntityFormTileEntityDetailSection(_contextConfiguration, (AttendanceEntityFormTileEntity) entity),
 				_ => throw new Exception($"Cannot find entity type {entityName}"),
 			};
 		}

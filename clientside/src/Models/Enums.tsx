@@ -15,17 +15,51 @@
  * Any changes out side of "protected regions" will be lost next time the bot makes any changes.
  */
 
+export type categoryGroups =
+	// % protected region % [Override categoryGroups keys here] off begin
+	'MEN' |
+		'WOMEN' |
+		'YOUNG_MEN' |
+		'YOUNG_LADIES' |
+		'CHILDREN';
+	// % protected region % [Override categoryGroups keys here] end
+
+export const categoryGroupsOptions: { [key in categoryGroups]: string } = {
+	// % protected region % [Override categoryGroups display fields here] off begin
+	MEN: 'Men',
+	WOMEN: 'Women ',
+	YOUNG_MEN: 'Young Men ',
+	YOUNG_LADIES: 'Young Ladies',
+	CHILDREN: 'Children',
+	// % protected region % [Override categoryGroups display fields here] end
+};
+
 export type membershipstatus =
 	// % protected region % [Override membershipstatus keys here] off begin
-	'VISITOR' |
+	'FIRST_TIME_VISITOR' |
+		'SECOND_TIME_VISITOR' |
 		'MEMBER';
 	// % protected region % [Override membershipstatus keys here] end
 
 export const membershipstatusOptions: { [key in membershipstatus]: string } = {
 	// % protected region % [Override membershipstatus display fields here] off begin
-	VISITOR: 'Visitor',
+	FIRST_TIME_VISITOR: 'First Time Visitor',
+	SECOND_TIME_VISITOR: 'Second Time Visitor',
 	MEMBER: 'Member',
 	// % protected region % [Override membershipstatus display fields here] end
+};
+
+export type reservation =
+	// % protected region % [Override reservation keys here] off begin
+	'RESERVED' |
+		'OPEN';
+	// % protected region % [Override reservation keys here] end
+
+export const reservationOptions: { [key in reservation]: string } = {
+	// % protected region % [Override reservation display fields here] off begin
+	RESERVED: 'Reserved',
+	OPEN: 'Open',
+	// % protected region % [Override reservation display fields here] end
 };
 
 export type status =
@@ -41,19 +75,6 @@ export const statusOptions: { [key in status]: string } = {
 	INACTIVE: 'Inactive',
 	SUSPENDED: 'Suspended',
 	// % protected region % [Override status display fields here] end
-};
-
-export type reservation =
-	// % protected region % [Override reservation keys here] off begin
-	'RESERVED' |
-		'OPEN';
-	// % protected region % [Override reservation keys here] end
-
-export const reservationOptions: { [key in reservation]: string } = {
-	// % protected region % [Override reservation display fields here] off begin
-	RESERVED: 'Reserved',
-	OPEN: 'Open',
-	// % protected region % [Override reservation display fields here] end
 };
 
 // % protected region % [Add any extra enums here] off begin

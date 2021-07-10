@@ -27,11 +27,10 @@ import {
 } from 'Util/EntityUtils';
 import { VisitorsHomeFellowshipEntity } from 'Models/Security/Acl/VisitorsHomeFellowshipEntity';
 import { AdminHomeFellowshipEntity } from 'Models/Security/Acl/AdminHomeFellowshipEntity';
-import { MemberHomeFellowshipEntity } from 'Models/Security/Acl/MemberHomeFellowshipEntity';
-import { CategoryGroupLeaderHomeFellowshipEntity } from 'Models/Security/Acl/CategoryGroupLeaderHomeFellowshipEntity';
+import { MembersHomeFellowshipEntity } from 'Models/Security/Acl/MembersHomeFellowshipEntity';
+import { CategoryLeadersHomeFellowshipEntity } from 'Models/Security/Acl/CategoryLeadersHomeFellowshipEntity';
 import { UsherHomeFellowshipEntity } from 'Models/Security/Acl/UsherHomeFellowshipEntity';
 import { ProtocolHomeFellowshipEntity } from 'Models/Security/Acl/ProtocolHomeFellowshipEntity';
-import { GroupCategoryHomeFellowshipEntity } from 'Models/Security/Acl/GroupCategoryHomeFellowshipEntity';
 import { EntityFormMode } from 'Views/Components/Helpers/Common';
 import {SuperAdministratorScheme} from '../Security/Acl/SuperAdministratorScheme';
 // % protected region % [Add any further imports here] off begin
@@ -42,7 +41,7 @@ export interface IHomeFellowshipEntityAttributes extends IModelAttributes {
 	fellowshipName: string;
 	fellowshipPastor: string;
 
-	membersfellowships: Array<Models.MemberEntity | Models.IMemberEntityAttributes>;
+	membersfellowships: Array<Models.MembersEntity | Models.IMembersEntityAttributes>;
 	// % protected region % [Add any custom attributes to the interface here] off begin
 	// % protected region % [Add any custom attributes to the interface here] end
 }
@@ -55,11 +54,10 @@ export default class HomeFellowshipEntity extends Model implements IHomeFellowsh
 		new SuperAdministratorScheme(),
 		new VisitorsHomeFellowshipEntity(),
 		new AdminHomeFellowshipEntity(),
-		new MemberHomeFellowshipEntity(),
-		new CategoryGroupLeaderHomeFellowshipEntity(),
+		new MembersHomeFellowshipEntity(),
+		new CategoryLeadersHomeFellowshipEntity(),
 		new UsherHomeFellowshipEntity(),
 		new ProtocolHomeFellowshipEntity(),
-		new GroupCategoryHomeFellowshipEntity(),
 		// % protected region % [Add any further ACL entries here] off begin
 		// % protected region % [Add any further ACL entries here] end
 	];
@@ -134,14 +132,14 @@ export default class HomeFellowshipEntity extends Model implements IHomeFellowsh
 		name: "MEMBERsFellowships",
 		displayType: 'reference-multicombobox',
 		order: 40,
-		referenceTypeFunc: () => Models.MemberEntity,
+		referenceTypeFunc: () => Models.MembersEntity,
 		referenceResolveFunction: makeFetchOneToManyFunc({
 			relationName: 'membersfellowships',
-			oppositeEntity: () => Models.MemberEntity,
+			oppositeEntity: () => Models.MembersEntity,
 		}),
 		// % protected region % [Modify props to the crud options here for reference 'MEMBERsFellowship'] end
 	})
-	public membersfellowships: Models.MemberEntity[] = [];
+	public membersfellowships: Models.MembersEntity[] = [];
 
 	// % protected region % [Add any custom attributes to the model here] off begin
 	// % protected region % [Add any custom attributes to the model here] end
@@ -179,10 +177,10 @@ export default class HomeFellowshipEntity extends Model implements IHomeFellowsh
 			}
 			if (attributes.membersfellowships !== undefined && Array.isArray(attributes.membersfellowships)) {
 				for (const model of attributes.membersfellowships) {
-					if (model instanceof Models.MemberEntity) {
+					if (model instanceof Models.MembersEntity) {
 						this.membersfellowships.push(model);
 					} else {
-						this.membersfellowships.push(new Models.MemberEntity(model));
+						this.membersfellowships.push(new Models.MembersEntity(model));
 					}
 				}
 			}
@@ -200,7 +198,8 @@ export default class HomeFellowshipEntity extends Model implements IHomeFellowsh
 	// % protected region % [Customize Default Expands here] off begin
 	public defaultExpands = `
 		membersfellowships {
-			${Models.MemberEntity.getAttributes().join('\n')}
+			${Models.MembersEntity.getAttributes().join('\n')}
+			${Models.MembersEntity.getFiles().map(f => f.name).join('\n')}
 		}
 	`;
 	// % protected region % [Customize Default Expands here] end

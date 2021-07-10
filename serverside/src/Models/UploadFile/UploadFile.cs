@@ -65,6 +65,13 @@ namespace Utawalaaltar.Models
 		[EntityAttribute]
 		public long Length { get; set; }
 
+		/// <summary>
+		/// Link to the Members entity which contains a file on the Picture attribute
+		/// </summary>
+#nullable enable
+		public MembersEntity? MembersPicture { get; set; }
+#nullable disable
+
 		public async Task BeforeSave(EntityState operation, UtawalaaltarDBContext dbContext, IServiceProvider serviceProvider, CancellationToken cancellationToken = default)
 		{
 			return;

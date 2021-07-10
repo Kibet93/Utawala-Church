@@ -42,9 +42,8 @@ namespace Utawalaaltar.Utility
 			return ExpressionHelper.OrExpressions(
 				new List<Expression<Func<User, bool>>>
 				{
-					UserFilter<CategoryGroupLeaderEntity>(user, groups, "CategoryGroupLeaderEntity", operation, serviceProvider),
-					UserFilter<GroupCategoryEntity>(user, groups, "GroupCategoryEntity", operation, serviceProvider),
-					UserFilter<MemberEntity>(user, groups, "MemberEntity", operation, serviceProvider),
+					UserFilter<CategoryLeadersEntity>(user, groups, "CategoryLeadersEntity", operation, serviceProvider),
+					UserFilter<MembersEntity>(user, groups, "MembersEntity", operation, serviceProvider),
 					UserFilter<AdminEntity>(user, groups, "AdminEntity", operation, serviceProvider),
 					UserFilter<ProtocolEntity>(user, groups, "ProtocolEntity", operation, serviceProvider),
 					UserFilter<UsherEntity>(user, groups, "UsherEntity", operation, serviceProvider),

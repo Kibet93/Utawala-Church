@@ -15,7 +15,7 @@
  * Any changes out side of "protected regions" will be lost next time the bot makes any changes.
  */
 import * as React from 'react';
-import { MemberEntity } from 'Models/Entities';
+import { MembersEntity } from 'Models/Entities';
 import SecuredPage from 'Views/Components/Security/SecuredPage';
 import EntityCRUD from 'Views/Components/CRUD/EntityCRUD';
 import { observer } from 'mobx-react';
@@ -44,7 +44,7 @@ class RegisteredMembersPage extends React.Component<RegisteredMembersPageProps> 
 		// % protected region % [Add logic before rendering contents here] end
 
 		let contents = (
-			<SecuredPage groups={['Super Administrators', 'Admin']}>
+			<SecuredPage groups={['Super Administrators', 'Admin', 'Members', 'CategoryLeaders', 'Usher', 'Protocol']}>
 				{
 				// % protected region % [Alter navigation here] off begin
 				}
@@ -65,7 +65,7 @@ class RegisteredMembersPage extends React.Component<RegisteredMembersPageProps> 
 					</h6>
 					<EntityCRUD
 						{...this.props}
-						modelType={MemberEntity}
+						modelType={MembersEntity}
 						URLExtension="2998426a-a51f-4b19-8112-be52c94ae468"
 						// % protected region % [Add props to crud component 2998426a-a51f-4b19-8112-be52c94ae468 here] off begin
 						// % protected region % [Add props to crud component 2998426a-a51f-4b19-8112-be52c94ae468 here] end

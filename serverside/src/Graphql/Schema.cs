@@ -62,14 +62,13 @@ namespace Utawalaaltar.Graphql
 		{
 			// Add query types for each entity
 			// % protected region % [Override query fields here] off begin
-			AddModelQueryField<AccountabilityGroupEntityType, AccountabilityGroupEntity>("AccountabilityGroupEntity");
-			AddModelQueryField<CategoryGroupLeaderEntityType, CategoryGroupLeaderEntity>("CategoryGroupLeaderEntity");
-			AddModelQueryField<GroupCategoryEntityType, GroupCategoryEntity>("GroupCategoryEntity");
-			AddModelQueryField<MemberEntityType, MemberEntity>("MemberEntity");
-			AddModelQueryField<MemberEntityFormVersionType, MemberEntityFormVersion>("MemberEntityFormVersion");
+			AddModelQueryField<AccountabilityGroupsEntityType, AccountabilityGroupsEntity>("AccountabilityGroupsEntity");
+			AddModelQueryField<AttendanceEntityType, AttendanceEntity>("AttendanceEntity");
+			AddModelQueryField<AttendanceEntityFormVersionType, AttendanceEntityFormVersion>("AttendanceEntityFormVersion");
+			AddModelQueryField<CategoryLeadersEntityType, CategoryLeadersEntity>("CategoryLeadersEntity");
+			AddModelQueryField<MembersEntityType, MembersEntity>("MembersEntity");
 			AddModelQueryField<NoOfServiceEntityType, NoOfServiceEntity>("NoOfServiceEntity");
 			AddModelQueryField<AdminEntityType, AdminEntity>("AdminEntity");
-			AddModelQueryField<AttendanceEntityType, AttendanceEntity>("AttendanceEntity");
 			AddModelQueryField<HomeFellowshipEntityType, HomeFellowshipEntity>("HomeFellowshipEntity");
 			AddModelQueryField<ProtocolEntityType, ProtocolEntity>("ProtocolEntity");
 			AddModelQueryField<SeatsEntityType, SeatsEntity>("SeatsEntity");
@@ -79,8 +78,8 @@ namespace Utawalaaltar.Graphql
 			AddModelQueryField<WorkflowStateEntityType, WorkflowStateEntity>("WorkflowStateEntity");
 			AddModelQueryField<WorkflowTransitionEntityType, WorkflowTransitionEntity>("WorkflowTransitionEntity");
 			AddModelQueryField<WorkflowVersionEntityType, WorkflowVersionEntity>("WorkflowVersionEntity");
-			AddModelQueryField<MemberSubmissionEntityType, MemberSubmissionEntity>("MemberSubmissionEntity");
-			AddModelQueryField<MemberEntityFormTileEntityType, MemberEntityFormTileEntity>("MemberEntityFormTileEntity");
+			AddModelQueryField<AttendanceSubmissionEntityType, AttendanceSubmissionEntity>("AttendanceSubmissionEntity");
+			AddModelQueryField<AttendanceEntityFormTileEntityType, AttendanceEntityFormTileEntity>("AttendanceEntityFormTileEntity");
 
 			// Add query types for each many to many reference
 			AddModelQueryField<SeatsWorkflowStatesType, SeatsWorkflowStates>("SeatsWorkflowStates");
@@ -187,24 +186,21 @@ namespace Utawalaaltar.Graphql
 
 			// Add input types for each entity
 			// % protected region % [Override mutation fields here] off begin
-			AddMutationField<AccountabilityGroupEntityInputType, AccountabilityGroupEntityInputType, AccountabilityGroupEntityType, AccountabilityGroupEntity>("AccountabilityGroupEntity");
-			AddMutationField<CategoryGroupLeaderEntityCreateInputType, CategoryGroupLeaderEntityInputType, CategoryGroupLeaderEntityType, CategoryGroupLeaderEntity>(
-				"CategoryGroupLeaderEntity",
-				CreateMutation.CreateUserCreateMutation<CategoryGroupLeaderEntity, CategoryGroupLeaderEntityRegistrationModel, CategoryGroupLeaderEntityGraphQlRegistrationModel>("CategoryGroupLeaderEntity"));
-			AddMutationField<GroupCategoryEntityCreateInputType, GroupCategoryEntityInputType, GroupCategoryEntityType, GroupCategoryEntity>(
-				"GroupCategoryEntity",
-				CreateMutation.CreateUserCreateMutation<GroupCategoryEntity, GroupCategoryEntityRegistrationModel, GroupCategoryEntityGraphQlRegistrationModel>("GroupCategoryEntity"));
-			AddMutationField<MemberEntityCreateInputType, MemberEntityInputType, MemberEntityType, MemberEntity>(
-				"MemberEntity",
-				CreateMutation.CreateUserCreateMutation<MemberEntity, MemberEntityRegistrationModel, MemberEntityGraphQlRegistrationModel>("MemberEntity"));
-			AddMutationField<MemberEntityFormVersionInputType, MemberEntityFormVersionInputType, MemberEntityFormVersionType, MemberEntityFormVersion>(
-				"MemberEntityFormVersion",
+			AddMutationField<AccountabilityGroupsEntityInputType, AccountabilityGroupsEntityInputType, AccountabilityGroupsEntityType, AccountabilityGroupsEntity>("AccountabilityGroupsEntity");
+			AddMutationField<AttendanceEntityInputType, AttendanceEntityInputType, AttendanceEntityType, AttendanceEntity>("AttendanceEntity");
+			AddMutationField<AttendanceEntityFormVersionInputType, AttendanceEntityFormVersionInputType, AttendanceEntityFormVersionType, AttendanceEntityFormVersion>(
+				"AttendanceEntityFormVersion",
 				deleteMutation: context => Task.FromResult((object)new Guid[]{}));
+			AddMutationField<CategoryLeadersEntityCreateInputType, CategoryLeadersEntityInputType, CategoryLeadersEntityType, CategoryLeadersEntity>(
+				"CategoryLeadersEntity",
+				CreateMutation.CreateUserCreateMutation<CategoryLeadersEntity, CategoryLeadersEntityRegistrationModel, CategoryLeadersEntityGraphQlRegistrationModel>("CategoryLeadersEntity"));
+			AddMutationField<MembersEntityCreateInputType, MembersEntityInputType, MembersEntityType, MembersEntity>(
+				"MembersEntity",
+				CreateMutation.CreateUserCreateMutation<MembersEntity, MembersEntityRegistrationModel, MembersEntityGraphQlRegistrationModel>("MembersEntity"));
 			AddMutationField<NoOfServiceEntityInputType, NoOfServiceEntityInputType, NoOfServiceEntityType, NoOfServiceEntity>("NoOfServiceEntity");
 			AddMutationField<AdminEntityCreateInputType, AdminEntityInputType, AdminEntityType, AdminEntity>(
 				"AdminEntity",
 				CreateMutation.CreateUserCreateMutation<AdminEntity, AdminEntityRegistrationModel, AdminEntityGraphQlRegistrationModel>("AdminEntity"));
-			AddMutationField<AttendanceEntityInputType, AttendanceEntityInputType, AttendanceEntityType, AttendanceEntity>("AttendanceEntity");
 			AddMutationField<HomeFellowshipEntityInputType, HomeFellowshipEntityInputType, HomeFellowshipEntityType, HomeFellowshipEntity>("HomeFellowshipEntity");
 			AddMutationField<ProtocolEntityCreateInputType, ProtocolEntityInputType, ProtocolEntityType, ProtocolEntity>(
 				"ProtocolEntity",
@@ -218,8 +214,8 @@ namespace Utawalaaltar.Graphql
 			AddMutationField<WorkflowStateEntityInputType, WorkflowStateEntityInputType, WorkflowStateEntityType, WorkflowStateEntity>("WorkflowStateEntity");
 			AddMutationField<WorkflowTransitionEntityInputType, WorkflowTransitionEntityInputType, WorkflowTransitionEntityType, WorkflowTransitionEntity>("WorkflowTransitionEntity");
 			AddMutationField<WorkflowVersionEntityInputType, WorkflowVersionEntityInputType, WorkflowVersionEntityType, WorkflowVersionEntity>("WorkflowVersionEntity");
-			AddMutationField<MemberSubmissionEntityInputType, MemberSubmissionEntityInputType, MemberSubmissionEntityType, MemberSubmissionEntity>("MemberSubmissionEntity");
-			AddMutationField<MemberEntityFormTileEntityInputType, MemberEntityFormTileEntityInputType, MemberEntityFormTileEntityType, MemberEntityFormTileEntity>("MemberEntityFormTileEntity");
+			AddMutationField<AttendanceSubmissionEntityInputType, AttendanceSubmissionEntityInputType, AttendanceSubmissionEntityType, AttendanceSubmissionEntity>("AttendanceSubmissionEntity");
+			AddMutationField<AttendanceEntityFormTileEntityInputType, AttendanceEntityFormTileEntityInputType, AttendanceEntityFormTileEntityType, AttendanceEntityFormTileEntity>("AttendanceEntityFormTileEntity");
 
 			// Add input types for each many to many reference
 			AddMutationField<SeatsWorkflowStatesInputType, SeatsWorkflowStatesInputType, SeatsWorkflowStatesType, SeatsWorkflowStates>("SeatsWorkflowStates");

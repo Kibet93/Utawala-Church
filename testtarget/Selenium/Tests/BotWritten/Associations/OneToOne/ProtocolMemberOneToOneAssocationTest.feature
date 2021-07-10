@@ -16,11 +16,11 @@
 ###
 # % protected region % [Override feature properties here] off begin
 @BotWritten @associations
-Feature: Reference from ProtocolEntity using Protocol to MemberEntity using MEMBER
+Feature: Reference from ProtocolEntity using Protocol to MembersEntity using MEMBER
 # % protected region % [Override feature properties here] end
-	Scenario: Reference from ProtocolEntity using Protocol to MemberEntity using MEMBER
+	Scenario: Reference from ProtocolEntity using Protocol to MembersEntity using MEMBER
 	Given I login to the site as a user
 	And I navigate to the ProtocolEntity backend page
 	And I create 1 ProtocolEntity's each associated with 1 Member using MEMBER
-	Then I validate each MemberEntity has 1 ProtocolEntity associations using Protocol
-	Then I validate each ProtocolEntity has 1 MemberEntity associations using MEMBER
+	Then I validate each MembersEntity has 1 ProtocolEntity associations using Protocol
+	Then I validate each ProtocolEntity has 1 MembersEntity associations using MEMBER

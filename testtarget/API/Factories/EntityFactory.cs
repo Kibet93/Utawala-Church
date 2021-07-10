@@ -41,13 +41,12 @@ namespace APITests.Factories
 		{
 			return _type switch
 			{
-				"AccountabilityGroupEntity" => AccountabilityGroupEntity.GetEntity(isValid, _fixedStrValues),
-				"CategoryGroupLeaderEntity" => CategoryGroupLeaderEntity.GetEntity(isValid, _fixedStrValues),
-				"GroupCategoryEntity" => GroupCategoryEntity.GetEntity(isValid, _fixedStrValues),
-				"MemberEntity" => MemberEntity.GetEntity(isValid, _fixedStrValues),
+				"AccountabilityGroupsEntity" => AccountabilityGroupsEntity.GetEntity(isValid, _fixedStrValues),
+				"AttendanceEntity" => AttendanceEntity.GetEntity(isValid, _fixedStrValues),
+				"CategoryLeadersEntity" => CategoryLeadersEntity.GetEntity(isValid, _fixedStrValues),
+				"MembersEntity" => MembersEntity.GetEntity(isValid, _fixedStrValues),
 				"NoOfServiceEntity" => NoOfServiceEntity.GetEntity(isValid, _fixedStrValues),
 				"AdminEntity" => AdminEntity.GetEntity(isValid, _fixedStrValues),
-				"AttendanceEntity" => AttendanceEntity.GetEntity(isValid, _fixedStrValues),
 				"HomeFellowshipEntity" => HomeFellowshipEntity.GetEntity(isValid, _fixedStrValues),
 				"ProtocolEntity" => ProtocolEntity.GetEntity(isValid, _fixedStrValues),
 				"SeatsEntity" => SeatsEntity.GetEntity(isValid, _fixedStrValues),
@@ -57,7 +56,7 @@ namespace APITests.Factories
 				"WorkflowStateEntity" => WorkflowStateEntity.GetEntity(isValid, _fixedStrValues),
 				"WorkflowTransitionEntity" => WorkflowTransitionEntity.GetEntity(isValid, _fixedStrValues),
 				"WorkflowVersionEntity" => WorkflowVersionEntity.GetEntity(isValid, _fixedStrValues),
-				"MemberSubmissionEntity" => MemberSubmissionEntity.GetEntity(isValid, _fixedStrValues),
+				"AttendanceSubmissionEntity" => AttendanceSubmissionEntity.GetEntity(isValid, _fixedStrValues),
 				_ => throw new Exception($"Cannot find entity type {_type}"),
 			};
 		}
@@ -102,13 +101,23 @@ namespace APITests.Factories
 		{
 			switch (_type)
 			{
-				case "MemberEntity":
+				case "CategoryLeadersEntity":
+					switch (enumColumnName)
+					{
+						case "Category Group":
+							return ((CategoryLeadersEntity)entity).CategoryGroup.ToString();
+						default:
+							return null;
+					}
+				case "MembersEntity":
 					switch (enumColumnName)
 					{
 						case "Status":
-							return ((MemberEntity)entity).Status.ToString();
+							return ((MembersEntity)entity).Status.ToString();
 						case "Membership Status":
-							return ((MemberEntity)entity).MembershipStatus.ToString();
+							return ((MembersEntity)entity).MembershipStatus.ToString();
+						case "Category Choice":
+							return ((MembersEntity)entity).CategoryChoice.ToString();
 						default:
 							return null;
 					}

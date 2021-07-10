@@ -15,28 +15,33 @@
  * Any changes out side of "protected regions" will be lost next time the bot makes any changes.
  */
 import moment from 'moment';
-import { action, observable } from 'mobx';
+import { action, observable, runInAction } from 'mobx';
 import { Model, IModelAttributes, attribute, entity } from 'Models/Model';
+import * as Models from 'Models/Entities';
 import * as Validators from 'Validators';
 import { CRUD } from '../CRUDOptions';
 import * as AttrUtils from "Util/AttributeUtils";
 import { IAcl } from 'Models/Security/IAcl';
 import {
+	makeFetchOneToManyFunc,
 	getCreatedModifiedCrudOptions,
 } from 'Util/EntityUtils';
 import { VisitorsAttendanceEntity } from 'Models/Security/Acl/VisitorsAttendanceEntity';
 import { AdminAttendanceEntity } from 'Models/Security/Acl/AdminAttendanceEntity';
-import { MemberAttendanceEntity } from 'Models/Security/Acl/MemberAttendanceEntity';
-import { CategoryGroupLeaderAttendanceEntity } from 'Models/Security/Acl/CategoryGroupLeaderAttendanceEntity';
+import { MembersAttendanceEntity } from 'Models/Security/Acl/MembersAttendanceEntity';
+import { CategoryLeadersAttendanceEntity } from 'Models/Security/Acl/CategoryLeadersAttendanceEntity';
 import { UsherAttendanceEntity } from 'Models/Security/Acl/UsherAttendanceEntity';
 import { ProtocolAttendanceEntity } from 'Models/Security/Acl/ProtocolAttendanceEntity';
-import { GroupCategoryAttendanceEntity } from 'Models/Security/Acl/GroupCategoryAttendanceEntity';
 import { EntityFormMode } from 'Views/Components/Helpers/Common';
+import { FormEntityData, FormEntityDataAttributes, getAllVersionsFn, getPublishedVersionFn } from 'Forms/FormEntityData';
+import { FormVersion } from 'Forms/FormVersion';
+import { fetchFormVersions, fetchPublishedVersion } from 'Forms/Forms';
 import {SuperAdministratorScheme} from '../Security/Acl/SuperAdministratorScheme';
 // % protected region % [Add any further imports here] off begin
 // % protected region % [Add any further imports here] end
 
-export interface IAttendanceEntityAttributes extends IModelAttributes {
+export interface IAttendanceEntityAttributes extends IModelAttributes, FormEntityDataAttributes {
+	name: string;
 	dateOfService: Date;
 	serviceID: number;
 	seatNoID: number;
@@ -45,6 +50,7 @@ export interface IAttendanceEntityAttributes extends IModelAttributes {
 	reasonForNotAttending: string;
 	comment: string;
 
+	formPages: Array<Models.AttendanceEntityFormTileEntity | Models.IAttendanceEntityFormTileEntityAttributes>;
 	// % protected region % [Add any custom attributes to the interface here] off begin
 	// % protected region % [Add any custom attributes to the interface here] end
 }
@@ -52,16 +58,15 @@ export interface IAttendanceEntityAttributes extends IModelAttributes {
 // % protected region % [Customise your entity metadata here] off begin
 @entity('AttendanceEntity', 'Attendance')
 // % protected region % [Customise your entity metadata here] end
-export default class AttendanceEntity extends Model implements IAttendanceEntityAttributes {
+export default class AttendanceEntity extends Model implements IAttendanceEntityAttributes, FormEntityData  {
 	public static acls: IAcl[] = [
 		new SuperAdministratorScheme(),
 		new VisitorsAttendanceEntity(),
 		new AdminAttendanceEntity(),
-		new MemberAttendanceEntity(),
-		new CategoryGroupLeaderAttendanceEntity(),
+		new MembersAttendanceEntity(),
+		new CategoryLeadersAttendanceEntity(),
 		new UsherAttendanceEntity(),
 		new ProtocolAttendanceEntity(),
-		new GroupCategoryAttendanceEntity(),
 		// % protected region % [Add any further ACL entries here] off begin
 		// % protected region % [Add any further ACL entries here] end
 	];
@@ -82,13 +87,29 @@ export default class AttendanceEntity extends Model implements IAttendanceEntity
 		// % protected region % [Add any custom update exclusions here] end
 	];
 
+	// % protected region % [Modify props to the crud options here for attribute 'Name'] off begin
+	@Validators.Required()
+	@observable
+	@attribute()
+	@CRUD({
+		name: 'Name',
+		displayType: 'textfield',
+		order: 10,
+		headerColumn: true,
+		searchable: true,
+		searchFunction: 'like',
+		searchTransform: AttrUtils.standardiseString,
+	})
+	public name: string;
+	// % protected region % [Modify props to the crud options here for attribute 'Name'] end
+
 	// % protected region % [Modify props to the crud options here for attribute 'Date Of Service'] off begin
 	@observable
 	@attribute()
 	@CRUD({
 		name: 'Date Of Service',
 		displayType: 'datepicker',
-		order: 10,
+		order: 20,
 		headerColumn: true,
 		searchable: true,
 		searchFunction: 'equal',
@@ -104,7 +125,7 @@ export default class AttendanceEntity extends Model implements IAttendanceEntity
 	@CRUD({
 		name: 'Service ID',
 		displayType: 'textfield',
-		order: 20,
+		order: 30,
 		headerColumn: true,
 		searchable: true,
 		searchFunction: 'equal',
@@ -120,7 +141,7 @@ export default class AttendanceEntity extends Model implements IAttendanceEntity
 	@CRUD({
 		name: 'Seat No ID',
 		displayType: 'textfield',
-		order: 30,
+		order: 40,
 		headerColumn: true,
 		searchable: true,
 		searchFunction: 'equal',
@@ -136,7 +157,7 @@ export default class AttendanceEntity extends Model implements IAttendanceEntity
 	@CRUD({
 		name: 'Temperature',
 		displayType: 'textfield',
-		order: 40,
+		order: 50,
 		headerColumn: true,
 		searchable: true,
 		searchFunction: 'equal',
@@ -151,7 +172,7 @@ export default class AttendanceEntity extends Model implements IAttendanceEntity
 	@CRUD({
 		name: 'Attended Service',
 		displayType: 'checkbox',
-		order: 50,
+		order: 60,
 		headerColumn: true,
 		searchable: true,
 		searchFunction: 'equal',
@@ -167,7 +188,7 @@ export default class AttendanceEntity extends Model implements IAttendanceEntity
 	@CRUD({
 		name: 'Reason For Not Attending',
 		displayType: 'textfield',
-		order: 60,
+		order: 70,
 		searchable: true,
 		searchFunction: 'like',
 		searchTransform: AttrUtils.standardiseString,
@@ -181,13 +202,42 @@ export default class AttendanceEntity extends Model implements IAttendanceEntity
 	@CRUD({
 		name: 'Comment',
 		displayType: 'textarea',
-		order: 70,
+		order: 80,
 		searchable: true,
 		searchFunction: 'like',
 		searchTransform: AttrUtils.standardiseString,
 	})
 	public comment: string;
 	// % protected region % [Modify props to the crud options here for attribute 'Comment'] end
+
+	@observable
+	@attribute({isReference: true})
+	public formVersions: FormVersion[] = [];
+
+	@observable
+	@attribute()
+	public publishedVersionId?: string;
+
+	@observable
+	@attribute({isReference: true})
+	public publishedVersion?: FormVersion;
+
+	@observable
+	@attribute({isReference: true})
+	@CRUD({
+		// % protected region % [Modify props to the crud options here for reference 'Form Page'] off begin
+		name: "Form Pages",
+		displayType: 'hidden',
+		order: 90,
+		referenceTypeFunc: () => Models.AttendanceEntityFormTileEntity,
+		disableDefaultOptionRemoval: true,
+		referenceResolveFunction: makeFetchOneToManyFunc({
+			relationName: 'formPages',
+			oppositeEntity: () => Models.AttendanceEntityFormTileEntity,
+		}),
+		// % protected region % [Modify props to the crud options here for reference 'Form Page'] end
+	})
+	public formPages: Models.AttendanceEntityFormTileEntity[] = [];
 
 	// % protected region % [Add any custom attributes to the model here] off begin
 	// % protected region % [Add any custom attributes to the model here] end
@@ -239,6 +289,35 @@ export default class AttendanceEntity extends Model implements IAttendanceEntity
 			if (attributes.comment !== undefined) {
 				this.comment = attributes.comment;
 			}
+			if (attributes.publishedVersionId !== undefined) {
+				this.publishedVersionId = attributes.publishedVersionId;
+			}
+			if (attributes.publishedVersion !== undefined) {
+				if (attributes.publishedVersion === null) {
+					this.publishedVersion = attributes.publishedVersion;
+				} else {
+					if (typeof attributes.publishedVersion.formData === 'string') {
+						attributes.publishedVersion.formData = JSON.parse(attributes.publishedVersion.formData);
+					}
+					this.publishedVersion = attributes.publishedVersion;
+					this.publishedVersionId = attributes.publishedVersion.id;
+				}
+			}
+			if (attributes.formVersions !== undefined) {
+				this.formVersions.push(...attributes.formVersions);
+			}
+			if (attributes.name !== undefined) {
+				this.name = attributes.name;
+			}
+			if (attributes.formPages !== undefined && Array.isArray(attributes.formPages)) {
+				for (const model of attributes.formPages) {
+					if (model instanceof Models.AttendanceEntityFormTileEntity) {
+						this.formPages.push(model);
+					} else {
+						this.formPages.push(new Models.AttendanceEntityFormTileEntity(model));
+					}
+				}
+			}
 			// % protected region % [Override assign attributes here] end
 
 			// % protected region % [Add any extra assign attributes logic here] off begin
@@ -252,6 +331,15 @@ export default class AttendanceEntity extends Model implements IAttendanceEntity
 	 */
 	// % protected region % [Customize Default Expands here] off begin
 	public defaultExpands = `
+		publishedVersion {
+			id
+			created
+			modified
+			formData
+		}
+		formPages {
+			${Models.AttendanceEntityFormTileEntity.getAttributes().join('\n')}
+		}
 	`;
 	// % protected region % [Customize Default Expands here] end
 
@@ -261,6 +349,7 @@ export default class AttendanceEntity extends Model implements IAttendanceEntity
 	// % protected region % [Customize Save From Crud here] off begin
 	public async saveFromCrud(formMode: EntityFormMode) {
 		const relationPath = {
+			formPages: {},
 		};
 		return this.save(
 			relationPath,
@@ -283,8 +372,43 @@ export default class AttendanceEntity extends Model implements IAttendanceEntity
 	 */
 	public getDisplayName() {
 		// % protected region % [Customise the display name for this entity] off begin
-		return this.id;
+		return this.name;
 		// % protected region % [Customise the display name for this entity] end
+	}
+
+	/**
+	 * Gets all the versions for this form.
+	 */
+	public getAllVersions: getAllVersionsFn = (includeSubmissions?, conditions?) => {
+		// % protected region % [Modify the getAllVersionsFn here] off begin
+		return fetchFormVersions(this, includeSubmissions, conditions)
+			.then(d => {
+				runInAction(() => this.formVersions = d);
+				return d.map(x => x.formData)
+			});
+		// % protected region % [Modify the getAllVersionsFn here] end
+	};
+
+	/**
+	 * Gets the published version for this form.
+	 */
+	public getPublishedVersion: getPublishedVersionFn = includeSubmissions => {
+		// % protected region % [Modify the getPublishedVersionFn here] off begin
+		return fetchPublishedVersion(this, includeSubmissions)
+			.then(d => {
+				runInAction(() => this.publishedVersion = d);
+				return d ? d.formData : undefined;
+			});
+		// % protected region % [Modify the getPublishedVersionFn here] end
+	};
+
+	/**
+	 * Gets the submission entity type for this form.
+	 */
+	public getSubmissionEntity = () => {
+		// % protected region % [Modify the getSubmissionEntity here] off begin
+		return Models.AttendanceSubmissionEntity;
+		// % protected region % [Modify the getSubmissionEntity here] end
 	}
 
 

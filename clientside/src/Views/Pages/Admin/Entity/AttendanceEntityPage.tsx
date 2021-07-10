@@ -44,7 +44,7 @@ export default class AttendanceEntityPage extends React.Component<RouteComponent
 		// % protected region % [Override contents here] end
 
 		return (
-			<SecuredPage groups={["Super Administrators", "Admin","Member","CategoryGroupLeader","Usher","Protocol"]}>
+			<SecuredPage groups={["Super Administrators", "Admin","Members","CategoryLeaders","Usher","Protocol"]}>
 				{contents}
 			</SecuredPage>
 		);

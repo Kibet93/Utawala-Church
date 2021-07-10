@@ -15,13 +15,12 @@
  * Any changes out side of "protected regions" will be lost next time the bot makes any changes.
  */
 
-import { IAccountabilityGroupEntityAttributes as IAccountabilityGroupEntityAttributesImport } from './AccountabilityGroupEntity';
-import { ICategoryGroupLeaderEntityAttributes as ICategoryGroupLeaderEntityAttributesImport } from './CategoryGroupLeaderEntity';
-import { IGroupCategoryEntityAttributes as IGroupCategoryEntityAttributesImport } from './GroupCategoryEntity';
-import { IMemberEntityAttributes as IMemberEntityAttributesImport } from './MemberEntity';
+import { IAccountabilityGroupsEntityAttributes as IAccountabilityGroupsEntityAttributesImport } from './AccountabilityGroupsEntity';
+import { IAttendanceEntityAttributes as IAttendanceEntityAttributesImport } from './AttendanceEntity';
+import { ICategoryLeadersEntityAttributes as ICategoryLeadersEntityAttributesImport } from './CategoryLeadersEntity';
+import { IMembersEntityAttributes as IMembersEntityAttributesImport } from './MembersEntity';
 import { INoOfServiceEntityAttributes as INoOfServiceEntityAttributesImport } from './NoOfServiceEntity';
 import { IAdminEntityAttributes as IAdminEntityAttributesImport } from './AdminEntity';
-import { IAttendanceEntityAttributes as IAttendanceEntityAttributesImport } from './AttendanceEntity';
 import { IHomeFellowshipEntityAttributes as IHomeFellowshipEntityAttributesImport } from './HomeFellowshipEntity';
 import { IProtocolEntityAttributes as IProtocolEntityAttributesImport } from './ProtocolEntity';
 import { ISeatsEntityAttributes as ISeatsEntityAttributesImport } from './SeatsEntity';
@@ -31,32 +30,29 @@ import { IWorkflowEntityAttributes as IWorkflowEntityAttributesImport } from './
 import { IWorkflowStateEntityAttributes as IWorkflowStateEntityAttributesImport } from './WorkflowStateEntity';
 import { IWorkflowTransitionEntityAttributes as IWorkflowTransitionEntityAttributesImport } from './WorkflowTransitionEntity';
 import { IWorkflowVersionEntityAttributes as IWorkflowVersionEntityAttributesImport } from './WorkflowVersionEntity';
-import { IMemberSubmissionEntityAttributes as IMemberSubmissionEntityAttributesImport } from './MemberSubmissionEntity';
-import { IMemberEntityFormTileEntityAttributes as IMemberEntityFormTileEntityAttributesImport } from './MemberEntityFormTileEntity';
+import { IAttendanceSubmissionEntityAttributes as IAttendanceSubmissionEntityAttributesImport } from './AttendanceSubmissionEntity';
+import { IAttendanceEntityFormTileEntityAttributes as IAttendanceEntityFormTileEntityAttributesImport } from './AttendanceEntityFormTileEntity';
 import { ISeatsWorkflowStatesAttributes as ISeatsWorkflowStatesAttributesImport } from './SeatsWorkflowStates';
 
 export { default as User } from './User';
 
-export { default as AccountabilityGroupEntity } from './AccountabilityGroupEntity';
-export type IAccountabilityGroupEntityAttributes = IAccountabilityGroupEntityAttributesImport;
+export { default as AccountabilityGroupsEntity } from './AccountabilityGroupsEntity';
+export type IAccountabilityGroupsEntityAttributes = IAccountabilityGroupsEntityAttributesImport;
 
-export { default as CategoryGroupLeaderEntity } from './CategoryGroupLeaderEntity';
-export type ICategoryGroupLeaderEntityAttributes = ICategoryGroupLeaderEntityAttributesImport;
+export { default as AttendanceEntity } from './AttendanceEntity';
+export type IAttendanceEntityAttributes = IAttendanceEntityAttributesImport;
 
-export { default as GroupCategoryEntity } from './GroupCategoryEntity';
-export type IGroupCategoryEntityAttributes = IGroupCategoryEntityAttributesImport;
+export { default as CategoryLeadersEntity } from './CategoryLeadersEntity';
+export type ICategoryLeadersEntityAttributes = ICategoryLeadersEntityAttributesImport;
 
-export { default as MemberEntity } from './MemberEntity';
-export type IMemberEntityAttributes = IMemberEntityAttributesImport;
+export { default as MembersEntity } from './MembersEntity';
+export type IMembersEntityAttributes = IMembersEntityAttributesImport;
 
 export { default as NoOfServiceEntity } from './NoOfServiceEntity';
 export type INoOfServiceEntityAttributes = INoOfServiceEntityAttributesImport;
 
 export { default as AdminEntity } from './AdminEntity';
 export type IAdminEntityAttributes = IAdminEntityAttributesImport;
-
-export { default as AttendanceEntity } from './AttendanceEntity';
-export type IAttendanceEntityAttributes = IAttendanceEntityAttributesImport;
 
 export { default as HomeFellowshipEntity } from './HomeFellowshipEntity';
 export type IHomeFellowshipEntityAttributes = IHomeFellowshipEntityAttributesImport;
@@ -85,11 +81,11 @@ export type IWorkflowTransitionEntityAttributes = IWorkflowTransitionEntityAttri
 export { default as WorkflowVersionEntity } from './WorkflowVersionEntity';
 export type IWorkflowVersionEntityAttributes = IWorkflowVersionEntityAttributesImport;
 
-export { default as MemberSubmissionEntity } from './MemberSubmissionEntity';
-export type IMemberSubmissionEntityAttributes = IMemberSubmissionEntityAttributesImport;
+export { default as AttendanceSubmissionEntity } from './AttendanceSubmissionEntity';
+export type IAttendanceSubmissionEntityAttributes = IAttendanceSubmissionEntityAttributesImport;
 
-export { default as MemberEntityFormTileEntity } from './MemberEntityFormTileEntity';
-export type IMemberEntityFormTileEntityAttributes = IMemberEntityFormTileEntityAttributesImport;
+export { default as AttendanceEntityFormTileEntity } from './AttendanceEntityFormTileEntity';
+export type IAttendanceEntityFormTileEntityAttributes = IAttendanceEntityFormTileEntityAttributesImport;
 
 export { default as SeatsWorkflowStates } from './SeatsWorkflowStates';
 export type ISeatsWorkflowStatesAttributes = ISeatsWorkflowStatesAttributesImport;

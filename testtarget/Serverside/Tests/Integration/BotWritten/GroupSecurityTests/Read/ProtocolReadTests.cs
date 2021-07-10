@@ -46,18 +46,18 @@ namespace ServersideTests.Tests.Integration.BotWritten.GroupSecurityTests.Read
 				var data = new TheoryData<IAbstractModel, bool, string>
 				{
 					// % protected region % [Configure entity theory data for Protocol here] off begin
-					{new AccountabilityGroupEntity(), true, "Protocol"},
-					{new NoOfServiceEntity(), true, "Protocol"},
+					{new AccountabilityGroupsEntity(), true, "Protocol"},
 					{new AttendanceEntity(), true, "Protocol"},
+					{new NoOfServiceEntity(), true, "Protocol"},
 					{new HomeFellowshipEntity(), true, "Protocol"},
-					{new SeatsEntity(), false, null},
-					{new ServicesEntity(), false, null},
+					{new SeatsEntity(), true, "Protocol"},
+					{new ServicesEntity(), true, "Protocol"},
 					{new WorkflowEntity(), true, "Protocol"},
 					{new WorkflowStateEntity(), true, "Protocol"},
 					{new WorkflowTransitionEntity(), true, "Protocol"},
 					{new WorkflowVersionEntity(), true, "Protocol"},
-					{new MemberSubmissionEntity(), true, "Protocol"},
-					{new MemberEntityFormTileEntity(), true, "Protocol"},
+					{new AttendanceSubmissionEntity(), true, "Protocol"},
+					{new AttendanceEntityFormTileEntity(), true, "Protocol"},
 					// % protected region % [Configure entity theory data for Protocol here] end
 				};
 				// % protected region % [Add any extra theory data here] off begin

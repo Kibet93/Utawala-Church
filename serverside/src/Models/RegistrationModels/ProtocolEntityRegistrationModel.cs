@@ -59,7 +59,7 @@ namespace Utawalaaltar.Models.RegistrationModels
 
 	public class ProtocolEntityGraphQlRegistrationModel : ProtocolEntityRegistrationModel
 	{
-		public MemberEntity Member { get; set; }
+		public MembersEntity Member { get; set; }
 
 		public override ProtocolEntity ToModel()
 		{

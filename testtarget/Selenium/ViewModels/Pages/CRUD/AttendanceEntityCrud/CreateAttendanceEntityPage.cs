@@ -48,6 +48,7 @@ namespace SeleniumTests.ViewModels.Pages.CRUD.AttendanceEntityCrud
 		// % protected region % [Override set values here] off begin
 		public void SetValues(AttendanceEntity attendanceEntity)
 		{
+			Name.Value = attendanceEntity.Name;
 			DateOfService.Value = attendanceEntity.DateOfService.GetValueOrDefault();
 			ServiceID.Value = attendanceEntity.ServiceID.ToString();
 			SeatNoID.Value = attendanceEntity.SeatNoID.ToString();
@@ -63,6 +64,7 @@ namespace SeleniumTests.ViewModels.Pages.CRUD.AttendanceEntityCrud
 		{
 			var attendanceEntity =  new AttendanceEntity
 			{
+				Name = Name.Value,
 				DateOfService = DateOfService.Value,
 				ServiceID = ServiceID.Value.ToNullableInt(),
 				SeatNoID = SeatNoID.Value.ToNullableInt(),

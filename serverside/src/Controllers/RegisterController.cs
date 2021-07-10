@@ -49,53 +49,37 @@ namespace Utawalaaltar.Controllers
 			_logger = logger;
 		}
 
-		// % protected region % [The default register function for Category Group Leader Entity] off begin
+		// % protected region % [The default register function for Category Leaders Entity] off begin
 		/// <summary>
-		/// Registers a new Category Group Leader Entity user
+		/// Registers a new Category Leaders Entity user
 		/// </summary>
 		/// <param name="registrationModel">The fields to set on the user</param>
 		/// <returns>A user result on success or a list of errors on failure</returns>
 		[HttpPost]
-		[Route("category-group-leader-entity")]
-		[Authorize(Roles = "Visitors,Admin,Member,CategoryGroupLeader,Usher,Protocol,GroupCategory,Super Administrators")]
-		public async Task<IActionResult> RegisterCategoryGroupLeaderEntity([FromBody] CategoryGroupLeaderEntityRegistrationModel registrationModel)
+		[Route("category-leaders-entity")]
+		[Authorize(Roles = "Visitors,Admin,Members,CategoryLeaders,Usher,Protocol,Super Administrators")]
+		public async Task<IActionResult> RegisterCategoryLeadersEntity([FromBody] CategoryLeadersEntityRegistrationModel registrationModel)
 		{
 			var model = registrationModel.ToModel();
 			return await Register(model, registrationModel.Password, registrationModel.Groups);
 		}
-		// % protected region % [The default register function for Category Group Leader Entity] end
+		// % protected region % [The default register function for Category Leaders Entity] end
 
-		// % protected region % [The default register function for Group Category Entity] off begin
+		// % protected region % [The default register function for MEMBERS Entity] off begin
 		/// <summary>
-		/// Registers a new Group Category Entity user
+		/// Registers a new MEMBERS Entity user
 		/// </summary>
 		/// <param name="registrationModel">The fields to set on the user</param>
 		/// <returns>A user result on success or a list of errors on failure</returns>
 		[HttpPost]
-		[Route("group-category-entity")]
-		[Authorize(Roles = "Visitors,Admin,Member,CategoryGroupLeader,Usher,Protocol,GroupCategory,Super Administrators")]
-		public async Task<IActionResult> RegisterGroupCategoryEntity([FromBody] GroupCategoryEntityRegistrationModel registrationModel)
+		[Route("members-entity")]
+		[Authorize(Roles = "Visitors,Admin,Members,CategoryLeaders,Usher,Protocol,Super Administrators")]
+		public async Task<IActionResult> RegisterMembersEntity([FromBody] MembersEntityRegistrationModel registrationModel)
 		{
 			var model = registrationModel.ToModel();
 			return await Register(model, registrationModel.Password, registrationModel.Groups);
 		}
-		// % protected region % [The default register function for Group Category Entity] end
-
-		// % protected region % [The default register function for MEMBER Entity] off begin
-		/// <summary>
-		/// Registers a new MEMBER Entity user
-		/// </summary>
-		/// <param name="registrationModel">The fields to set on the user</param>
-		/// <returns>A user result on success or a list of errors on failure</returns>
-		[HttpPost]
-		[Route("member-entity")]
-		[Authorize(Roles = "Visitors,Admin,Member,CategoryGroupLeader,Usher,Protocol,GroupCategory,Super Administrators")]
-		public async Task<IActionResult> RegisterMemberEntity([FromBody] MemberEntityRegistrationModel registrationModel)
-		{
-			var model = registrationModel.ToModel();
-			return await Register(model, registrationModel.Password, registrationModel.Groups);
-		}
-		// % protected region % [The default register function for MEMBER Entity] end
+		// % protected region % [The default register function for MEMBERS Entity] end
 
 		// % protected region % [The default register function for Admin Entity] off begin
 		/// <summary>
@@ -105,7 +89,7 @@ namespace Utawalaaltar.Controllers
 		/// <returns>A user result on success or a list of errors on failure</returns>
 		[HttpPost]
 		[Route("admin-entity")]
-		[Authorize(Roles = "Visitors,Admin,Member,CategoryGroupLeader,Usher,Protocol,GroupCategory,Super Administrators")]
+		[Authorize(Roles = "Visitors,Admin,Members,CategoryLeaders,Usher,Protocol,Super Administrators")]
 		public async Task<IActionResult> RegisterAdminEntity([FromBody] AdminEntityRegistrationModel registrationModel)
 		{
 			var model = registrationModel.ToModel();
@@ -121,7 +105,7 @@ namespace Utawalaaltar.Controllers
 		/// <returns>A user result on success or a list of errors on failure</returns>
 		[HttpPost]
 		[Route("protocol-entity")]
-		[Authorize(Roles = "Visitors,Admin,Member,CategoryGroupLeader,Usher,Protocol,GroupCategory,Super Administrators")]
+		[Authorize(Roles = "Visitors,Admin,Members,CategoryLeaders,Usher,Protocol,Super Administrators")]
 		public async Task<IActionResult> RegisterProtocolEntity([FromBody] ProtocolEntityRegistrationModel registrationModel)
 		{
 			var model = registrationModel.ToModel();
@@ -137,7 +121,7 @@ namespace Utawalaaltar.Controllers
 		/// <returns>A user result on success or a list of errors on failure</returns>
 		[HttpPost]
 		[Route("usher-entity")]
-		[Authorize(Roles = "Visitors,Admin,Member,CategoryGroupLeader,Usher,Protocol,GroupCategory,Super Administrators")]
+		[Authorize(Roles = "Visitors,Admin,Members,CategoryLeaders,Usher,Protocol,Super Administrators")]
 		public async Task<IActionResult> RegisterUsherEntity([FromBody] UsherEntityRegistrationModel registrationModel)
 		{
 			var model = registrationModel.ToModel();

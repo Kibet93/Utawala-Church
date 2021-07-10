@@ -16,11 +16,11 @@
 ###
 # % protected region % [Override feature properties here] off begin
 @BotWritten @associations
-Feature: Reference from MemberEntity using MEMBERsAccountabilityGroup to AccountabilityGroupEntity using Accountability Group
+Feature: Reference from MembersEntity using MEMBERsAccountabilityGroup to AccountabilityGroupsEntity using Accountability Group
 # % protected region % [Override feature properties here] end
-	Scenario: Reference from MemberEntity using MEMBERsAccountabilityGroup to AccountabilityGroupEntity using Accountability Group
+	Scenario: Reference from MembersEntity using MEMBERsAccountabilityGroup to AccountabilityGroupsEntity using Accountability Group
 	Given I login to the site as a user
-	And I navigate to the MemberEntity backend page
-	And I create 3 MemberEntity's each associated with 1 AccountabilityGroup using Accountability Group
-	Then I validate each AccountabilityGroupEntity has 3 MemberEntity associations using MEMBERsAccountabilityGroup
-	Then I validate each MemberEntity has 1 AccountabilityGroupEntity associations using Accountability Group
+	And I navigate to the MembersEntity backend page
+	And I create 3 MembersEntity's each associated with 1 AccountabilityGroup using Accountability Group
+	Then I validate each AccountabilityGroupsEntity has 3 MembersEntity associations using MEMBERsAccountabilityGroup
+	Then I validate each MembersEntity has 1 AccountabilityGroupsEntity associations using Accountability Group

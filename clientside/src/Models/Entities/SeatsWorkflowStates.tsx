@@ -19,11 +19,10 @@ import * as Models from 'Models/Entities';
 import { IAcl } from '../Security/IAcl';
 import { observable } from 'mobx';
 import { AdminWorkflowBehaviour } from '../Security/Acl/AdminWorkflowBehaviour';
-import { MemberWorkflowBehaviour } from '../Security/Acl/MemberWorkflowBehaviour';
-import { CategoryGroupLeaderWorkflowBehaviour } from '../Security/Acl/CategoryGroupLeaderWorkflowBehaviour';
+import { MembersWorkflowBehaviour } from '../Security/Acl/MembersWorkflowBehaviour';
+import { CategoryLeadersWorkflowBehaviour } from '../Security/Acl/CategoryLeadersWorkflowBehaviour';
 import { UsherWorkflowBehaviour } from '../Security/Acl/UsherWorkflowBehaviour';
 import { ProtocolWorkflowBehaviour } from '../Security/Acl/ProtocolWorkflowBehaviour';
-import { GroupCategoryWorkflowBehaviour } from '../Security/Acl/GroupCategoryWorkflowBehaviour';
 
 // % protected region % [Add any further imports here] off begin
 // % protected region % [Add any further imports here] end
@@ -42,11 +41,10 @@ export interface ISeatsWorkflowStatesAttributes extends IModelAttributes {
 export default class SeatsWorkflowStates extends Model implements ISeatsWorkflowStatesAttributes {
 	public static acls: IAcl[] = [
 		new AdminWorkflowBehaviour(),
-		new MemberWorkflowBehaviour(),
-		new CategoryGroupLeaderWorkflowBehaviour(),
+		new MembersWorkflowBehaviour(),
+		new CategoryLeadersWorkflowBehaviour(),
 		new UsherWorkflowBehaviour(),
 		new ProtocolWorkflowBehaviour(),
-		new GroupCategoryWorkflowBehaviour(),
 		// % protected region % [Add any further ACL entries here] off begin
 		// % protected region % [Add any further ACL entries here] end
 	];

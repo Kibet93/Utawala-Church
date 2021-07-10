@@ -27,11 +27,10 @@ import {
 } from 'Util/EntityUtils';
 import { VisitorsProtocolEntity } from 'Models/Security/Acl/VisitorsProtocolEntity';
 import { AdminProtocolEntity } from 'Models/Security/Acl/AdminProtocolEntity';
-import { MemberProtocolEntity } from 'Models/Security/Acl/MemberProtocolEntity';
-import { CategoryGroupLeaderProtocolEntity } from 'Models/Security/Acl/CategoryGroupLeaderProtocolEntity';
+import { MembersProtocolEntity } from 'Models/Security/Acl/MembersProtocolEntity';
+import { CategoryLeadersProtocolEntity } from 'Models/Security/Acl/CategoryLeadersProtocolEntity';
 import { UsherProtocolEntity } from 'Models/Security/Acl/UsherProtocolEntity';
 import { ProtocolProtocolEntity } from 'Models/Security/Acl/ProtocolProtocolEntity';
-import { GroupCategoryProtocolEntity } from 'Models/Security/Acl/GroupCategoryProtocolEntity';
 import { EntityFormMode } from 'Views/Components/Helpers/Common';
 import {SuperAdministratorScheme} from '../Security/Acl/SuperAdministratorScheme';
 // % protected region % [Add any further imports here] off begin
@@ -42,7 +41,7 @@ export interface IProtocolEntityAttributes extends IModelAttributes {
 	memberID: number;
 
 	memberId: string;
-	member: Models.MemberEntity | Models.IMemberEntityAttributes;
+	member: Models.MembersEntity | Models.IMembersEntityAttributes;
 	// % protected region % [Add any custom attributes to the interface here] off begin
 	// % protected region % [Add any custom attributes to the interface here] end
 }
@@ -55,11 +54,10 @@ export default class ProtocolEntity extends Model implements IProtocolEntityAttr
 		new SuperAdministratorScheme(),
 		new VisitorsProtocolEntity(),
 		new AdminProtocolEntity(),
-		new MemberProtocolEntity(),
-		new CategoryGroupLeaderProtocolEntity(),
+		new MembersProtocolEntity(),
+		new CategoryLeadersProtocolEntity(),
 		new UsherProtocolEntity(),
 		new ProtocolProtocolEntity(),
-		new GroupCategoryProtocolEntity(),
 		// % protected region % [Add any further ACL entries here] off begin
 		// % protected region % [Add any further ACL entries here] end
 	];
@@ -150,17 +148,17 @@ export default class ProtocolEntity extends Model implements IProtocolEntityAttr
 		name: 'MEMBER',
 		displayType: 'reference-combobox',
 		order: 50,
-		referenceTypeFunc: () => Models.MemberEntity,
+		referenceTypeFunc: () => Models.MembersEntity,
 		referenceResolveFunction: makeFetchOneToManyFunc({
 			relationName: 'members',
-			oppositeEntity: () => Models.MemberEntity,
+			oppositeEntity: () => Models.MembersEntity,
 		})
 		// % protected region % [Modify props to the crud options here for reference 'MEMBER'] end
 	})
 	public memberId: string;
 	@observable
 	@attribute({isReference: true})
-	public member: Models.MemberEntity;
+	public member: Models.MembersEntity;
 
 	// % protected region % [Add any custom attributes to the model here] off begin
 	// % protected region % [Add any custom attributes to the model here] end
@@ -200,11 +198,11 @@ export default class ProtocolEntity extends Model implements IProtocolEntityAttr
 				if (attributes.member === null) {
 					this.member = attributes.member;
 				} else {
-					if (attributes.member instanceof Models.MemberEntity) {
+					if (attributes.member instanceof Models.MembersEntity) {
 						this.member = attributes.member;
 						this.memberId = attributes.member.id;
 					} else {
-						this.member = new Models.MemberEntity(attributes.member);
+						this.member = new Models.MembersEntity(attributes.member);
 						this.memberId = this.member.id;
 					}
 				}
@@ -223,7 +221,8 @@ export default class ProtocolEntity extends Model implements IProtocolEntityAttr
 	// % protected region % [Customize Default Expands here] off begin
 	public defaultExpands = `
 		member {
-			${Models.MemberEntity.getAttributes().join('\n')}
+			${Models.MembersEntity.getAttributes().join('\n')}
+			${Models.MembersEntity.getFiles().map(f => f.name).join('\n')}
 		}
 	`;
 	// % protected region % [Customize Default Expands here] end

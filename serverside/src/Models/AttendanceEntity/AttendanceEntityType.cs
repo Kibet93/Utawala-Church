@@ -48,10 +48,101 @@ namespace Utawalaaltar.Models
 			Field(o => o.AttendedService, type: typeof(BooleanGraphType));
 			Field(o => o.ReasonForNotAttending, type: typeof(StringGraphType));
 			Field(o => o.Comment, type: typeof(StringGraphType));
+			Field(o => o.Name, type: typeof(StringGraphType));
+			Field(o => o.PublishedVersionId, type: typeof(IdGraphType));
 			// % protected region % [Add any extra GraphQL fields here] off begin
 			// % protected region % [Add any extra GraphQL fields here] end
 
 			// Add entity references
+			Field<ListGraphType<AttendanceEntityFormVersionType>, IEnumerable<AttendanceEntityFormVersion>>()
+				.Name("FormVersions")
+				.AddCommonArguments()
+				.ResolveAsync(async context =>
+				{
+					var graphQlContext = (UtawalaaltarGraphQlContext) context.UserContext;
+					var accessor = graphQlContext.ServiceProvider.GetRequiredService<IDataLoaderContextAccessor>();
+					var loader = accessor.Context.GetOrAddCollectionBatchLoader<Guid, AttendanceEntityFormVersion>(
+						"GetFormVersionsForAttendanceEntity",
+						async keys =>
+						{
+							var args = new CommonArguments(context);
+							var query = QueryHelpers.CreateResolveFunction<AttendanceEntityFormVersion>(context, new ReadOptions {DisableAudit = true});
+							var results = await query
+								.Where(x => keys.Contains(x.FormId))
+								.Select(x => x.FormId)
+								.Distinct()
+								.SelectMany(x => query
+									.Where(y => y.FormId == x)
+									.AddIdCondition(args.Id)
+									.AddIdsCondition(args.Ids)
+									.AddWhereFilter(args.Where)
+									.AddConditionalWhereFilter(args.Conditions)
+									.AddConditionalHasFilter(args.Has, ((UtawalaaltarGraphQlContext) context.UserContext).ServiceProvider)
+									.AddOrderBys(args.OrderBy)
+									.AddSkip(args.Skip)
+									.AddTake(args.Take))
+								.ToListAsync(context.CancellationToken);
+							return results.ToLookup(x => x.FormId, x => x);
+						});
+					return loader.LoadAsync(context.Source.Id);
+				});
+			Field<AttendanceEntityFormVersionType, AttendanceEntityFormVersion>()
+				.Name("PublishedVersion")
+				.ResolveAsync(async context =>
+				{
+					if (!context.Source.PublishedVersionId.HasValue)
+					{
+						return null;
+					}
+					var graphQlContext = (UtawalaaltarGraphQlContext) context.UserContext;
+					var accessor = graphQlContext.ServiceProvider.GetRequiredService<IDataLoaderContextAccessor>();
+					var loader = accessor.Context.GetOrAddBatchLoader<Guid?, AttendanceEntityFormVersion>(
+						"GetSpacePoliceOfficerForIncidentSubmissionEntity",
+						async keys =>
+						{
+							var results = await QueryHelpers.BuildQueryResolver<AttendanceEntityFormVersion>(
+								context,
+								x => keys.Contains(x.Id));
+							return results.ToDictionary(x => new Guid?(x.Id), x => x);
+						});
+					return loader.LoadAsync(context.Source.PublishedVersionId);
+				});
+
+			// GraphQL reference to entity AttendanceEntityFormTileEntity via reference FormPage
+			Field<ListGraphType<NonNullGraphType<AttendanceEntityFormTileEntityType>>, IEnumerable<AttendanceEntityFormTileEntity>>()
+				.Name("FormPages")
+				.AddCommonArguments()
+				.ResolveAsync(async context =>
+				{
+					var graphQlContext = (UtawalaaltarGraphQlContext) context.UserContext;
+					var accessor = graphQlContext.ServiceProvider.GetRequiredService<IDataLoaderContextAccessor>();
+
+					var loader = accessor.Context.GetOrAddCollectionBatchLoader<Guid, AttendanceEntityFormTileEntity>(
+						string.Join("-", context.ResponsePath.Where(x => x is string)) + "GetFormPagesForAttendanceEntity",
+						async keys =>
+						{
+							var args = new CommonArguments(context);
+							var query = QueryHelpers.CreateResolveFunction<AttendanceEntityFormTileEntity>(context, new ReadOptions {DisableAudit = true});
+							var results = await query
+								.Where(x => keys.Contains(x.FormId))
+								.Select(x => x.FormId)
+								.Distinct()
+								.SelectMany(x => query
+									.Where(y => y.FormId == x)
+									.AddIdCondition(args.Id)
+									.AddIdsCondition(args.Ids)
+									.AddWhereFilter(args.Where)
+									.AddConditionalWhereFilter(args.Conditions)
+									.AddConditionalHasFilter(args.Has, ((UtawalaaltarGraphQlContext) context.UserContext).ServiceProvider)
+									.AddOrderBys(args.OrderBy)
+									.AddSkip(args.Skip)
+									.AddTake(args.Take))
+								.ToListAsync(context.CancellationToken);
+							return results.ToLookup(x => x.FormId, x => x);
+						});
+
+					return loader.LoadAsync(context.Source.Id);
+				});
 
 			// % protected region % [Add any extra GraphQL references here] off begin
 			// % protected region % [Add any extra GraphQL references here] end
@@ -79,10 +170,14 @@ namespace Utawalaaltar.Models
 			Field<BooleanGraphType>("AttendedService");
 			Field<StringGraphType>("ReasonForNotAttending");
 			Field<StringGraphType>("Comment");
+			Field<StringGraphType>("Name");
+			Field<IdGraphType>("PublishedVersionId").Description = "The current published version for the form";
+			Field<ListGraphType<AttendanceEntityFormVersionInputType>>("FormVersions").Description = "The versions for this form";
 
 			// Add entity references
 
 			// Add references to foreign models to allow nested creation
+			Field<ListGraphType<AttendanceEntityFormTileEntityInputType>>("FormPages");
 
 			// % protected region % [Add any extra GraphQL input fields here] off begin
 			// % protected region % [Add any extra GraphQL input fields here] end

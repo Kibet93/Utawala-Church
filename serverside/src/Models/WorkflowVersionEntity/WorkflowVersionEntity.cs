@@ -99,11 +99,10 @@ namespace Utawalaaltar.Models {
 			// % protected region % [Override ACLs here] off begin
 			new SuperAdministratorsScheme(),
 			new AdminWorkflowBehaviour(),
-			new MemberWorkflowBehaviour(),
-			new CategoryGroupLeaderWorkflowBehaviour(),
+			new MembersWorkflowBehaviour(),
+			new CategoryLeadersWorkflowBehaviour(),
 			new UsherWorkflowBehaviour(),
 			new ProtocolWorkflowBehaviour(),
-			new GroupCategoryWorkflowBehaviour(),
 			// % protected region % [Override ACLs here] end
 			// % protected region % [Add any further ACL entries here] off begin
 			// % protected region % [Add any further ACL entries here] end

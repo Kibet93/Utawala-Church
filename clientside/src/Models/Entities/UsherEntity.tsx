@@ -27,11 +27,10 @@ import {
 } from 'Util/EntityUtils';
 import { VisitorsUsherEntity } from 'Models/Security/Acl/VisitorsUsherEntity';
 import { AdminUsherEntity } from 'Models/Security/Acl/AdminUsherEntity';
-import { MemberUsherEntity } from 'Models/Security/Acl/MemberUsherEntity';
-import { CategoryGroupLeaderUsherEntity } from 'Models/Security/Acl/CategoryGroupLeaderUsherEntity';
+import { MembersUsherEntity } from 'Models/Security/Acl/MembersUsherEntity';
+import { CategoryLeadersUsherEntity } from 'Models/Security/Acl/CategoryLeadersUsherEntity';
 import { UsherUsherEntity } from 'Models/Security/Acl/UsherUsherEntity';
 import { ProtocolUsherEntity } from 'Models/Security/Acl/ProtocolUsherEntity';
-import { GroupCategoryUsherEntity } from 'Models/Security/Acl/GroupCategoryUsherEntity';
 import { EntityFormMode } from 'Views/Components/Helpers/Common';
 import {SuperAdministratorScheme} from '../Security/Acl/SuperAdministratorScheme';
 // % protected region % [Add any further imports here] off begin
@@ -42,7 +41,7 @@ export interface IUsherEntityAttributes extends IModelAttributes {
 	memberID: number;
 
 	memberId: string;
-	member: Models.MemberEntity | Models.IMemberEntityAttributes;
+	member: Models.MembersEntity | Models.IMembersEntityAttributes;
 	// % protected region % [Add any custom attributes to the interface here] off begin
 	// % protected region % [Add any custom attributes to the interface here] end
 }
@@ -55,11 +54,10 @@ export default class UsherEntity extends Model implements IUsherEntityAttributes
 		new SuperAdministratorScheme(),
 		new VisitorsUsherEntity(),
 		new AdminUsherEntity(),
-		new MemberUsherEntity(),
-		new CategoryGroupLeaderUsherEntity(),
+		new MembersUsherEntity(),
+		new CategoryLeadersUsherEntity(),
 		new UsherUsherEntity(),
 		new ProtocolUsherEntity(),
-		new GroupCategoryUsherEntity(),
 		// % protected region % [Add any further ACL entries here] off begin
 		// % protected region % [Add any further ACL entries here] end
 	];
@@ -149,17 +147,17 @@ export default class UsherEntity extends Model implements IUsherEntityAttributes
 		name: 'MEMBER',
 		displayType: 'reference-combobox',
 		order: 50,
-		referenceTypeFunc: () => Models.MemberEntity,
+		referenceTypeFunc: () => Models.MembersEntity,
 		referenceResolveFunction: makeFetchOneToManyFunc({
 			relationName: 'members',
-			oppositeEntity: () => Models.MemberEntity,
+			oppositeEntity: () => Models.MembersEntity,
 		})
 		// % protected region % [Modify props to the crud options here for reference 'MEMBER'] end
 	})
 	public memberId: string;
 	@observable
 	@attribute({isReference: true})
-	public member: Models.MemberEntity;
+	public member: Models.MembersEntity;
 
 	// % protected region % [Add any custom attributes to the model here] off begin
 	// % protected region % [Add any custom attributes to the model here] end
@@ -199,11 +197,11 @@ export default class UsherEntity extends Model implements IUsherEntityAttributes
 				if (attributes.member === null) {
 					this.member = attributes.member;
 				} else {
-					if (attributes.member instanceof Models.MemberEntity) {
+					if (attributes.member instanceof Models.MembersEntity) {
 						this.member = attributes.member;
 						this.memberId = attributes.member.id;
 					} else {
-						this.member = new Models.MemberEntity(attributes.member);
+						this.member = new Models.MembersEntity(attributes.member);
 						this.memberId = this.member.id;
 					}
 				}
@@ -222,7 +220,8 @@ export default class UsherEntity extends Model implements IUsherEntityAttributes
 	// % protected region % [Customize Default Expands here] off begin
 	public defaultExpands = `
 		member {
-			${Models.MemberEntity.getAttributes().join('\n')}
+			${Models.MembersEntity.getAttributes().join('\n')}
+			${Models.MembersEntity.getFiles().map(f => f.name).join('\n')}
 		}
 	`;
 	// % protected region % [Customize Default Expands here] end

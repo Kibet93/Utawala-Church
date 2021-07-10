@@ -79,11 +79,10 @@ namespace Utawalaaltar.Models {
 			new SuperAdministratorsScheme(),
 			new VisitorsHomeFellowshipEntity(),
 			new AdminHomeFellowshipEntity(),
-			new MemberHomeFellowshipEntity(),
-			new CategoryGroupLeaderHomeFellowshipEntity(),
+			new MembersHomeFellowshipEntity(),
+			new CategoryLeadersHomeFellowshipEntity(),
 			new UsherHomeFellowshipEntity(),
 			new ProtocolHomeFellowshipEntity(),
-			new GroupCategoryHomeFellowshipEntity(),
 			// % protected region % [Override ACLs here] end
 			// % protected region % [Add any further ACL entries here] off begin
 			// % protected region % [Add any further ACL entries here] end
@@ -93,9 +92,9 @@ namespace Utawalaaltar.Models {
 		/// <summary>
 		/// Incoming one to many reference
 		/// </summary>
-		/// <see cref="Utawalaaltar.Models.MemberEntity"/>
-		[EntityForeignKey("Membersfellowships", "HomeFellowship", false, typeof(MemberEntity))]
-		public ICollection<MemberEntity> Membersfellowships { get; set; }
+		/// <see cref="Utawalaaltar.Models.MembersEntity"/>
+		[EntityForeignKey("Membersfellowships", "HomeFellowship", false, typeof(MembersEntity))]
+		public ICollection<MembersEntity> Membersfellowships { get; set; }
 		// % protected region % [Customise Membersfellowships here] end
 
 		public async Task BeforeSave(
@@ -139,7 +138,7 @@ namespace Utawalaaltar.Models {
 			{
 				case "Membersfellowships":
 					var membersfellowshipIds = modelList.SelectMany(x => x.Membersfellowships.Select(m => m.Id)).ToList();
-					var oldmembersfellowship = await dbContext.MemberEntity
+					var oldmembersfellowship = await dbContext.MembersEntity
 						.Where(m => m.HomeFellowshipId.HasValue && ids.Contains(m.HomeFellowshipId.Value))
 						.Where(m => !membersfellowshipIds.Contains(m.Id))
 						.ToListAsync(cancellation);
@@ -149,7 +148,7 @@ namespace Utawalaaltar.Models {
 						membersfellowship.HomeFellowshipId = null;
 					}
 
-					dbContext.MemberEntity.UpdateRange(oldmembersfellowship);
+					dbContext.MembersEntity.UpdateRange(oldmembersfellowship);
 					return oldmembersfellowship.Count;
 				// % protected region % [Add any extra clean reference logic here] off begin
 				// % protected region % [Add any extra clean reference logic here] end

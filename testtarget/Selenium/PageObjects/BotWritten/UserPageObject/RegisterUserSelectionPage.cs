@@ -27,7 +27,7 @@ namespace SeleniumTests.PageObjects.BotWritten.UserPageObjects
 {
 	public class RegisterUserSelectionPage : BasePage
 	{
-		public IWebElement MemberSubmissionEntityDropdownOption => FindElementExt("MemberSubmissionEntityDropdownOption");
+		public IWebElement AttendanceSubmissionEntityDropdownOption => FindElementExt("AttendanceSubmissionEntityDropdownOption");
 		public IWebElement UserTypeDropdown => FindElementExt("UserTypeDropdown");
 		public IWebElement ConfirmButton => FindElementExt("ConfirmButton");
 		public IWebElement CancelButton => FindElementExt("CancelButton");
@@ -39,7 +39,7 @@ namespace SeleniumTests.PageObjects.BotWritten.UserPageObjects
 
 		private void InitializeSelectors()
 		{
-			selectorDict.Add("MemberSubmissionEntityDropdownOption", (selector: "//div[contains(@data-id, 'MemberSubmissionEntity')]", type: SelectorType.XPath));
+			selectorDict.Add("AttendanceSubmissionEntityDropdownOption", (selector: "//div[contains(@data-id, 'AttendanceSubmissionEntity')]", type: SelectorType.XPath));
 			selectorDict.Add("UserTypeDropdown", (selector: "//div[contains(@class, 'input-group__dropdown')]//input", type: SelectorType.XPath));
 			selectorDict.Add("ConfirmButton", (selector: "confirm_type", type: SelectorType.ID));
 			selectorDict.Add("CancelButton", (selector: "cancel_register", type: SelectorType.ID));

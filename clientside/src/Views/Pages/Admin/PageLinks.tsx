@@ -37,36 +37,36 @@ interface AdminLink extends IIconProps {
 
 const getPageLinks = (): AdminLink[] => [
 	{
-		// % protected region % [Override navigation link for AccountabilityGroupEntity here] off begin
-		path: '/admin/accountabilitygroupentity',
-		label: getModelDisplayName(Models.AccountabilityGroupEntity),
-		entity: Models.AccountabilityGroupEntity,
+		// % protected region % [Override navigation link for AccountabilityGroupsEntity here] off begin
+		path: '/admin/accountabilitygroupsentity',
+		label: getModelDisplayName(Models.AccountabilityGroupsEntity),
+		entity: Models.AccountabilityGroupsEntity,
 		isMember: false
-		// % protected region % [Override navigation link for AccountabilityGroupEntity here] end
+		// % protected region % [Override navigation link for AccountabilityGroupsEntity here] end
 	},
 	{
-		// % protected region % [Override navigation link for CategoryGroupLeaderEntity here] off begin
-		path: '/admin/categorygroupleaderentity',
-		label: getModelDisplayName(Models.CategoryGroupLeaderEntity),
-		entity: Models.CategoryGroupLeaderEntity,
-		isMember: true
-		// % protected region % [Override navigation link for CategoryGroupLeaderEntity here] end
+		// % protected region % [Override navigation link for AttendanceEntity here] off begin
+		path: '/admin/attendanceentity',
+		label: getModelDisplayName(Models.AttendanceEntity),
+		entity: Models.AttendanceEntity,
+		isMember: false
+		// % protected region % [Override navigation link for AttendanceEntity here] end
 	},
 	{
-		// % protected region % [Override navigation link for GroupCategoryEntity here] off begin
-		path: '/admin/groupcategoryentity',
-		label: getModelDisplayName(Models.GroupCategoryEntity),
-		entity: Models.GroupCategoryEntity,
+		// % protected region % [Override navigation link for CategoryLeadersEntity here] off begin
+		path: '/admin/categoryleadersentity',
+		label: getModelDisplayName(Models.CategoryLeadersEntity),
+		entity: Models.CategoryLeadersEntity,
 		isMember: true
-		// % protected region % [Override navigation link for GroupCategoryEntity here] end
+		// % protected region % [Override navigation link for CategoryLeadersEntity here] end
 	},
 	{
-		// % protected region % [Override navigation link for MemberEntity here] off begin
-		path: '/admin/memberentity',
-		label: getModelDisplayName(Models.MemberEntity),
-		entity: Models.MemberEntity,
+		// % protected region % [Override navigation link for MembersEntity here] off begin
+		path: '/admin/membersentity',
+		label: getModelDisplayName(Models.MembersEntity),
+		entity: Models.MembersEntity,
 		isMember: true
-		// % protected region % [Override navigation link for MemberEntity here] end
+		// % protected region % [Override navigation link for MembersEntity here] end
 	},
 	{
 		// % protected region % [Override navigation link for NoOfServiceEntity here] off begin
@@ -83,14 +83,6 @@ const getPageLinks = (): AdminLink[] => [
 		entity: Models.AdminEntity,
 		isMember: true
 		// % protected region % [Override navigation link for AdminEntity here] end
-	},
-	{
-		// % protected region % [Override navigation link for AttendanceEntity here] off begin
-		path: '/admin/attendanceentity',
-		label: getModelDisplayName(Models.AttendanceEntity),
-		entity: Models.AttendanceEntity,
-		isMember: false
-		// % protected region % [Override navigation link for AttendanceEntity here] end
 	},
 	{
 		// % protected region % [Override navigation link for HomeFellowshipEntity here] off begin
@@ -133,12 +125,20 @@ const getPageLinks = (): AdminLink[] => [
 		// % protected region % [Override navigation link for UsherEntity here] end
 	},
 	{
-		// % protected region % [Override navigation link for MemberSubmissionEntity here] off begin
-		path: '/admin/membersubmissionentity',
-		label: getModelDisplayName(Models.MemberSubmissionEntity),
-		entity: Models.MemberSubmissionEntity,
+		// % protected region % [Override navigation link for AttendanceSubmissionEntity here] off begin
+		path: '/admin/attendancesubmissionentity',
+		label: getModelDisplayName(Models.AttendanceSubmissionEntity),
+		entity: Models.AttendanceSubmissionEntity,
 		isMember: false
-		// % protected region % [Override navigation link for MemberSubmissionEntity here] end
+		// % protected region % [Override navigation link for AttendanceSubmissionEntity here] end
+	},
+	{
+		// % protected region % [Override navigation link for AttendanceEntityFormTileEntity here] off begin
+		path: '/admin/attendanceentityformtileentity',
+		label: getModelDisplayName(Models.AttendanceEntityFormTileEntity),
+		entity: Models.AttendanceEntityFormTileEntity,
+		isMember: false
+		// % protected region % [Override navigation link for AttendanceEntityFormTileEntity here] end
 	},
 	// % protected region % [Add any extra page links here] off begin
 	// % protected region % [Add any extra page links here] end
@@ -215,7 +215,7 @@ export default class PageLinks extends React.Component<RouteComponentProps> {
 
 		const otherlinkGroup: ILink[] = [];
 		// % protected region % [Update the link group for the forms extension here] off begin
-		const formsGroups: string[] = ['Usher', 'Super Administrators', 'Admin', 'Protocol', 'Member', 'CategoryGroupLeader'];
+		const formsGroups: string[] = ['Usher', 'Super Administrators', 'CategoryLeaders', 'Admin', 'Protocol', 'Members'];
 		if (store.userGroups.some(ug => formsGroups.some(fg => fg === ug.name))) {
 			otherlinkGroup.push(
 				{
@@ -229,7 +229,7 @@ export default class PageLinks extends React.Component<RouteComponentProps> {
 		}
 		// % protected region % [Update the link group for the forms extension here] end
 		// % protected region % [Update the link group for the workflow extension here] off begin
-		const workflowGroups: string[] = ['Super Administrators','Admin'];
+		const workflowGroups: string[] = ['Usher','Super Administrators','CategoryLeaders','Admin','Protocol','Members'];
 		if (store.userGroups.some(ug => workflowGroups.some(fg => fg === ug.name))){
 			otherlinkGroup.push(
 				{

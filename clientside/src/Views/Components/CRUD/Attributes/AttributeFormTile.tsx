@@ -29,6 +29,7 @@ export interface IFormTile {
 }
 
 export const formTiles: IFormTile[] = [
+	{formModel: "AttendanceEntity", value: "4be93de3-1775-4df7-be2a-c9720964c8d7", display: "4be93de3-1775-4df7-be2a-c9720964c8d7"},
 	// % protected region % [Add any extra form tiles here] off begin
 	// % protected region % [Add any extra form tiles here] end
 ];

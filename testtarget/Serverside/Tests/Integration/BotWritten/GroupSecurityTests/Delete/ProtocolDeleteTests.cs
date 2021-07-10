@@ -45,18 +45,18 @@ namespace ServersideTests.Tests.Integration.BotWritten.GroupSecurityTests.Delete
 				var data = new TheoryData<IAbstractModel, string,string>
 				{
 					// % protected region % [Configure entity theory data for Protocol here] off begin
-					{new AccountabilityGroupEntity(), SecurityStringHelper.UserPermissionDenied, "Protocol"},
-					{new NoOfServiceEntity(), SecurityStringHelper.UserPermissionDenied, "Protocol"},
-					{new AttendanceEntity(), SecurityStringHelper.UserPermissionDenied, "Protocol"},
-					{new HomeFellowshipEntity(), SecurityStringHelper.UserPermissionDenied, "Protocol"},
-					{new SeatsEntity(), SecurityStringHelper.UserPermissionDenied, "Protocol"},
-					{new ServicesEntity(), SecurityStringHelper.UserPermissionDenied, "Protocol"},
+					{new AccountabilityGroupsEntity(), null, "Protocol"},
+					{new AttendanceEntity(), null, "Protocol"},
+					{new NoOfServiceEntity(), null, "Protocol"},
+					{new HomeFellowshipEntity(), null, "Protocol"},
+					{new SeatsEntity(), null, "Protocol"},
+					{new ServicesEntity(), null, "Protocol"},
 					{new WorkflowEntity(), SecurityStringHelper.UserPermissionDenied, "Protocol"},
 					{new WorkflowStateEntity(), SecurityStringHelper.UserPermissionDenied, "Protocol"},
 					{new WorkflowTransitionEntity(), SecurityStringHelper.UserPermissionDenied, "Protocol"},
 					{new WorkflowVersionEntity(), SecurityStringHelper.UserPermissionDenied, "Protocol"},
-					{new MemberSubmissionEntity(), null, "Protocol"},
-					{new MemberEntityFormTileEntity(), SecurityStringHelper.UserPermissionDenied, "Protocol"},
+					{new AttendanceSubmissionEntity(), null, "Protocol"},
+					{new AttendanceEntityFormTileEntity(), null, "Protocol"},
 					// % protected region % [Configure entity theory data for Protocol here] end
 				};
 				// % protected region % [Add any extra theory data here] off begin

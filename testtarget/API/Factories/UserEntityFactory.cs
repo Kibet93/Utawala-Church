@@ -41,12 +41,10 @@ namespace APITests.Factories
 		{
 			switch (_type)
 			{
-				case "CategoryGroupLeaderEntity":
-					return CategoryGroupLeaderEntity.GetEntity(isValid, _fixedStrValues);
-				case "GroupCategoryEntity":
-					return GroupCategoryEntity.GetEntity(isValid, _fixedStrValues);
-				case "MemberEntity":
-					return MemberEntity.GetEntity(isValid, _fixedStrValues);
+				case "CategoryLeadersEntity":
+					return CategoryLeadersEntity.GetEntity(isValid, _fixedStrValues);
+				case "MembersEntity":
+					return MembersEntity.GetEntity(isValid, _fixedStrValues);
 				case "AdminEntity":
 					return AdminEntity.GetEntity(isValid, _fixedStrValues);
 				case "ProtocolEntity":
@@ -98,13 +96,23 @@ namespace APITests.Factories
 		{
 			switch (_type)
 			{
-				case "MemberEntity":
+				case "CategoryLeadersEntity":
+					switch (enumColumnName)
+					{
+						case "category Group":
+							return ((CategoryLeadersEntity)entity).CategoryGroup.ToString();
+						default:
+							return null;
+					}
+				case "MembersEntity":
 					switch (enumColumnName)
 					{
 						case "status":
-							return ((MemberEntity)entity).Status.ToString();
+							return ((MembersEntity)entity).Status.ToString();
 						case "membership Status":
-							return ((MemberEntity)entity).MembershipStatus.ToString();
+							return ((MembersEntity)entity).MembershipStatus.ToString();
+						case "category Choice":
+							return ((MembersEntity)entity).CategoryChoice.ToString();
 						default:
 							return null;
 					}

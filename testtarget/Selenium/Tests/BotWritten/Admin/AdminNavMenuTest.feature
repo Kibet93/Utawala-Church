@@ -45,9 +45,9 @@ Scenario: Verify the number of Admin Submenus
 	When I click on the Topbar Link
 	Then I assert that the admin bar is on the Frontend
 	When I click on Users Nav link on the Admin Nav section
-	Then I assert that 7 Nav links are displayed
+	Then I assert that 6 Nav links are displayed
 	When I click on Entities Nav link on the Admin Nav section
-	Then I assert that 7 Nav links are displayed
+	Then I assert that 8 Nav links are displayed
 # % protected region % [Modify the test content of 'Verify the number of Admin Submenus' here] end
 
 # % protected region % [Modify the test content of 'Verify the admin submenus' here] off begin
@@ -60,20 +60,20 @@ Scenario: Verify the admin submenus
 	Then I see the Admin Submenus like
 	| Users |
 	| All Users |
-	| Category Group Leader |
-	| Group Category |
-	| MEMBER |
+	| Category Leaders |
+	| MEMBERS |
 	| Admin |
 	| Protocol |
 	| Usher |
 	When I click on Entities Nav link on the Admin Nav section
 	Then I see the Admin Submenus like
 	| Entities |
-	| Accountability Group |
-	| No Of Service |
+	| Accountability Groups |
 	| Attendance |
+	| No Of Service |
 	| Home Fellowship |
 	| Seats |
 	| Services |
-	| MEMBER Submission |
+	| Attendance Submission |
+	| Attendance Entity Form Tile |
 # % protected region % [Modify the test content of 'Verify the admin submenus' here] end

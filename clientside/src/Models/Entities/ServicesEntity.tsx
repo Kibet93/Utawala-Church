@@ -26,11 +26,10 @@ import {
 } from 'Util/EntityUtils';
 import { VisitorsServicesEntity } from 'Models/Security/Acl/VisitorsServicesEntity';
 import { AdminServicesEntity } from 'Models/Security/Acl/AdminServicesEntity';
-import { MemberServicesEntity } from 'Models/Security/Acl/MemberServicesEntity';
-import { CategoryGroupLeaderServicesEntity } from 'Models/Security/Acl/CategoryGroupLeaderServicesEntity';
+import { MembersServicesEntity } from 'Models/Security/Acl/MembersServicesEntity';
+import { CategoryLeadersServicesEntity } from 'Models/Security/Acl/CategoryLeadersServicesEntity';
 import { UsherServicesEntity } from 'Models/Security/Acl/UsherServicesEntity';
 import { ProtocolServicesEntity } from 'Models/Security/Acl/ProtocolServicesEntity';
-import { GroupCategoryServicesEntity } from 'Models/Security/Acl/GroupCategoryServicesEntity';
 import { EntityFormMode } from 'Views/Components/Helpers/Common';
 import {SuperAdministratorScheme} from '../Security/Acl/SuperAdministratorScheme';
 // % protected region % [Add any further imports here] off begin
@@ -52,11 +51,10 @@ export default class ServicesEntity extends Model implements IServicesEntityAttr
 		new SuperAdministratorScheme(),
 		new VisitorsServicesEntity(),
 		new AdminServicesEntity(),
-		new MemberServicesEntity(),
-		new CategoryGroupLeaderServicesEntity(),
+		new MembersServicesEntity(),
+		new CategoryLeadersServicesEntity(),
 		new UsherServicesEntity(),
 		new ProtocolServicesEntity(),
-		new GroupCategoryServicesEntity(),
 		// % protected region % [Add any further ACL entries here] off begin
 		// % protected region % [Add any further ACL entries here] end
 	];

@@ -63,13 +63,13 @@ namespace ServersideTests.Tests.Integration.BotWritten
 		}
 
 
-		// % protected region % [Customise Accountability Group Entity crud tests here] off begin
+		// % protected region % [Customise Accountability Groups Entity crud tests here] off begin
 		[Fact]
-		public async void AccountabilityGroupEntityControllerGetTest()
+		public async void AccountabilityGroupsEntityControllerGetTest()
 		{
 			// Arrange
-			using var controller = _serviceProvider.GetRequiredService<AccountabilityGroupEntityController>();
-			var entities = new EntityFactory<AccountabilityGroupEntity>(10)
+			using var controller = _serviceProvider.GetRequiredService<AccountabilityGroupsEntityController>();
+			var entities = new EntityFactory<AccountabilityGroupsEntity>(10)
 				.UseAttributes()
 				.UseReferences()
 				.UseOwner(Guid.NewGuid())
@@ -84,15 +84,15 @@ namespace ServersideTests.Tests.Integration.BotWritten
 			// Assert
 			data.Data.Select(d => d.Id).Should().Contain(entities.Select(d => d.Id));
 		}
-		// % protected region % [Customise Accountability Group Entity crud tests here] end
+		// % protected region % [Customise Accountability Groups Entity crud tests here] end
 
-		// % protected region % [Customise Category Group Leader Entity crud tests here] off begin
+		// % protected region % [Customise Attendance Entity crud tests here] off begin
 		[Fact]
-		public async void CategoryGroupLeaderEntityControllerGetTest()
+		public async void AttendanceEntityControllerGetTest()
 		{
 			// Arrange
-			using var controller = _serviceProvider.GetRequiredService<CategoryGroupLeaderEntityController>();
-			var entities = new EntityFactory<CategoryGroupLeaderEntity>(10)
+			using var controller = _serviceProvider.GetRequiredService<AttendanceEntityController>();
+			var entities = new EntityFactory<AttendanceEntity>(10)
 				.UseAttributes()
 				.UseReferences()
 				.UseOwner(Guid.NewGuid())
@@ -107,15 +107,15 @@ namespace ServersideTests.Tests.Integration.BotWritten
 			// Assert
 			data.Data.Select(d => d.Id).Should().Contain(entities.Select(d => d.Id));
 		}
-		// % protected region % [Customise Category Group Leader Entity crud tests here] end
+		// % protected region % [Customise Attendance Entity crud tests here] end
 
-		// % protected region % [Customise Group Category Entity crud tests here] off begin
+		// % protected region % [Customise Category Leaders Entity crud tests here] off begin
 		[Fact]
-		public async void GroupCategoryEntityControllerGetTest()
+		public async void CategoryLeadersEntityControllerGetTest()
 		{
 			// Arrange
-			using var controller = _serviceProvider.GetRequiredService<GroupCategoryEntityController>();
-			var entities = new EntityFactory<GroupCategoryEntity>(10)
+			using var controller = _serviceProvider.GetRequiredService<CategoryLeadersEntityController>();
+			var entities = new EntityFactory<CategoryLeadersEntity>(10)
 				.UseAttributes()
 				.UseReferences()
 				.UseOwner(Guid.NewGuid())
@@ -130,15 +130,15 @@ namespace ServersideTests.Tests.Integration.BotWritten
 			// Assert
 			data.Data.Select(d => d.Id).Should().Contain(entities.Select(d => d.Id));
 		}
-		// % protected region % [Customise Group Category Entity crud tests here] end
+		// % protected region % [Customise Category Leaders Entity crud tests here] end
 
-		// % protected region % [Customise MEMBER Entity crud tests here] off begin
+		// % protected region % [Customise MEMBERS Entity crud tests here] off begin
 		[Fact]
-		public async void MemberEntityControllerGetTest()
+		public async void MembersEntityControllerGetTest()
 		{
 			// Arrange
-			using var controller = _serviceProvider.GetRequiredService<MemberEntityController>();
-			var entities = new EntityFactory<MemberEntity>(10)
+			using var controller = _serviceProvider.GetRequiredService<MembersEntityController>();
+			var entities = new EntityFactory<MembersEntity>(10)
 				.UseAttributes()
 				.UseReferences()
 				.UseOwner(Guid.NewGuid())
@@ -153,7 +153,7 @@ namespace ServersideTests.Tests.Integration.BotWritten
 			// Assert
 			data.Data.Select(d => d.Id).Should().Contain(entities.Select(d => d.Id));
 		}
-		// % protected region % [Customise MEMBER Entity crud tests here] end
+		// % protected region % [Customise MEMBERS Entity crud tests here] end
 
 		// % protected region % [Customise No Of Service Entity crud tests here] off begin
 		[Fact]
@@ -200,29 +200,6 @@ namespace ServersideTests.Tests.Integration.BotWritten
 			data.Data.Select(d => d.Id).Should().Contain(entities.Select(d => d.Id));
 		}
 		// % protected region % [Customise Admin Entity crud tests here] end
-
-		// % protected region % [Customise Attendance Entity crud tests here] off begin
-		[Fact]
-		public async void AttendanceEntityControllerGetTest()
-		{
-			// Arrange
-			using var controller = _serviceProvider.GetRequiredService<AttendanceEntityController>();
-			var entities = new EntityFactory<AttendanceEntity>(10)
-				.UseAttributes()
-				.UseReferences()
-				.UseOwner(Guid.NewGuid())
-				.Generate()
-				.ToList();
-			_database.AddRange(entities);
-			await _database.SaveChangesAsync();
-
-			// Act
-			var data = await controller.Get(null, default);
-
-			// Assert
-			data.Data.Select(d => d.Id).Should().Contain(entities.Select(d => d.Id));
-		}
-		// % protected region % [Customise Attendance Entity crud tests here] end
 
 		// % protected region % [Customise Home Fellowship Entity crud tests here] off begin
 		[Fact]
@@ -431,13 +408,13 @@ namespace ServersideTests.Tests.Integration.BotWritten
 		}
 		// % protected region % [Customise Workflow Version Entity crud tests here] end
 
-		// % protected region % [Customise MEMBER Submission Entity crud tests here] off begin
+		// % protected region % [Customise Attendance Submission Entity crud tests here] off begin
 		[Fact]
-		public async void MemberSubmissionEntityControllerGetTest()
+		public async void AttendanceSubmissionEntityControllerGetTest()
 		{
 			// Arrange
-			using var controller = _serviceProvider.GetRequiredService<MemberSubmissionEntityController>();
-			var entities = new EntityFactory<MemberSubmissionEntity>(10)
+			using var controller = _serviceProvider.GetRequiredService<AttendanceSubmissionEntityController>();
+			var entities = new EntityFactory<AttendanceSubmissionEntity>(10)
 				.UseAttributes()
 				.UseReferences()
 				.UseOwner(Guid.NewGuid())
@@ -452,15 +429,15 @@ namespace ServersideTests.Tests.Integration.BotWritten
 			// Assert
 			data.Data.Select(d => d.Id).Should().Contain(entities.Select(d => d.Id));
 		}
-		// % protected region % [Customise MEMBER Submission Entity crud tests here] end
+		// % protected region % [Customise Attendance Submission Entity crud tests here] end
 
-		// % protected region % [Customise MEMBER Entity Form Tile Entity crud tests here] off begin
+		// % protected region % [Customise Attendance Entity Form Tile Entity crud tests here] off begin
 		[Fact]
-		public async void MemberEntityFormTileEntityControllerGetTest()
+		public async void AttendanceEntityFormTileEntityControllerGetTest()
 		{
 			// Arrange
-			using var controller = _serviceProvider.GetRequiredService<MemberEntityFormTileEntityController>();
-			var entities = new EntityFactory<MemberEntityFormTileEntity>(10)
+			using var controller = _serviceProvider.GetRequiredService<AttendanceEntityFormTileEntityController>();
+			var entities = new EntityFactory<AttendanceEntityFormTileEntity>(10)
 				.UseAttributes()
 				.UseReferences()
 				.UseOwner(Guid.NewGuid())
@@ -475,7 +452,7 @@ namespace ServersideTests.Tests.Integration.BotWritten
 			// Assert
 			data.Data.Select(d => d.Id).Should().Contain(entities.Select(d => d.Id));
 		}
-		// % protected region % [Customise MEMBER Entity Form Tile Entity crud tests here] end
+		// % protected region % [Customise Attendance Entity Form Tile Entity crud tests here] end
 
 	// % protected region % [Add any additional tests here] off begin
 	// % protected region % [Add any additional tests here] end

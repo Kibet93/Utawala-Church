@@ -26,6 +26,24 @@ namespace Utawalaaltar.Models {
 		{
 			AbstractModelConfiguration.Configure(builder);
 
+			// % protected region % [Override form data configuration here] off begin
+			builder
+				.HasMany(e => e.FormVersions)
+				.WithOne(e => e.Form)
+				.OnDelete(DeleteBehavior.Cascade);
+			builder
+				.HasOne(e => e.PublishedVersion)
+				.WithOne(e => e.PublishedForm)
+				.OnDelete(DeleteBehavior.Restrict);
+			// % protected region % [Override form data configuration here] end
+
+			// % protected region % [Override FormPages Form configuration here] off begin
+			builder
+				.HasMany(e => e.FormPages)
+				.WithOne(e => e.Form)
+				.OnDelete(DeleteBehavior.Restrict);
+			// % protected region % [Override FormPages Form configuration here] end
+
 			// % protected region % [Override DateOfService index configuration here] off begin
 			builder.HasIndex(e => e.DateOfService);
 			// % protected region % [Override DateOfService index configuration here] end

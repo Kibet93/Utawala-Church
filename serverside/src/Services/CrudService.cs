@@ -656,6 +656,7 @@ namespace Utawalaaltar.Services
 			await using var dbContext = _dbContextFactory.CreateDbContext();
 
 			IQueryable<UploadFile> fileQuery = dbContext.Files;
+			fileQuery = fileQuery.Include(f => f.MembersPicture);
 
 			if (!options.DisableSecurity)
 			{
@@ -664,6 +665,7 @@ namespace Utawalaaltar.Services
 				var conditions = new Expression[]
 				{
 					Expression.Constant(false),
+					CreateFileSecurityCondition<MembersEntity>(dbContext, baseParam, "MembersPicture"),
 				};
 
 				var securityCondition = Expression.Lambda<Func<UploadFile, bool>>(

@@ -47,7 +47,7 @@ namespace APITests.Tests.BotWritten
 		{
 			return new TheoryData<EntityFactory>
 			{
-				new EntityFactory("MemberEntity"),
+				new EntityFactory("MembersEntity"),
 				new EntityFactory("WorkflowEntity"),
 				new EntityFactory("WorkflowStateEntity"),
 				new EntityFactory("WorkflowTransitionEntity"),

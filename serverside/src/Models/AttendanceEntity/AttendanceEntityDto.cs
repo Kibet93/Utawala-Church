@@ -24,6 +24,7 @@ namespace Utawalaaltar.Models
 {
 	public class AttendanceEntityDto : ModelDto<AttendanceEntity>
 	{
+		public String Name { get; set; }
 		// % protected region % [Customise DateOfService here] off begin
 		public DateTime? DateOfService { get; set; }
 		// % protected region % [Customise DateOfService here] end
@@ -79,6 +80,7 @@ namespace Utawalaaltar.Models
 				Id = Id,
 				Created = Created,
 				Modified = Modified,
+				Name = Name,
 				DateOfService = DateOfService,
 				ServiceID = ServiceID,
 				SeatNoID = SeatNoID,
@@ -96,6 +98,7 @@ namespace Utawalaaltar.Models
 			Id = model.Id;
 			Created = model.Created;
 			Modified = model.Modified;
+			Name = model.Name;
 			DateOfService = model.DateOfService;
 			ServiceID = model.ServiceID;
 			SeatNoID = model.SeatNoID;

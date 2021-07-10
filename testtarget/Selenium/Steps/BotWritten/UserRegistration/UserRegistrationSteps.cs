@@ -83,12 +83,10 @@ namespace SeleniumTests.Steps.BotWritten.UserRegistration
 		{
 			switch (userType)
 			{
-				case "Category Group Leader":
-					return UserType.CATEGORY_GROUP_LEADER_ENTITY;
-				case "Group Category":
-					return UserType.GROUP_CATEGORY_ENTITY;
-				case "MEMBER":
-					return UserType.MEMBER_ENTITY;
+				case "Category Leaders":
+					return UserType.CATEGORY_LEADERS_ENTITY;
+				case "MEMBERS":
+					return UserType.MEMBERS_ENTITY;
 				case "Admin":
 					return UserType.ADMIN_ENTITY;
 				case "Protocol":

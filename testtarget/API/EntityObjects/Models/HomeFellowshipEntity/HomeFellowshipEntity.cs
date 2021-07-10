@@ -46,7 +46,7 @@ namespace APITests.EntityObjects.Models
 		/// </summary>
 		/// <see cref="Utawalaaltar.Models.Membersfellowship"/>
 		public List<Guid> MembersfellowshipIds { get; set; }
-		public ICollection<MemberEntity> Membersfellowships { get; set; }
+		public ICollection<MembersEntity> Membersfellowships { get; set; }
 
 
 		public HomeFellowshipEntity()

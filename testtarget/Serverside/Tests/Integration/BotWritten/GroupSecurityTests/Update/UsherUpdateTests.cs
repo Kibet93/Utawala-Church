@@ -45,18 +45,18 @@ namespace ServersideTests.Tests.Integration.BotWritten.GroupSecurityTests.Update
 				var data = new TheoryData<IAbstractModel, string,string>
 				{
 					// % protected region % [Configure entity theory data for Usher here] off begin
-					{new AccountabilityGroupEntity(), SecurityStringHelper.UserPermissionDenied, "Usher"},
-					{new NoOfServiceEntity(), SecurityStringHelper.UserPermissionDenied, "Usher"},
-					{new AttendanceEntity(), SecurityStringHelper.UserPermissionDenied, "Usher"},
-					{new HomeFellowshipEntity(), SecurityStringHelper.UserPermissionDenied, "Usher"},
-					{new SeatsEntity(), SecurityStringHelper.UserPermissionDenied, "Usher"},
-					{new ServicesEntity(), SecurityStringHelper.UserPermissionDenied, "Usher"},
+					{new AccountabilityGroupsEntity(), null, "Usher"},
+					{new AttendanceEntity(), null, "Usher"},
+					{new NoOfServiceEntity(), null, "Usher"},
+					{new HomeFellowshipEntity(), null, "Usher"},
+					{new SeatsEntity(), null, "Usher"},
+					{new ServicesEntity(), null, "Usher"},
 					{new WorkflowEntity(), SecurityStringHelper.UserPermissionDenied, "Usher"},
 					{new WorkflowStateEntity(), SecurityStringHelper.UserPermissionDenied, "Usher"},
 					{new WorkflowTransitionEntity(), SecurityStringHelper.UserPermissionDenied, "Usher"},
 					{new WorkflowVersionEntity(), SecurityStringHelper.UserPermissionDenied, "Usher"},
-					{new MemberSubmissionEntity(), null, "Usher"},
-					{new MemberEntityFormTileEntity(), SecurityStringHelper.UserPermissionDenied, "Usher"},
+					{new AttendanceSubmissionEntity(), null, "Usher"},
+					{new AttendanceEntityFormTileEntity(), null, "Usher"},
 					// % protected region % [Configure entity theory data for Usher here] end
 				};
 				// % protected region % [Add any extra theory data here] off begin

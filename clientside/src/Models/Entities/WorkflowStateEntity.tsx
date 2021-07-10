@@ -28,11 +28,10 @@ import {
 	getCreatedModifiedCrudOptions,
 } from 'Util/EntityUtils';
 import { AdminWorkflowBehaviour } from 'Models/Security/Acl/AdminWorkflowBehaviour';
-import { MemberWorkflowBehaviour } from 'Models/Security/Acl/MemberWorkflowBehaviour';
-import { CategoryGroupLeaderWorkflowBehaviour } from 'Models/Security/Acl/CategoryGroupLeaderWorkflowBehaviour';
+import { MembersWorkflowBehaviour } from 'Models/Security/Acl/MembersWorkflowBehaviour';
+import { CategoryLeadersWorkflowBehaviour } from 'Models/Security/Acl/CategoryLeadersWorkflowBehaviour';
 import { UsherWorkflowBehaviour } from 'Models/Security/Acl/UsherWorkflowBehaviour';
 import { ProtocolWorkflowBehaviour } from 'Models/Security/Acl/ProtocolWorkflowBehaviour';
-import { GroupCategoryWorkflowBehaviour } from 'Models/Security/Acl/GroupCategoryWorkflowBehaviour';
 import { EntityFormMode } from 'Views/Components/Helpers/Common';
 import {SuperAdministratorScheme} from '../Security/Acl/SuperAdministratorScheme';
 // % protected region % [Add any further imports here] off begin
@@ -60,11 +59,10 @@ export default class WorkflowStateEntity extends Model implements IWorkflowState
 	public static acls: IAcl[] = [
 		new SuperAdministratorScheme(),
 		new AdminWorkflowBehaviour(),
-		new MemberWorkflowBehaviour(),
-		new CategoryGroupLeaderWorkflowBehaviour(),
+		new MembersWorkflowBehaviour(),
+		new CategoryLeadersWorkflowBehaviour(),
 		new UsherWorkflowBehaviour(),
 		new ProtocolWorkflowBehaviour(),
-		new GroupCategoryWorkflowBehaviour(),
 		// % protected region % [Add any further ACL entries here] off begin
 		// % protected region % [Add any further ACL entries here] end
 	];

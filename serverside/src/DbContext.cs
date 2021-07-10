@@ -38,14 +38,13 @@ namespace Utawalaaltar.Models {
 		// % protected region % [Add any custom class variables] end
 
 		public DbSet<UploadFile> Files { get; set; }
-		public DbSet<AccountabilityGroupEntity> AccountabilityGroupEntity { get; set; }
-		public DbSet<CategoryGroupLeaderEntity> CategoryGroupLeaderEntity { get; set; }
-		public DbSet<GroupCategoryEntity> GroupCategoryEntity { get; set; }
-		public DbSet<MemberEntity> MemberEntity { get; set; }
-		public DbSet<MemberEntityFormVersion> MemberEntityFormVersion { get; set; }
+		public DbSet<AccountabilityGroupsEntity> AccountabilityGroupsEntity { get; set; }
+		public DbSet<AttendanceEntity> AttendanceEntity { get; set; }
+		public DbSet<AttendanceEntityFormVersion> AttendanceEntityFormVersion { get; set; }
+		public DbSet<CategoryLeadersEntity> CategoryLeadersEntity { get; set; }
+		public DbSet<MembersEntity> MembersEntity { get; set; }
 		public DbSet<NoOfServiceEntity> NoOfServiceEntity { get; set; }
 		public DbSet<AdminEntity> AdminEntity { get; set; }
-		public DbSet<AttendanceEntity> AttendanceEntity { get; set; }
 		public DbSet<HomeFellowshipEntity> HomeFellowshipEntity { get; set; }
 		public DbSet<ProtocolEntity> ProtocolEntity { get; set; }
 		public DbSet<SeatsEntity> SeatsEntity { get; set; }
@@ -55,16 +54,17 @@ namespace Utawalaaltar.Models {
 		public DbSet<WorkflowStateEntity> WorkflowStateEntity { get; set; }
 		public DbSet<WorkflowTransitionEntity> WorkflowTransitionEntity { get; set; }
 		public DbSet<WorkflowVersionEntity> WorkflowVersionEntity { get; set; }
-		public DbSet<MemberSubmissionEntity> MemberSubmissionEntity { get; set; }
-		public DbSet<MemberEntityFormTileEntity> MemberEntityFormTileEntity { get; set; }
+		public DbSet<AttendanceSubmissionEntity> AttendanceSubmissionEntity { get; set; }
+		public DbSet<AttendanceEntityFormTileEntity> AttendanceEntityFormTileEntity { get; set; }
 		public DbSet<SeatsWorkflowStates> SeatsWorkflowStates { get; set; }
 		public DbSet<DataProtectionKey> DataProtectionKeys { get; set; }
 
 		static UtawalaaltarDBContext()
 		{
+			NpgsqlConnection.GlobalTypeMapper.MapEnum<CategoryGroups>();
 			NpgsqlConnection.GlobalTypeMapper.MapEnum<Membershipstatus>();
-			NpgsqlConnection.GlobalTypeMapper.MapEnum<Status>();
 			NpgsqlConnection.GlobalTypeMapper.MapEnum<Reservation>();
+			NpgsqlConnection.GlobalTypeMapper.MapEnum<Status>();
 			// % protected region % [Add extra methods to the static constructor here] off begin
 			// % protected region % [Add extra methods to the static constructor here] end
 		}
@@ -87,18 +87,18 @@ namespace Utawalaaltar.Models {
 			modelBuilder.OnHangfireModelCreating();
 			// % protected region % [Customise Hangfire configuration here] end
 
+			modelBuilder.HasPostgresEnum<CategoryGroups>();
 			modelBuilder.HasPostgresEnum<Membershipstatus>();
-			modelBuilder.HasPostgresEnum<Status>();
 			modelBuilder.HasPostgresEnum<Reservation>();
+			modelBuilder.HasPostgresEnum<Status>();
 			// Configure models from the entity diagram
 			modelBuilder.HasPostgresExtension("uuid-ossp");
-			modelBuilder.ApplyConfiguration(new AccountabilityGroupEntityConfiguration());
-			modelBuilder.ApplyConfiguration(new CategoryGroupLeaderEntityConfiguration());
-			modelBuilder.ApplyConfiguration(new GroupCategoryEntityConfiguration());
-			modelBuilder.ApplyConfiguration(new MemberEntityConfiguration());
+			modelBuilder.ApplyConfiguration(new AccountabilityGroupsEntityConfiguration());
+			modelBuilder.ApplyConfiguration(new AttendanceEntityConfiguration());
+			modelBuilder.ApplyConfiguration(new CategoryLeadersEntityConfiguration());
+			modelBuilder.ApplyConfiguration(new MembersEntityConfiguration());
 			modelBuilder.ApplyConfiguration(new NoOfServiceEntityConfiguration());
 			modelBuilder.ApplyConfiguration(new AdminEntityConfiguration());
-			modelBuilder.ApplyConfiguration(new AttendanceEntityConfiguration());
 			modelBuilder.ApplyConfiguration(new HomeFellowshipEntityConfiguration());
 			modelBuilder.ApplyConfiguration(new ProtocolEntityConfiguration());
 			modelBuilder.ApplyConfiguration(new SeatsEntityConfiguration());
@@ -108,8 +108,8 @@ namespace Utawalaaltar.Models {
 			modelBuilder.ApplyConfiguration(new WorkflowStateEntityConfiguration());
 			modelBuilder.ApplyConfiguration(new WorkflowTransitionEntityConfiguration());
 			modelBuilder.ApplyConfiguration(new WorkflowVersionEntityConfiguration());
-			modelBuilder.ApplyConfiguration(new MemberSubmissionEntityConfiguration());
-			modelBuilder.ApplyConfiguration(new MemberEntityFormTileEntityConfiguration());
+			modelBuilder.ApplyConfiguration(new AttendanceSubmissionEntityConfiguration());
+			modelBuilder.ApplyConfiguration(new AttendanceEntityFormTileEntityConfiguration());
 			modelBuilder.ApplyConfiguration(new SeatsWorkflowStatesConfiguration());
 
 			// Configure the user and group models

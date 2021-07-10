@@ -43,11 +43,7 @@ namespace APITests.TheoryData.BotWritten
 				"pass",
 				PasswordLengthError);
 			Add(
-				new UserEntityFactory("GroupCategoryEntity"),
-				"pass",
-				PasswordLengthError);
-			Add(
-				new UserEntityFactory("MemberEntity"),
+				new UserEntityFactory("MembersEntity"),
 				"pass",
 				PasswordLengthError);
 			Add(
@@ -55,7 +51,7 @@ namespace APITests.TheoryData.BotWritten
 				"pass",
 				PasswordLengthError);
 			Add(
-				new UserEntityFactory("CategoryGroupLeaderEntity"),
+				new UserEntityFactory("CategoryLeadersEntity"),
 				"pass",
 				PasswordLengthError);
 			// % protected region % [Modify PasswordInvalidTheoryData entities here] end
@@ -103,32 +99,17 @@ namespace APITests.TheoryData.BotWritten
 				InvalidEmailError
 			);
 			Add(
-				new UserEntityFactory("GroupCategoryEntity"),
+				new UserEntityFactory("MembersEntity"),
 				"super@example.com",
 				"Username 'super@example.com' is already taken."
 			);
 			Add(
-				new UserEntityFactory("GroupCategoryEntity"),
+				new UserEntityFactory("MembersEntity"),
 				"super",
 				InvalidEmailError
 			);
 			Add(
-				new UserEntityFactory("GroupCategoryEntity"),
-				"@e.c*@example.com",
-				InvalidEmailError
-			);
-			Add(
-				new UserEntityFactory("MemberEntity"),
-				"super@example.com",
-				"Username 'super@example.com' is already taken."
-			);
-			Add(
-				new UserEntityFactory("MemberEntity"),
-				"super",
-				InvalidEmailError
-			);
-			Add(
-				new UserEntityFactory("MemberEntity"),
+				new UserEntityFactory("MembersEntity"),
 				"@e.c*@example.com",
 				InvalidEmailError
 			);
@@ -148,17 +129,17 @@ namespace APITests.TheoryData.BotWritten
 				InvalidEmailError
 			);
 			Add(
-				new UserEntityFactory("CategoryGroupLeaderEntity"),
+				new UserEntityFactory("CategoryLeadersEntity"),
 				"super@example.com",
 				"Username 'super@example.com' is already taken."
 			);
 			Add(
-				new UserEntityFactory("CategoryGroupLeaderEntity"),
+				new UserEntityFactory("CategoryLeadersEntity"),
 				"super",
 				InvalidEmailError
 			);
 			Add(
-				new UserEntityFactory("CategoryGroupLeaderEntity"),
+				new UserEntityFactory("CategoryLeadersEntity"),
 				"@e.c*@example.com",
 				InvalidEmailError
 			);

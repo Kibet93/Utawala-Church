@@ -25,7 +25,7 @@ import SecuredPage from 'Views/Components/Security/SecuredPage';
 export default class AllUsersPage extends React.Component<RouteComponentProps> {
 	public render() {
 		return (
-			<SecuredPage groups={["Usher","GroupCategory","Super Administrators","Visitors","Admin","Protocol","Member","CategoryGroupLeader"]}>
+			<SecuredPage groups={["Usher","Super Administrators","Visitors","CategoryLeaders","Admin","Protocol","Members"]}>
 				<PageWrapper {...this.props}>
 					<UserList{...this.props}/>
 				</PageWrapper>

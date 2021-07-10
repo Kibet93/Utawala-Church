@@ -31,10 +31,9 @@ namespace APITests.TheoryData.BotWritten
 			// % protected region % [Modify UserEntityFactorySingleTheoryData entities here] off begin
 			Add(new UserEntityFactory("ProtocolEntity"));
 			Add(new UserEntityFactory("UsherEntity"));
-			Add(new UserEntityFactory("GroupCategoryEntity"));
-			Add(new UserEntityFactory("MemberEntity"));
+			Add(new UserEntityFactory("MembersEntity"));
 			Add(new UserEntityFactory("AdminEntity"));
-			Add(new UserEntityFactory("CategoryGroupLeaderEntity"));
+			Add(new UserEntityFactory("CategoryLeadersEntity"));
 			// % protected region % [Modify UserEntityFactorySingleTheoryData entities here] end
 		}
 	}
@@ -44,13 +43,12 @@ namespace APITests.TheoryData.BotWritten
 		public EntityFactorySingleTheoryData()
 		{
 			// % protected region % [Modify UserEntityFactorySingleTheoryData entities here] off begin
-			Add(new EntityFactory("AccountabilityGroupEntity"), 1);
-			Add(new EntityFactory("CategoryGroupLeaderEntity"), 1);
-			Add(new EntityFactory("GroupCategoryEntity"), 1);
-			Add(new EntityFactory("MemberEntity"), 1);
+			Add(new EntityFactory("AccountabilityGroupsEntity"), 1);
+			Add(new EntityFactory("AttendanceEntity"), 1);
+			Add(new EntityFactory("CategoryLeadersEntity"), 1);
+			Add(new EntityFactory("MembersEntity"), 1);
 			Add(new EntityFactory("NoOfServiceEntity"), 1);
 			Add(new EntityFactory("AdminEntity"), 1);
-			Add(new EntityFactory("AttendanceEntity"), 1);
 			Add(new EntityFactory("HomeFellowshipEntity"), 1);
 			Add(new EntityFactory("ProtocolEntity"), 1);
 			Add(new EntityFactory("SeatsEntity"), 1);
@@ -69,13 +67,12 @@ namespace APITests.TheoryData.BotWritten
 		public NonUserEntityFactorySingleTheoryData()
 		{
 			// % protected region % [Modify UserEntityFactorySingleTheoryData entities here] off begin
-			Add(new EntityFactory("AccountabilityGroupEntity"), 1);
-			Add(new EntityFactory("CategoryGroupLeaderEntity"), 1);
-			Add(new EntityFactory("GroupCategoryEntity"), 1);
-			Add(new EntityFactory("MemberEntity"), 1);
+			Add(new EntityFactory("AccountabilityGroupsEntity"), 1);
+			Add(new EntityFactory("AttendanceEntity"), 1);
+			Add(new EntityFactory("CategoryLeadersEntity"), 1);
+			Add(new EntityFactory("MembersEntity"), 1);
 			Add(new EntityFactory("NoOfServiceEntity"), 1);
 			Add(new EntityFactory("AdminEntity"), 1);
-			Add(new EntityFactory("AttendanceEntity"), 1);
 			Add(new EntityFactory("HomeFellowshipEntity"), 1);
 			Add(new EntityFactory("ProtocolEntity"), 1);
 			Add(new EntityFactory("SeatsEntity"), 1);
@@ -94,13 +91,12 @@ namespace APITests.TheoryData.BotWritten
 		public EntityFactoryTheoryData()
 		{
 			// % protected region % [Modify UserEntityFactorySingleTheoryData entities here] off begin
-			Add(new EntityFactory("AccountabilityGroupEntity"));
-			Add(new EntityFactory("CategoryGroupLeaderEntity"));
-			Add(new EntityFactory("GroupCategoryEntity"));
-			Add(new EntityFactory("MemberEntity"));
+			Add(new EntityFactory("AccountabilityGroupsEntity"));
+			Add(new EntityFactory("AttendanceEntity"));
+			Add(new EntityFactory("CategoryLeadersEntity"));
+			Add(new EntityFactory("MembersEntity"));
 			Add(new EntityFactory("NoOfServiceEntity"));
 			Add(new EntityFactory("AdminEntity"));
-			Add(new EntityFactory("AttendanceEntity"));
 			Add(new EntityFactory("HomeFellowshipEntity"));
 			Add(new EntityFactory("ProtocolEntity"));
 			Add(new EntityFactory("SeatsEntity"));
@@ -120,12 +116,11 @@ namespace APITests.TheoryData.BotWritten
 		{
 			// % protected region % [Modify UserEntityFactorySingleTheoryData entities here] off begin
 			var numEntities = 3;
-			Add(new EntityFactory("AccountabilityGroupEntity"), numEntities);
-			Add(new EntityFactory("CategoryGroupLeaderEntity"), numEntities);
-			Add(new EntityFactory("GroupCategoryEntity"), numEntities);
-			Add(new EntityFactory("MemberEntity"), numEntities);
-			Add(new EntityFactory("NoOfServiceEntity"), numEntities);
+			Add(new EntityFactory("AccountabilityGroupsEntity"), numEntities);
 			Add(new EntityFactory("AttendanceEntity"), numEntities);
+			Add(new EntityFactory("CategoryLeadersEntity"), numEntities);
+			Add(new EntityFactory("MembersEntity"), numEntities);
+			Add(new EntityFactory("NoOfServiceEntity"), numEntities);
 			Add(new EntityFactory("HomeFellowshipEntity"), numEntities);
 			Add(new EntityFactory("ProtocolEntity"), numEntities);
 			Add(new EntityFactory("SeatsEntity"), numEntities);

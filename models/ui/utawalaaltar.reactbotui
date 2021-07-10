@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <reactbotUi:UserInterfaceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:reactbotUi="http://codebots.com/emf/reactbot/ui" Uuid="bc82347d-0f45-49fc-8d99-fa8e5671304e" TargetProject="utawalaaltar">
   <Pages xsi:type="reactbotUi:Page" Uuid="28169de1-04e9-4de1-999b-72c7c8d4b1a2" Name="Home" IsHomePage="true"/>
-  <Pages xsi:type="reactbotUi:Page" Uuid="37452baa-e0cb-4f76-87b2-9e557a41b881" Name="Booking"/>
   <Pages xsi:type="reactbotUi:Page" Uuid="22c192d0-75ac-43b1-84af-cfa353e5f7ec" Name="Registered Members"/>
   <Pages xsi:type="reactbotUi:Page" Uuid="4eb9750c-980c-43ef-9701-2ece2b2d8781" Name="Service Attendance"/>
-  <Layouts xsi:type="reactbotUi:VerticalStackLayout" Uuid="7ad6f454-3e9f-4521-9520-e29b3527d1cc"/>
+  <Pages xsi:type="reactbotUi:Page" Uuid="8f86745f-cd85-4081-ae66-a2fccf813205" Name="Seat Booking"/>
   <Components xsi:type="reactbotUi:HeadingComponent" Uuid="716b05da-9c0b-4ff8-aa59-ce2712c05b6e" Contents="Welcome to Utawala Main Altar"/>
   <Components xsi:type="reactbotUi:HeadingComponent" Uuid="2ba227b1-fc7b-4c70-94cd-8657c5c270a7" Contents="Order of Services" Level="6"/>
   <Components xsi:type="reactbotUi:ListComponent" Uuid="535cf826-b392-4c74-8adf-5721266ffb7a">
@@ -12,7 +11,6 @@
     <Items>1st Service                  -       8:35 to 10:30 Am</Items>
     <Items>2nd Service                -      11:00  to  1:00 Pm</Items>
   </Components>
-  <Components xsi:type="reactbotUi:ParagraphComponent" Uuid="2c6ad418-6f86-4c05-83de-76d6f15c01fc" Contents="Seat Reservation"/>
   <Components xsi:type="reactbotUi:HeadingComponent" Uuid="f041fd1b-94c8-4617-99b6-91faf7991954" Contents="Utawala Main Altar Members" Level="6"/>
   <Components xsi:type="reactbotUi:CrudComponent" Uuid="2998426a-a51f-4b19-8112-be52c94ae468">
     <Entity href="../entity/utawalaaltar.csharpbotentity#409528e3-6d78-430b-8eca-e85ed652b49a"/>
@@ -21,13 +19,19 @@
   <Components xsi:type="reactbotUi:CrudComponent" Uuid="24654ee3-a79b-4cbe-822e-b01f631ee946">
     <Entity href="../entity/utawalaaltar.csharpbotentity#28b888de-8bc4-440f-86e0-aaea33ea2a0c"/>
   </Components>
+  <Components xsi:type="reactbotUi:HeadingComponent" Uuid="9ddc447f-79e5-4b21-a8ef-ae007439913d" Contents="Seat Bookings"/>
+  <Components xsi:type="reactbotUi:ParagraphComponent" Uuid="e3cde5a1-829f-40df-978b-f87b960a7320" Contents="Reserve your seat prior to the service"/>
+  <Components xsi:type="reactbotUi:FormComponent" Uuid="4be93de3-1775-4df7-be2a-c9720964c8d7">
+    <Entity href="../entity/utawalaaltar.csharpbotentity#32a9c2dd-5e3d-4a81-aa2c-380f5be150be"/>
+  </Components>
   <ReferenceLayoutElements xsi:type="reactbotUi:LayoutElementReference" Uuid="6901fbbe-f456-58f2-98f7-59a22cb76d75" Source="28169de1-04e9-4de1-999b-72c7c8d4b1a2" Target="716b05da-9c0b-4ff8-aa59-ce2712c05b6e"/>
   <ReferenceLayoutElements xsi:type="reactbotUi:LayoutElementReference" Uuid="71831293-308b-52ae-a729-bc6fae930af6" Order="1" Source="28169de1-04e9-4de1-999b-72c7c8d4b1a2" Target="2ba227b1-fc7b-4c70-94cd-8657c5c270a7"/>
   <ReferenceLayoutElements xsi:type="reactbotUi:LayoutElementReference" Uuid="f772e7cf-dd83-5fb9-83e3-bb0c2499318f" Order="2" Source="28169de1-04e9-4de1-999b-72c7c8d4b1a2" Target="535cf826-b392-4c74-8adf-5721266ffb7a"/>
-  <ReferenceLayoutElements xsi:type="reactbotUi:LayoutElementReference" Uuid="cc2a9a9d-da81-5de8-96f2-894f4f24adb1" Source="37452baa-e0cb-4f76-87b2-9e557a41b881" Target="7ad6f454-3e9f-4521-9520-e29b3527d1cc"/>
-  <ReferenceLayoutElements xsi:type="reactbotUi:LayoutElementReference" Uuid="29a62796-c262-5a86-9570-01e2211c0210" Source="7ad6f454-3e9f-4521-9520-e29b3527d1cc" Target="2c6ad418-6f86-4c05-83de-76d6f15c01fc"/>
   <ReferenceLayoutElements xsi:type="reactbotUi:LayoutElementReference" Uuid="00ac8efb-95ea-53bc-b1ad-562e93cca2cb" Source="22c192d0-75ac-43b1-84af-cfa353e5f7ec" Target="f041fd1b-94c8-4617-99b6-91faf7991954"/>
   <ReferenceLayoutElements xsi:type="reactbotUi:LayoutElementReference" Uuid="4a476bce-a4e0-57f9-9c81-5e82efc14dea" Order="1" Source="22c192d0-75ac-43b1-84af-cfa353e5f7ec" Target="2998426a-a51f-4b19-8112-be52c94ae468"/>
   <ReferenceLayoutElements xsi:type="reactbotUi:LayoutElementReference" Uuid="f7b9baf3-30f9-566a-9d3f-804168ff066f" Source="4eb9750c-980c-43ef-9701-2ece2b2d8781" Target="933dd476-58ff-43f8-a78a-f67b9a1615e6"/>
   <ReferenceLayoutElements xsi:type="reactbotUi:LayoutElementReference" Uuid="d6e5de1c-4a0c-593f-a033-682e604297b2" Order="1" Source="4eb9750c-980c-43ef-9701-2ece2b2d8781" Target="24654ee3-a79b-4cbe-822e-b01f631ee946"/>
+  <ReferenceLayoutElements xsi:type="reactbotUi:LayoutElementReference" Uuid="57d155e1-cf69-53d5-af95-ede297ebead4" Source="8f86745f-cd85-4081-ae66-a2fccf813205" Target="9ddc447f-79e5-4b21-a8ef-ae007439913d"/>
+  <ReferenceLayoutElements xsi:type="reactbotUi:LayoutElementReference" Uuid="b76f35f3-9ad7-51ac-b018-f35b596a4ec4" Order="1" Source="8f86745f-cd85-4081-ae66-a2fccf813205" Target="e3cde5a1-829f-40df-978b-f87b960a7320"/>
+  <ReferenceLayoutElements xsi:type="reactbotUi:LayoutElementReference" Uuid="d0d74abb-8707-5104-986f-deb73d8f565b" Order="2" Source="8f86745f-cd85-4081-ae66-a2fccf813205" Target="4be93de3-1775-4df7-be2a-c9720964c8d7"/>
 </reactbotUi:UserInterfaceModel>

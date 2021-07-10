@@ -159,6 +159,7 @@ export class AttributeCRUDOptions implements ICRUDOptions {
 		this.updateFieldType = options.updateFieldType || options.displayType;
 		this.groupId = options.groupId;
 		this.order = options.order;
+		this.formTileFilterFn = options.formTileFilterFn;
 		this.fileAttribute = options.fileAttribute;
 		this.isReadonly = options.isReadonly;
 		// % protected region % [Add more Attribute CRUD Option constructor operations here] off begin

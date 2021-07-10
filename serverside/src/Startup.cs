@@ -511,26 +511,23 @@ namespace Utawalaaltar
 		{
 			// GraphQL types must be registered as singleton services. This is since building the underlying graph is
 			// expensive and should only be done once.
-			services.TryAddSingleton<AccountabilityGroupEntityType>();
-			services.TryAddSingleton<AccountabilityGroupEntityInputType>();
-			services.TryAddSingleton<CategoryGroupLeaderEntityType>();
-			services.TryAddSingleton<CategoryGroupLeaderEntityInputType>();
-			services.TryAddSingleton<CategoryGroupLeaderEntityCreateInputType>();
-			services.TryAddSingleton<GroupCategoryEntityType>();
-			services.TryAddSingleton<GroupCategoryEntityInputType>();
-			services.TryAddSingleton<GroupCategoryEntityCreateInputType>();
-			services.TryAddSingleton<MemberEntityType>();
-			services.TryAddSingleton<MemberEntityInputType>();
-			services.TryAddSingleton<MemberEntityCreateInputType>();
-			services.TryAddSingleton<MemberEntityFormVersionType>();
-			services.TryAddSingleton<MemberEntityFormVersionInputType>();
+			services.TryAddSingleton<AccountabilityGroupsEntityType>();
+			services.TryAddSingleton<AccountabilityGroupsEntityInputType>();
+			services.TryAddSingleton<AttendanceEntityType>();
+			services.TryAddSingleton<AttendanceEntityInputType>();
+			services.TryAddSingleton<AttendanceEntityFormVersionType>();
+			services.TryAddSingleton<AttendanceEntityFormVersionInputType>();
+			services.TryAddSingleton<CategoryLeadersEntityType>();
+			services.TryAddSingleton<CategoryLeadersEntityInputType>();
+			services.TryAddSingleton<CategoryLeadersEntityCreateInputType>();
+			services.TryAddSingleton<MembersEntityType>();
+			services.TryAddSingleton<MembersEntityInputType>();
+			services.TryAddSingleton<MembersEntityCreateInputType>();
 			services.TryAddSingleton<NoOfServiceEntityType>();
 			services.TryAddSingleton<NoOfServiceEntityInputType>();
 			services.TryAddSingleton<AdminEntityType>();
 			services.TryAddSingleton<AdminEntityInputType>();
 			services.TryAddSingleton<AdminEntityCreateInputType>();
-			services.TryAddSingleton<AttendanceEntityType>();
-			services.TryAddSingleton<AttendanceEntityInputType>();
 			services.TryAddSingleton<HomeFellowshipEntityType>();
 			services.TryAddSingleton<HomeFellowshipEntityInputType>();
 			services.TryAddSingleton<ProtocolEntityType>();
@@ -551,29 +548,29 @@ namespace Utawalaaltar
 			services.TryAddSingleton<WorkflowTransitionEntityInputType>();
 			services.TryAddSingleton<WorkflowVersionEntityType>();
 			services.TryAddSingleton<WorkflowVersionEntityInputType>();
-			services.TryAddSingleton<MemberSubmissionEntityType>();
-			services.TryAddSingleton<MemberSubmissionEntityInputType>();
-			services.TryAddSingleton<MemberEntityFormTileEntityType>();
-			services.TryAddSingleton<MemberEntityFormTileEntityInputType>();
+			services.TryAddSingleton<AttendanceSubmissionEntityType>();
+			services.TryAddSingleton<AttendanceSubmissionEntityInputType>();
+			services.TryAddSingleton<AttendanceEntityFormTileEntityType>();
+			services.TryAddSingleton<AttendanceEntityFormTileEntityInputType>();
 			services.TryAddSingleton<SeatsWorkflowStatesType>();
 			services.TryAddSingleton<SeatsWorkflowStatesInputType>();
 			// % protected region % [Register additional graphql types here] off begin
 			// % protected region % [Register additional graphql types here] end
 
 			// Register enum GraphQl types
+			services.TryAddSingleton<EnumerationGraphType<CategoryGroups>>();
 			services.TryAddSingleton<EnumerationGraphType<Membershipstatus>>();
-			services.TryAddSingleton<EnumerationGraphType<Status>>();
 			services.TryAddSingleton<EnumerationGraphType<Reservation>>();
+			services.TryAddSingleton<EnumerationGraphType<Status>>();
 
 			// Connect the database type to the GraphQL type
-			GraphQL.Utilities.GraphTypeTypeRegistry.Register<AccountabilityGroupEntity, AccountabilityGroupEntityType>();
-			GraphQL.Utilities.GraphTypeTypeRegistry.Register<CategoryGroupLeaderEntity, CategoryGroupLeaderEntityType>();
-			GraphQL.Utilities.GraphTypeTypeRegistry.Register<GroupCategoryEntity, GroupCategoryEntityType>();
-			GraphQL.Utilities.GraphTypeTypeRegistry.Register<MemberEntity, MemberEntityType>();
-			GraphQL.Utilities.GraphTypeTypeRegistry.Register<MemberEntityFormVersion, MemberEntityFormVersionType>();
+			GraphQL.Utilities.GraphTypeTypeRegistry.Register<AccountabilityGroupsEntity, AccountabilityGroupsEntityType>();
+			GraphQL.Utilities.GraphTypeTypeRegistry.Register<AttendanceEntity, AttendanceEntityType>();
+			GraphQL.Utilities.GraphTypeTypeRegistry.Register<AttendanceEntityFormVersion, AttendanceEntityFormVersionType>();
+			GraphQL.Utilities.GraphTypeTypeRegistry.Register<CategoryLeadersEntity, CategoryLeadersEntityType>();
+			GraphQL.Utilities.GraphTypeTypeRegistry.Register<MembersEntity, MembersEntityType>();
 			GraphQL.Utilities.GraphTypeTypeRegistry.Register<NoOfServiceEntity, NoOfServiceEntityType>();
 			GraphQL.Utilities.GraphTypeTypeRegistry.Register<AdminEntity, AdminEntityType>();
-			GraphQL.Utilities.GraphTypeTypeRegistry.Register<AttendanceEntity, AttendanceEntityType>();
 			GraphQL.Utilities.GraphTypeTypeRegistry.Register<HomeFellowshipEntity, HomeFellowshipEntityType>();
 			GraphQL.Utilities.GraphTypeTypeRegistry.Register<ProtocolEntity, ProtocolEntityType>();
 			GraphQL.Utilities.GraphTypeTypeRegistry.Register<SeatsEntity, SeatsEntityType>();
@@ -583,8 +580,8 @@ namespace Utawalaaltar
 			GraphQL.Utilities.GraphTypeTypeRegistry.Register<WorkflowStateEntity, WorkflowStateEntityType>();
 			GraphQL.Utilities.GraphTypeTypeRegistry.Register<WorkflowTransitionEntity, WorkflowTransitionEntityType>();
 			GraphQL.Utilities.GraphTypeTypeRegistry.Register<WorkflowVersionEntity, WorkflowVersionEntityType>();
-			GraphQL.Utilities.GraphTypeTypeRegistry.Register<MemberSubmissionEntity, MemberSubmissionEntityType>();
-			GraphQL.Utilities.GraphTypeTypeRegistry.Register<MemberEntityFormTileEntity, MemberEntityFormTileEntityType>();
+			GraphQL.Utilities.GraphTypeTypeRegistry.Register<AttendanceSubmissionEntity, AttendanceSubmissionEntityType>();
+			GraphQL.Utilities.GraphTypeTypeRegistry.Register<AttendanceEntityFormTileEntity, AttendanceEntityFormTileEntityType>();
 			GraphQL.Utilities.GraphTypeTypeRegistry.Register<SeatsWorkflowStates, SeatsWorkflowStatesType>();
 
 			GraphQL.Utilities.GraphTypeTypeRegistry.Register<WhereExpression, WhereType>();

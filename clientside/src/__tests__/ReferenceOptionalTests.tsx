@@ -25,12 +25,11 @@ import { Model } from '../Models/Model';
  * Tests cases for validating the source optional = false property of a reference
  */
 test.each([
-	['categoryGroupLeaders', 'groupCategory', 'CategoryGroupLeaderEntity', 'GroupCategoryEntity', new Models.CategoryGroupLeaderEntity(), 'oneToMany'],
 	['states', 'workflowVersion', 'WorkflowStateEntity', 'WorkflowVersionEntity', new Models.WorkflowStateEntity(), 'oneToMany'],
 	['outgoingTransitions', 'sourceState', 'WorkflowTransitionEntity', 'WorkflowStateEntity', new Models.WorkflowTransitionEntity(), 'oneToMany'],
 	['incomingTransitions', 'targetState', 'WorkflowTransitionEntity', 'WorkflowStateEntity', new Models.WorkflowTransitionEntity(), 'oneToMany'],
 	['versions', 'workflow', 'WorkflowVersionEntity', 'WorkflowEntity', new Models.WorkflowVersionEntity(), 'oneToMany'],
-	['formPage', 'form', 'MemberEntityFormTileEntity', 'MemberEntity', new Models.MemberEntityFormTileEntity(), 'oneToMany'],
+	['formPage', 'form', 'AttendanceEntityFormTileEntity', 'AttendanceEntity', new Models.AttendanceEntityFormTileEntity(), 'oneToMany'],
 ])(
 	'Source Optional for the %s %s relation between %s and %s',
 	(...args: Array<string | Model>) => {

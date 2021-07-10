@@ -42,6 +42,7 @@ namespace SeleniumTests.ViewModels.Pages.CRUD.AttendanceEntityCrud
 		{
 			var attendanceEntity =  new AttendanceEntity
 			{
+				Name = Name.Value,
 				DateOfService = DateOfService.Value,
 				ServiceID = ServiceID.Value.ToNullableInt(),
 				SeatNoID = SeatNoID.Value.ToNullableInt(),

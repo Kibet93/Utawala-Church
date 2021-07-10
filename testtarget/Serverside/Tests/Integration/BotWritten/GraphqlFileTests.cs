@@ -89,6 +89,89 @@ namespace ServersideTests.Tests.Integration.BotWritten
 		}
 
 		/// <summary>
+		/// Test for the Picture attribute on the MEMBERS entity
+		/// that will will ensure that files can be fetched using the graphql API.
+		/// </summary>
+		[Fact]
+		public async void GetMembersPictureTest()
+		{
+			// Arrange
+			var (dbEntity, fileEntity) = InitialiseEntity<MembersEntity>(false, "MembersEntity");
+			var fileToSave = FileContents.Replace("{TEXT}", dbEntity.Id.ToString());
+			var fileBytes = Encoding.UTF8.GetBytes(fileToSave);
+
+			dbEntity.Picture = fileEntity;
+			_dbContext.Add(dbEntity);
+			await _dbContext.SaveChangesAsync();
+
+			await _storageProvider.PutAsync(new StoragePutOptions
+			{
+				Container = "MembersEntity",
+				FileName = fileEntity.FileId,
+				Content = new MemoryStream(fileBytes),
+			});
+
+			// Act
+			var fileId = await FetchFileAsync("MembersEntity", "pictureId");
+			var fileResult = await _fileController.Get(fileId, default) as FileStreamResult;
+
+			// Assert
+			Assert.NotNull(fileResult?.FileStream);
+
+			using var reader = new StreamReader(fileResult.FileStream);
+			var fileContents = reader.ReadToEnd();
+
+			Assert.Equal(fileToSave, fileContents);
+		}
+
+		/// <summary>
+		/// Test for the Picture attribute on the MembersEntity entity
+		/// that will will ensure that files can be saved using the CrudService
+		/// </summary>
+		[Fact]
+		public async void CreateMembersEntityPictureTest()
+		{
+			// Arrange
+			var (dbEntity, _) = InitialiseEntity<MembersEntity>(true);
+			var fileToSave = FileContents.Replace("{TEXT}", dbEntity.Id.ToString());
+			var fileBytes = Encoding.UTF8.GetBytes(fileToSave);
+
+			dbEntity.PictureId = Guid.NewGuid();
+
+			// Act
+			await _crudService.Create(dbEntity, new UpdateOptions
+			{
+				Files = new FormFileCollection
+				{
+					new FormFile(
+						new MemoryStream(fileBytes),
+						0,
+						fileBytes.LongLength,
+						dbEntity.PictureId.ToString(),
+						"file.svg")
+					{
+						Headers = new HeaderDictionary
+						{
+							{HeaderNames.ContentType, "image/svg"}
+						},
+					}
+				}
+			});
+
+			// Assert
+			var entity = _dbContext.MembersEntity.First();
+			var file = _dbContext.Files.First(f => f.Id == entity.PictureId);
+			var fileStream = await _storageProvider.GetAsync(new StorageGetOptions
+			{
+				Container = "MembersEntity",
+				FileName = file.FileId
+			});
+			var reader = new StreamReader(fileStream);
+
+			Assert.Equal(fileToSave, reader.ReadToEnd());
+		}
+
+		/// <summary>
 		/// Initialises a new entity with attributes, references and a random owner and a file for this entity.
 		/// </summary>
 		/// <param name="disableIds">Should id generation be disabled for this entity</param>

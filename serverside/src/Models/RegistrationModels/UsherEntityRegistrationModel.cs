@@ -59,7 +59,7 @@ namespace Utawalaaltar.Models.RegistrationModels
 
 	public class UsherEntityGraphQlRegistrationModel : UsherEntityRegistrationModel
 	{
-		public MemberEntity Member { get; set; }
+		public MembersEntity Member { get; set; }
 
 		public override UsherEntity ToModel()
 		{

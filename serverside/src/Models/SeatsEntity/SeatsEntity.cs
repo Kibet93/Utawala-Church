@@ -80,11 +80,10 @@ namespace Utawalaaltar.Models {
 			new SuperAdministratorsScheme(),
 			new VisitorsSeatsEntity(),
 			new AdminSeatsEntity(),
-			new MemberSeatsEntity(),
-			new CategoryGroupLeaderSeatsEntity(),
+			new MembersSeatsEntity(),
+			new CategoryLeadersSeatsEntity(),
 			new UsherSeatsEntity(),
 			new ProtocolSeatsEntity(),
-			new GroupCategorySeatsEntity(),
 			// % protected region % [Override ACLs here] end
 			// % protected region % [Add any further ACL entries here] off begin
 			// % protected region % [Add any further ACL entries here] end

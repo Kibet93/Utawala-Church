@@ -16,11 +16,11 @@
 ###
 # % protected region % [Override feature properties here] off begin
 @BotWritten @associations
-Feature: Reference from UsherEntity using Ushers to MemberEntity using MEMBER
+Feature: Reference from UsherEntity using Ushers to MembersEntity using MEMBER
 # % protected region % [Override feature properties here] end
-	Scenario: Reference from UsherEntity using Ushers to MemberEntity using MEMBER
+	Scenario: Reference from UsherEntity using Ushers to MembersEntity using MEMBER
 	Given I login to the site as a user
 	And I navigate to the UsherEntity backend page
 	And I create 1 UsherEntity's each associated with 1 Member using MEMBER
-	Then I validate each MemberEntity has 1 UsherEntity associations using Ushers
-	Then I validate each UsherEntity has 1 MemberEntity associations using MEMBER
+	Then I validate each MembersEntity has 1 UsherEntity associations using Ushers
+	Then I validate each UsherEntity has 1 MembersEntity associations using MEMBER

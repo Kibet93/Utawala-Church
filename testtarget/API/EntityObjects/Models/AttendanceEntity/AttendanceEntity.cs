@@ -30,6 +30,8 @@ namespace APITests.EntityObjects.Models
 {
 	public class AttendanceEntity : BaseEntity
 	{
+		// Form Name
+		public string Name { get; set; }
 		// 
 		[EntityAttribute]
 		public DateTime? DateOfService { get; set; }
@@ -51,6 +53,13 @@ namespace APITests.EntityObjects.Models
 		// 
 		[EntityAttribute]
 		public String Comment { get; set; }
+
+		/// <summary>
+		/// Outgoing one to many reference
+		/// </summary>
+		/// <see cref="Utawalaaltar.Models.FormPage"/>
+		public List<Guid> FormPageIds { get; set; }
+		public ICollection<AttendanceEntityFormTileEntity> FormPages { get; set; }
 
 
 		public AttendanceEntity()
@@ -118,6 +127,7 @@ namespace APITests.EntityObjects.Models
 			var entityVar = new Dictionary<string, string>()
 			{
 				{"id" , Id.ToString()},
+				{"name" , Name},
 				{"dateOfService" ,((DateTime)DateOfService).ToIsoString()},
 				{"serviceID" , ServiceID.ToString()},
 				{"seatNoID" , SeatNoID.ToString()},
@@ -137,6 +147,7 @@ namespace APITests.EntityObjects.Models
 			var entityVar = new RestSharp.JsonObject
 			{
 				["id"] = Id,
+				["name"] = Name,
 			};
 			if(DateOfService != null) 
 			{
@@ -165,6 +176,10 @@ namespace APITests.EntityObjects.Models
 			if(Comment != null) 
 			{
 				entityVar["comment"] = Comment.ToString();
+			}
+			if (FormPageIds != default)
+			{
+				entityVar["formPages"] = FormPages.Select(x => x.ToJson());
 			}
 
 			return entityVar;
@@ -247,6 +262,7 @@ namespace APITests.EntityObjects.Models
 		private void SetValidEntityAttributes()
 		{
 			// % protected region % [Override generated entity attributes here] off begin
+			Name = Guid.NewGuid().ToString();
 			PopulateAttributes();
 			// % protected region % [Override generated entity attributes here] end
 		}
@@ -258,6 +274,7 @@ namespace APITests.EntityObjects.Models
 		{
 			var attendanceEntity = new AttendanceEntity
 			{
+				Name = Guid.NewGuid().ToString(),
 			};
 			attendanceEntity.PopulateAttributes();
 			// % protected region % [Customize valid entity before return here] off begin

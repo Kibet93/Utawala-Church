@@ -24,7 +24,8 @@ namespace Utawalaaltar.Enums
 	public enum Membershipstatus
 	{
 		// % protected region % [Customise existing enum literals here] off begin
-		VISITOR,
+		FIRST_TIME_VISITOR,
+		SECOND_TIME_VISITOR,
 		MEMBER,
 		// % protected region % [Customise existing enum literals here] end
 

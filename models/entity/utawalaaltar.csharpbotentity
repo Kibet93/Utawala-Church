@@ -1,55 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <csharpbotEntity:EntityModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:csharpbotEntity="http://codebots.com/emf/csharpbot/entity" DatabaseProvider="POSTGRES" TargetProject="utawalaaltar" Uuid="be9642d0-8c6d-449f-9c4a-5d558a0c6427" CreateDockerfile="true">
-	<Entities xsi:type="csharpbotEntity:Entity"  Uuid="be7a6d4e-cdb0-4fa3-bc99-b9cd6db143b9" Name="Accountability Group" OrderByDirection="ASCENDING">
+	<Entities xsi:type="csharpbotEntity:Entity"  Uuid="be7a6d4e-cdb0-4fa3-bc99-b9cd6db143b9" Name="Accountability Groups" OrderByDirection="ASCENDING">
 		<Attributes xsi:type="csharpbotEntity:AttributeString"  Uuid="69ece633-7bb3-4494-a19a-ccb34d5a608d" Name="Name" Searchable="true" Unique="false" DatabaseType="VARCHAR"/>
 		<Attributes xsi:type="csharpbotEntity:AttributeInteger"  Uuid="aba33040-58b9-42f7-87ce-1270e1b823d5" Name="Category" Searchable="false" Unique="false"/>
 		<Attributes xsi:type="csharpbotEntity:AttributeInteger"  Uuid="562045a5-c70b-4206-a05a-066637e10192" Name="Leader ID" Searchable="false" Unique="false"/>
-	</Entities>
-	<Entities xsi:type="csharpbotEntity:Entity"  Uuid="7f5d6e5f-6307-42cd-b708-60e920fbc712" Name="Category Group Leader" OrderByDirection="ASCENDING">
-		<Attributes xsi:type="csharpbotEntity:AttributeInteger"  Uuid="b4cc385b-4a94-4743-b123-7f1c10b0001c" Name="Member ID" Searchable="true" Unique="false"/>
-		<Attributes xsi:type="csharpbotEntity:AttributeInteger"  Uuid="918770ab-39d3-45b6-92d2-eff3d36ae3ef" Name="Category ID" Searchable="false" Unique="false"/>
-		<Behaviours xsi:type="csharpbotEntity:BehaviourUser"  Uuid="4f1830b7-d419-40c4-b418-8b05ad33a2d1"/>
-		<Attributes xsi:type="csharpbotEntity:AttributeString"  Uuid="572acec5-cc7b-40d4-a316-b500b9d589b7" Name="Group Name" Searchable="false" Unique="false" DatabaseType="VARCHAR"/>
-	</Entities>
-	<Entities xsi:type="csharpbotEntity:Entity"  Uuid="f6660f5c-0063-4434-9315-e8533b261b89" Name="Group Category" DocoDescription="Men, Women, Young Men, Ladies" OrderByDirection="ASCENDING">
-		<Attributes xsi:type="csharpbotEntity:AttributeString"  Uuid="fd9dce54-b518-4b9f-bc86-ff895723272e" Name="Name" Searchable="false" Unique="false" DatabaseType="VARCHAR"/>
-		<Attributes xsi:type="csharpbotEntity:AttributeInteger"  Uuid="77da6468-c62e-438c-a223-3183baca29a3" Name="Leader ID" Searchable="false" Unique="false"/>
-		<Behaviours xsi:type="csharpbotEntity:BehaviourUser"  Uuid="391e6be0-3f21-4f08-ae80-fa88506e5fff"/>
-	</Entities>
-	<Entities xsi:type="csharpbotEntity:Entity"  Uuid="409528e3-6d78-430b-8eca-e85ed652b49a" Name="MEMBER" OrderByDirection="ASCENDING">
-		<Attributes xsi:type="csharpbotEntity:AttributeInteger"  Uuid="90d8ff1b-3653-40cf-99ac-80b6d0bfece3" Name="Member ID" Searchable="false" Unique="true"/>
-		<Attributes xsi:type="csharpbotEntity:AttributeString"  Uuid="f7d89dae-e5b4-4554-80fb-c4259d7c8227" Name="Full Name" Searchable="true" Unique="false" DatabaseType="VARCHAR">
-			<Validators xsi:type="csharpbotEntity:ValidatorRequired"  Uuid="bd5ef88d-617d-42ad-9592-375e73944933"/>
-		</Attributes>
-		<Attributes xsi:type="csharpbotEntity:AttributeString"  Uuid="b74f5833-cc92-447e-a62d-703a7b454518" Name="National ID" Searchable="true" Unique="false" DatabaseType="VARCHAR"/>
-		<Attributes xsi:type="csharpbotEntity:AttributeString"  Uuid="32dc0d84-3244-4449-8229-070c41c8a2d8" Name="Residence" Searchable="true" Unique="false" DatabaseType="VARCHAR"/>
-		<Attributes xsi:type="csharpbotEntity:AttributeDate"  Uuid="6a0151ea-a72e-4167-8108-70c98f773e1f" Name="Date of Birth" DocoDescription="For age Calculation" Searchable="false" Unique="false"/>
-		<Attributes xsi:type="csharpbotEntity:AttributeInteger"  Uuid="fcd7ae67-2acf-4a16-9b0a-6528f7510a6a" Name="Age" DocoDescription="Current Age" Searchable="false" Unique="false"/>
-		<Attributes xsi:type="csharpbotEntity:AttributeInteger"  Uuid="0068ec00-e68a-4dd2-a15c-3f4d808c8923" Name="Category ID" Searchable="false" Unique="false"/>
-		<Attributes xsi:type="csharpbotEntity:AttributeEnum"  Uuid="59740d5b-0818-4e74-ad56-5a188cbf962e" Name="Status" Searchable="false" Unique="false"/>
-		<Attributes xsi:type="csharpbotEntity:AttributeEnum"  Uuid="d807d400-5a47-4cf9-a016-526433133ad0" Name="Membership Status" Searchable="true" Unique="false"/>
-		<Behaviours xsi:type="csharpbotEntity:BehaviourUser"  Uuid="8325f37b-fe5a-40e3-a1ae-251303715935"/>
-		<Behaviours xsi:type="csharpbotEntity:BehaviourForms"  Uuid="4d1423df-d141-4c30-beab-1832b8d9e0a7"/>
-	</Entities>
-	<Entities xsi:type="csharpbotEntity:Entity"  Uuid="73975888-228f-47f6-ab20-1ab54e388956" Name="No Of Service" OrderByDirection="ASCENDING">
-		<Attributes xsi:type="csharpbotEntity:AttributeString"  Uuid="75098509-7416-46d3-8501-c0c2293874c1" Name="Name" Searchable="true" Unique="true" DatabaseType="VARCHAR"/>
-		<Attributes xsi:type="csharpbotEntity:AttributeEnum"  Uuid="ad4b7001-276c-482e-9d81-2597404de11e" Name="Status" Searchable="false" Unique="false"/>
-	</Entities>
-	<Enumerations xsi:type="csharpbotEntity:Enumeration"  Uuid="267a8a19-c83a-412e-980d-c32cf524af85" Name="MembershipStatus">
-		<EnumLiterals xsi:type="csharpbotEntity:EnumLiteral"  Uuid="e1683530-a628-4bf3-bf64-e6384a8e314d" Name="Visitor"/>
-		<EnumLiterals xsi:type="csharpbotEntity:EnumLiteral"  Uuid="29e2d0f2-76e8-45c7-a222-124552d6e9b2" Name="Member"/>
-	</Enumerations>
-	<Enumerations xsi:type="csharpbotEntity:Enumeration"  Uuid="43aaaa92-6528-44c9-8734-41c4df295e64" Name="Status">
-		<EnumLiterals xsi:type="csharpbotEntity:EnumLiteral"  Uuid="1b33fa55-58e0-4987-9082-3798c5afa91e" Name="Active"/>
-		<EnumLiterals xsi:type="csharpbotEntity:EnumLiteral"  Uuid="95f722d0-340b-4b28-85fc-41621f695f05" Name="Inactive"/>
-		<EnumLiterals xsi:type="csharpbotEntity:EnumLiteral"  Uuid="1cf32c2a-f040-4c56-811d-33ebff50b17a" Name="Suspended"/>
-	</Enumerations>
-	<ReferenceEnums xsi:type="csharpbotEntity:ReferenceEnum"  Source="ac15220e-5fdb-47d6-86b0-690e6007fedd" Target="518e6af8-0816-457b-b3f6-b528642ec01e"/>
-	<ReferenceEnums xsi:type="csharpbotEntity:ReferenceEnum"  Source="ad4b7001-276c-482e-9d81-2597404de11e" Target="43aaaa92-6528-44c9-8734-41c4df295e64"/>
-	<ReferenceEnums xsi:type="csharpbotEntity:ReferenceEnum"  Source="59740d5b-0818-4e74-ad56-5a188cbf962e" Target="43aaaa92-6528-44c9-8734-41c4df295e64"/>
-	<ReferenceEnums xsi:type="csharpbotEntity:ReferenceEnum"  Source="d807d400-5a47-4cf9-a016-526433133ad0" Target="267a8a19-c83a-412e-980d-c32cf524af85"/>
-	<Entities xsi:type="csharpbotEntity:Entity"  Uuid="3daca0b4-457f-4145-9a4f-51e2a88aa2d7" Name="Admin" OrderByDirection="ASCENDING">
-		<Behaviours xsi:type="csharpbotEntity:BehaviourUser"  Uuid="83dc8272-7823-4eba-8306-b06615d43f33"/>
 	</Entities>
 	<Entities xsi:type="csharpbotEntity:Entity"  Uuid="32a9c2dd-5e3d-4a81-aa2c-380f5be150be" Name="Attendance" OrderByDirection="ASCENDING">
 		<Attributes xsi:type="csharpbotEntity:AttributeDate"  Uuid="04dd4a1c-13b5-4d31-a702-94bcfcf930c5" Name="Date Of Service" Searchable="true" Unique="false"/>
@@ -59,6 +13,39 @@
 		<Attributes xsi:type="csharpbotEntity:AttributeBoolean"  Uuid="caa0db6d-f5ea-43f1-9a68-34d9e219d7e5" Name="Attended Service" Searchable="false" Unique="false"/>
 		<Attributes xsi:type="csharpbotEntity:AttributeString"  Uuid="101a528e-196f-4a29-8c24-d533ce6025ac" Name="Reason For Not Attending" Searchable="false" Unique="false" DatabaseType="VARCHAR"/>
 		<Attributes xsi:type="csharpbotEntity:AttributeString"  Uuid="49b4ba70-418b-4b6d-95a4-36d107f3e902" Name="Comment" Searchable="false" Unique="false" DatabaseType="LONGTEXT"/>
+		<Behaviours xsi:type="csharpbotEntity:BehaviourForms"  Uuid="f808cb62-4fd4-413c-99aa-54e88a423b07"/>
+	</Entities>
+	<Entities xsi:type="csharpbotEntity:Entity"  Uuid="7f5d6e5f-6307-42cd-b708-60e920fbc712" Name="Category Leaders" OrderByDirection="ASCENDING">
+		<Behaviours xsi:type="csharpbotEntity:BehaviourUser"  Uuid="4f1830b7-d419-40c4-b418-8b05ad33a2d1"/>
+		<Attributes xsi:type="csharpbotEntity:AttributeEnum"  Uuid="5703f6b3-e96d-4d97-81bf-467daa20e366" Name="Category Group" Searchable="true" Unique="false"/>
+	</Entities>
+	<Entities xsi:type="csharpbotEntity:Entity"  Uuid="409528e3-6d78-430b-8eca-e85ed652b49a" Name="MEMBERS" OrderByDirection="ASCENDING">
+		<Attributes xsi:type="csharpbotEntity:AttributeString"  Uuid="f7d89dae-e5b4-4554-80fb-c4259d7c8227" Name="Full Name" Searchable="true" Unique="false" DatabaseType="VARCHAR">
+			<Validators xsi:type="csharpbotEntity:ValidatorRequired"  Uuid="bd5ef88d-617d-42ad-9592-375e73944933"/>
+		</Attributes>
+		<Attributes xsi:type="csharpbotEntity:AttributeString"  Uuid="b74f5833-cc92-447e-a62d-703a7b454518" Name="National ID" Searchable="true" Unique="false" DatabaseType="VARCHAR"/>
+		<Attributes xsi:type="csharpbotEntity:AttributeString"  Uuid="32dc0d84-3244-4449-8229-070c41c8a2d8" Name="Residence" Searchable="true" Unique="false" DatabaseType="VARCHAR"/>
+		<Attributes xsi:type="csharpbotEntity:AttributeDate"  Uuid="6a0151ea-a72e-4167-8108-70c98f773e1f" Name="Date of Birth" DocoDescription="For age Calculation" Searchable="false" Unique="false"/>
+		<Attributes xsi:type="csharpbotEntity:AttributeInteger"  Uuid="fcd7ae67-2acf-4a16-9b0a-6528f7510a6a" Name="Age" DocoDescription="Current Age" Searchable="false" Unique="false"/>
+		<Attributes xsi:type="csharpbotEntity:AttributeEnum"  Uuid="59740d5b-0818-4e74-ad56-5a188cbf962e" Name="Status" Searchable="false" Unique="false"/>
+		<Attributes xsi:type="csharpbotEntity:AttributeEnum"  Uuid="d807d400-5a47-4cf9-a016-526433133ad0" Name="Membership Status" Searchable="true" Unique="false"/>
+		<Behaviours xsi:type="csharpbotEntity:BehaviourUser"  Uuid="8325f37b-fe5a-40e3-a1ae-251303715935"/>
+		<Attributes xsi:type="csharpbotEntity:AttributeEnum"  Uuid="2367061d-1522-4fd9-94fe-3f611fdee015" Name="Category Choice" Searchable="true" Unique="false"/>
+		<Attributes xsi:type="csharpbotEntity:AttributeInteger"  Uuid="8fa646fe-8489-4102-9ed2-e42013e56320" Name="Accountability Grp" Searchable="true" Unique="false"/>
+		<Attributes xsi:type="csharpbotEntity:AttributeImage"  Uuid="a5d77e23-ebdb-4b14-a197-9162112b42b5" Name="Picture" DocoDescription="Profile Picture"/>
+	</Entities>
+	<Entities xsi:type="csharpbotEntity:Entity"  Uuid="73975888-228f-47f6-ab20-1ab54e388956" Name="No Of Service" OrderByDirection="ASCENDING">
+		<Attributes xsi:type="csharpbotEntity:AttributeString"  Uuid="75098509-7416-46d3-8501-c0c2293874c1" Name="Name" Searchable="true" Unique="true" DatabaseType="VARCHAR"/>
+		<Attributes xsi:type="csharpbotEntity:AttributeEnum"  Uuid="ad4b7001-276c-482e-9d81-2597404de11e" Name="Status" Searchable="false" Unique="false"/>
+	</Entities>
+	<ReferenceEnums xsi:type="csharpbotEntity:ReferenceEnum"  Source="5703f6b3-e96d-4d97-81bf-467daa20e366" Target="a45fd03c-85e5-42b4-83ec-72688e7a4753"/>
+	<ReferenceEnums xsi:type="csharpbotEntity:ReferenceEnum"  Source="2367061d-1522-4fd9-94fe-3f611fdee015" Target="a45fd03c-85e5-42b4-83ec-72688e7a4753"/>
+	<ReferenceEnums xsi:type="csharpbotEntity:ReferenceEnum"  Source="59740d5b-0818-4e74-ad56-5a188cbf962e" Target="43aaaa92-6528-44c9-8734-41c4df295e64"/>
+	<ReferenceEnums xsi:type="csharpbotEntity:ReferenceEnum"  Source="ac15220e-5fdb-47d6-86b0-690e6007fedd" Target="518e6af8-0816-457b-b3f6-b528642ec01e"/>
+	<ReferenceEnums xsi:type="csharpbotEntity:ReferenceEnum"  Source="d807d400-5a47-4cf9-a016-526433133ad0" Target="267a8a19-c83a-412e-980d-c32cf524af85"/>
+	<ReferenceEnums xsi:type="csharpbotEntity:ReferenceEnum"  Source="ad4b7001-276c-482e-9d81-2597404de11e" Target="43aaaa92-6528-44c9-8734-41c4df295e64"/>
+	<Entities xsi:type="csharpbotEntity:Entity"  Uuid="3daca0b4-457f-4145-9a4f-51e2a88aa2d7" Name="Admin" OrderByDirection="ASCENDING">
+		<Behaviours xsi:type="csharpbotEntity:BehaviourUser"  Uuid="83dc8272-7823-4eba-8306-b06615d43f33"/>
 	</Entities>
 	<Entities xsi:type="csharpbotEntity:Entity"  Uuid="77fb75f3-41ee-4007-98f6-a50d8daadb69" Name="Home Fellowship" OrderByDirection="ASCENDING">
 		<Attributes xsi:type="csharpbotEntity:AttributeInteger"  Uuid="5f0acab6-82da-4190-9d76-33ad267feb99" Name="Fellowship ID" Searchable="false" Unique="true"/>
@@ -82,13 +69,28 @@
 		<Attributes xsi:type="csharpbotEntity:AttributeInteger"  Uuid="d2672f9e-9e0f-41eb-8fd1-158814e36716" Name="Member ID" Searchable="false" Unique="false"/>
 		<Behaviours xsi:type="csharpbotEntity:BehaviourUser"  Uuid="3289e8df-56b5-4cbf-a82c-602cb0927736"/>
 	</Entities>
+	<Enumerations xsi:type="csharpbotEntity:Enumeration"  Uuid="a45fd03c-85e5-42b4-83ec-72688e7a4753" Name="Category Groups">
+		<EnumLiterals xsi:type="csharpbotEntity:EnumLiteral"  Uuid="e6a3a245-95b2-4792-9d21-59e561a24ef8" Name="Men"/>
+		<EnumLiterals xsi:type="csharpbotEntity:EnumLiteral"  Uuid="4b508193-d1fd-4b6d-bb1a-b4ab5e42556e" Name="Women "/>
+		<EnumLiterals xsi:type="csharpbotEntity:EnumLiteral"  Uuid="f2cf32c2-d1c3-4dd4-9126-f87219de4480" Name="Young Men "/>
+		<EnumLiterals xsi:type="csharpbotEntity:EnumLiteral"  Uuid="6c616a9d-4bad-4b04-9c28-90de53ca8c5f" Name="Young Ladies"/>
+		<EnumLiterals xsi:type="csharpbotEntity:EnumLiteral"  Uuid="151eaa2b-c6aa-4432-bdf1-3d92395f8ac4" Name="Children"/>
+	</Enumerations>
+	<Enumerations xsi:type="csharpbotEntity:Enumeration"  Uuid="267a8a19-c83a-412e-980d-c32cf524af85" Name="MembershipStatus">
+		<EnumLiterals xsi:type="csharpbotEntity:EnumLiteral"  Uuid="e1683530-a628-4bf3-bf64-e6384a8e314d" Name="First Time Visitor"/>
+		<EnumLiterals xsi:type="csharpbotEntity:EnumLiteral"  Uuid="a6a017d4-8649-4063-b0eb-1ce9aff8cfca" Name="Second Time Visitor"/>
+		<EnumLiterals xsi:type="csharpbotEntity:EnumLiteral"  Uuid="29e2d0f2-76e8-45c7-a222-124552d6e9b2" Name="Member"/>
+	</Enumerations>
 	<Enumerations xsi:type="csharpbotEntity:Enumeration"  Uuid="518e6af8-0816-457b-b3f6-b528642ec01e" Name="Reservation">
 		<EnumLiterals xsi:type="csharpbotEntity:EnumLiteral"  Uuid="61c77682-6775-4019-9ea0-a4fd76962b1f" Name="Reserved"/>
 		<EnumLiterals xsi:type="csharpbotEntity:EnumLiteral"  Uuid="864db40b-5d11-4d58-8d74-6cfb99fb3d93" Name="Open"/>
 	</Enumerations>
-	<ReferenceEntityEntities xsi:type="csharpbotEntity:ReferenceOneToMany"  Uuid="7918af72-c204-45ff-98f8-4a98e6f64d66" Name="Category Group Leaders" OppositeName="Group Category" TargetOptional="true" SourceOptional="false" Source="f6660f5c-0063-4434-9315-e8533b261b89" Target="7f5d6e5f-6307-42cd-b708-60e920fbc712"/>
+	<Enumerations xsi:type="csharpbotEntity:Enumeration"  Uuid="43aaaa92-6528-44c9-8734-41c4df295e64" Name="Status">
+		<EnumLiterals xsi:type="csharpbotEntity:EnumLiteral"  Uuid="1b33fa55-58e0-4987-9082-3798c5afa91e" Name="Active"/>
+		<EnumLiterals xsi:type="csharpbotEntity:EnumLiteral"  Uuid="95f722d0-340b-4b28-85fc-41621f695f05" Name="Inactive"/>
+		<EnumLiterals xsi:type="csharpbotEntity:EnumLiteral"  Uuid="1cf32c2a-f040-4c56-811d-33ebff50b17a" Name="Suspended"/>
+	</Enumerations>
 	<ReferenceEntityEntities xsi:type="csharpbotEntity:ReferenceOneToMany"  Uuid="026e86ad-40c4-4bf2-b567-2ba29e2cd33a" Name="MEMBERsAccountabilityGroup" OppositeName="Accountability Group" TargetOptional="true" SourceOptional="true" Source="be7a6d4e-cdb0-4fa3-bc99-b9cd6db143b9" Target="409528e3-6d78-430b-8eca-e85ed652b49a"/>
-	<ReferenceEntityEntities xsi:type="csharpbotEntity:ReferenceOneToMany"  Uuid="db5c485c-f813-456a-8a6e-2be8a041e98d" Name="MEMBERsCategories" OppositeName="Group Category" TargetOptional="true" SourceOptional="true" Source="f6660f5c-0063-4434-9315-e8533b261b89" Target="409528e3-6d78-430b-8eca-e85ed652b49a"/>
 	<ReferenceEntityEntities xsi:type="csharpbotEntity:ReferenceOneToMany"  Uuid="b07a5d95-479e-4939-b631-e22ed4c62a90" Name="MEMBERsFellowship" OppositeName="Home Fellowship" TargetOptional="true" SourceOptional="true" Source="77fb75f3-41ee-4007-98f6-a50d8daadb69" Target="409528e3-6d78-430b-8eca-e85ed652b49a"/>
 	<ReferenceEntityEntities xsi:type="csharpbotEntity:ReferenceOneToOne"  Uuid="40fb1246-611a-4fd8-b6be-b7c04ffb114b" Name="Category Group Leader" OppositeName="MEMBER" TargetOptional="true" SourceOptional="false" Source="409528e3-6d78-430b-8eca-e85ed652b49a" Target="7f5d6e5f-6307-42cd-b708-60e920fbc712"/>
 	<ReferenceEntityEntities xsi:type="csharpbotEntity:ReferenceOneToOne"  Uuid="e1b0a6b4-9f32-4064-88b4-322936739f98" Name="Protocol" OppositeName="MEMBER" TargetOptional="true" SourceOptional="false" Source="409528e3-6d78-430b-8eca-e85ed652b49a" Target="7d6b7e4d-9921-4d80-ae02-c8f480b7d241"/>

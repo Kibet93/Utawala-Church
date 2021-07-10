@@ -49,19 +49,19 @@ namespace Utawalaaltar.Models
 			// Add entity references
 			Field(o => o.MemberId, type: typeof(IdGraphType));
 
-			// GraphQL reference to entity MemberEntity via reference Member
-			Field<MemberEntityType, MemberEntity>()
+			// GraphQL reference to entity MembersEntity via reference Member
+			Field<MembersEntityType, MembersEntity>()
 				.Name("Member")
 				.ResolveAsync(async context =>
 				{
 					var graphQlContext = (UtawalaaltarGraphQlContext) context.UserContext;
 					var accessor = graphQlContext.ServiceProvider.GetRequiredService<IDataLoaderContextAccessor>();
 
-					var loader = accessor.Context.GetOrAddBatchLoader<Guid, MemberEntity>(
+					var loader = accessor.Context.GetOrAddBatchLoader<Guid, MembersEntity>(
 						string.Join("-", context.ResponsePath.Where(x => x is string)) + "GetMemberForProtocolEntity",
 						async keys =>
 						{
-							var results = await QueryHelpers.BuildQueryResolver<MemberEntity>(
+							var results = await QueryHelpers.BuildQueryResolver<MembersEntity>(
 								context,
 								x => keys.Contains(x.Id));
 							return results.ToDictionary(x => x.Id, x => x);
@@ -95,7 +95,7 @@ namespace Utawalaaltar.Models
 			Field<IdGraphType>("MemberId");
 
 			// Add references to foreign models to allow nested creation
-			Field<MemberEntityInputType>("Member");
+			Field<MembersEntityInputType>("Member");
 
 			// % protected region % [Add any extra GraphQL input fields here] off begin
 			// % protected region % [Add any extra GraphQL input fields here] end
@@ -128,7 +128,7 @@ namespace Utawalaaltar.Models
 
 
 			// Add references to foreign models to allow nested creation
-			Field<MemberEntityInputType>("Member");
+			Field<MembersEntityInputType>("Member");
 
 			// % protected region % [Add any extra GraphQL create input fields here] off begin
 			// % protected region % [Add any extra GraphQL create input fields here] end

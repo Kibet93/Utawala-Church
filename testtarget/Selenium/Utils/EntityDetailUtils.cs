@@ -28,20 +28,18 @@ namespace SeleniumTests.Utils
 		{
 			switch (entityName)
 			{
-				case "AccountabilityGroupEntity":
-					return new AccountabilityGroupEntityDetailSection(contextConfiguration);
-				case "CategoryGroupLeaderEntity":
-					return new CategoryGroupLeaderEntityDetailSection(contextConfiguration);
-				case "GroupCategoryEntity":
-					return new GroupCategoryEntityDetailSection(contextConfiguration);
-				case "MemberEntity":
-					return new MemberEntityDetailSection(contextConfiguration);
+				case "AccountabilityGroupsEntity":
+					return new AccountabilityGroupsEntityDetailSection(contextConfiguration);
+				case "AttendanceEntity":
+					return new AttendanceEntityDetailSection(contextConfiguration);
+				case "CategoryLeadersEntity":
+					return new CategoryLeadersEntityDetailSection(contextConfiguration);
+				case "MembersEntity":
+					return new MembersEntityDetailSection(contextConfiguration);
 				case "NoOfServiceEntity":
 					return new NoOfServiceEntityDetailSection(contextConfiguration);
 				case "AdminEntity":
 					return new AdminEntityDetailSection(contextConfiguration);
-				case "AttendanceEntity":
-					return new AttendanceEntityDetailSection(contextConfiguration);
 				case "HomeFellowshipEntity":
 					return new HomeFellowshipEntityDetailSection(contextConfiguration);
 				case "ProtocolEntity":
@@ -58,8 +56,8 @@ namespace SeleniumTests.Utils
 					return new WorkflowTransitionEntityDetailSection(contextConfiguration);
 				case "WorkflowVersionEntity":
 					return new WorkflowVersionEntityDetailSection(contextConfiguration);
-				case "MemberSubmissionEntity":
-					return new MemberSubmissionEntityDetailSection(contextConfiguration);
+				case "AttendanceSubmissionEntity":
+					return new AttendanceSubmissionEntityDetailSection(contextConfiguration);
 				default:
 					throw new Exception($"Cannot find detail section for type {entityName}");
 			}

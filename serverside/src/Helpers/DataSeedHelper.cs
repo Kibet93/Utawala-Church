@@ -58,11 +58,10 @@ namespace Utawalaaltar.Helpers
 			new SeedGroup {Name = "Super Administrators", HasBackendAccess = true},
 			new SeedGroup {Name = "Visitors", HasBackendAccess = false},
 			new SeedGroup {Name = "Admin", HasBackendAccess = true},
-			new SeedGroup {Name = "Member", HasBackendAccess = false},
-			new SeedGroup {Name = "CategoryGroupLeader", HasBackendAccess = false},
+			new SeedGroup {Name = "Members", HasBackendAccess = false},
+			new SeedGroup {Name = "CategoryLeaders", HasBackendAccess = false},
 			new SeedGroup {Name = "Usher", HasBackendAccess = false},
 			new SeedGroup {Name = "Protocol", HasBackendAccess = false},
-			new SeedGroup {Name = "GroupCategory", HasBackendAccess = false},
 			// % protected region % [Configure the modelled groups here] end
 
 			// % protected region % [Add any extra seeded groups here] off begin
@@ -115,15 +114,11 @@ namespace Utawalaaltar.Helpers
 				await CreateUser(
 					new User {Email = "super@example.com", Discriminator = "User"},
 					"password",
-					new [] {"Visitors", "Admin", "Member", "CategoryGroupLeader", "Usher", "Protocol", "GroupCategory", "Super Administrators"});
+					new [] {"Visitors", "Admin", "Members", "CategoryLeaders", "Usher", "Protocol", "Super Administrators"});
 				await CreateUser(
-					new GroupCategoryEntity {Email = "groupcategory@example.com"},
+					new MembersEntity {Email = "members@example.com"},
 					"password",
-					new [] {"GroupCategory"});
-				await CreateUser(
-					new MemberEntity {Email = "member@example.com"},
-					"password",
-					new [] {"Member"});
+					new [] {"Members"});
 				await CreateUser(
 					new AdminEntity {Email = "admin@example.com"},
 					"password",

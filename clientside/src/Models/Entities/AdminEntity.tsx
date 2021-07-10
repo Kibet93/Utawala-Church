@@ -25,11 +25,10 @@ import {
 } from 'Util/EntityUtils';
 import { VisitorsAdminEntity } from 'Models/Security/Acl/VisitorsAdminEntity';
 import { AdminAdminEntity } from 'Models/Security/Acl/AdminAdminEntity';
-import { MemberAdminEntity } from 'Models/Security/Acl/MemberAdminEntity';
-import { CategoryGroupLeaderAdminEntity } from 'Models/Security/Acl/CategoryGroupLeaderAdminEntity';
+import { MembersAdminEntity } from 'Models/Security/Acl/MembersAdminEntity';
+import { CategoryLeadersAdminEntity } from 'Models/Security/Acl/CategoryLeadersAdminEntity';
 import { UsherAdminEntity } from 'Models/Security/Acl/UsherAdminEntity';
 import { ProtocolAdminEntity } from 'Models/Security/Acl/ProtocolAdminEntity';
-import { GroupCategoryAdminEntity } from 'Models/Security/Acl/GroupCategoryAdminEntity';
 import { EntityFormMode } from 'Views/Components/Helpers/Common';
 import {SuperAdministratorScheme} from '../Security/Acl/SuperAdministratorScheme';
 // % protected region % [Add any further imports here] off begin
@@ -50,11 +49,10 @@ export default class AdminEntity extends Model implements IAdminEntityAttributes
 		new SuperAdministratorScheme(),
 		new VisitorsAdminEntity(),
 		new AdminAdminEntity(),
-		new MemberAdminEntity(),
-		new CategoryGroupLeaderAdminEntity(),
+		new MembersAdminEntity(),
+		new CategoryLeadersAdminEntity(),
 		new UsherAdminEntity(),
 		new ProtocolAdminEntity(),
-		new GroupCategoryAdminEntity(),
 		// % protected region % [Add any further ACL entries here] off begin
 		// % protected region % [Add any further ACL entries here] end
 	];

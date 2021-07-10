@@ -81,7 +81,7 @@ namespace APITests.EntityObjects.Models
 		{
 			References.Add(new Reference
 			{
-				EntityName = "MemberEntity",
+				EntityName = "MembersEntity",
 				OppositeName = "Member",
 				Name = "Ushers",
 				Optional = false,
@@ -228,7 +228,7 @@ namespace APITests.EntityObjects.Models
 		private void SetValidEntityAssociations()
 		{
 
-			MemberId = new MemberEntity(ConfigureOptions.CREATE_ATTRIBUTES_AND_REFERENCES).Save();
+			MemberId = new MembersEntity(ConfigureOptions.CREATE_ATTRIBUTES_AND_REFERENCES).Save();
 
 		}
 

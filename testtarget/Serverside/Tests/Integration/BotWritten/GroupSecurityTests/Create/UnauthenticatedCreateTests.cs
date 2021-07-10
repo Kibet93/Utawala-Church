@@ -47,9 +47,9 @@ namespace ServersideTests.Tests.Integration.BotWritten.GroupSecurityTests.Create
 				var data = new TheoryData<IAbstractModel, string,string>
 				{
 					// % protected region % [Configure entity theory data for Unauthenticated here] off begin
-					{new AccountabilityGroupEntity(), SecurityStringHelper.UserPermissionDenied, null},
-					{new NoOfServiceEntity(), SecurityStringHelper.UserPermissionDenied, null},
+					{new AccountabilityGroupsEntity(), SecurityStringHelper.UserPermissionDenied, null},
 					{new AttendanceEntity(), SecurityStringHelper.UserPermissionDenied, null},
+					{new NoOfServiceEntity(), SecurityStringHelper.UserPermissionDenied, null},
 					{new HomeFellowshipEntity(), SecurityStringHelper.UserPermissionDenied, null},
 					{new SeatsEntity(), SecurityStringHelper.UserPermissionDenied, null},
 					{new ServicesEntity(), SecurityStringHelper.UserPermissionDenied, null},
@@ -57,8 +57,8 @@ namespace ServersideTests.Tests.Integration.BotWritten.GroupSecurityTests.Create
 					{new WorkflowStateEntity(), SecurityStringHelper.NoApplicableSchemes, null},
 					{new WorkflowTransitionEntity(), SecurityStringHelper.NoApplicableSchemes, null},
 					{new WorkflowVersionEntity(), SecurityStringHelper.NoApplicableSchemes, null},
-					{new MemberSubmissionEntity(), null, null},
-					{new MemberEntityFormTileEntity(), SecurityStringHelper.UserPermissionDenied, null},
+					{new AttendanceSubmissionEntity(), null, null},
+					{new AttendanceEntityFormTileEntity(), SecurityStringHelper.UserPermissionDenied, null},
 					// % protected region % [Configure entity theory data for Unauthenticated here] end
 				};
 				// % protected region % [Add any extra theory data here] off begin
@@ -84,9 +84,8 @@ namespace ServersideTests.Tests.Integration.BotWritten.GroupSecurityTests.Create
 				var data = new TheoryData<IAbstractModel, object, string, string>
 				{
 					// % protected region % [Configure user theory data for Unauthenticated here] off begin
-					{new CategoryGroupLeaderEntity(), new CategoryGroupLeaderEntityGraphQlRegistrationModel(), SecurityStringHelper.UserPermissionDenied, null},
-					{new GroupCategoryEntity(), new GroupCategoryEntityGraphQlRegistrationModel(), SecurityStringHelper.UserPermissionDenied, null},
-					{new MemberEntity(), new MemberEntityGraphQlRegistrationModel(), SecurityStringHelper.UserPermissionDenied, null},
+					{new CategoryLeadersEntity(), new CategoryLeadersEntityGraphQlRegistrationModel(), SecurityStringHelper.UserPermissionDenied, null},
+					{new MembersEntity(), new MembersEntityGraphQlRegistrationModel(), SecurityStringHelper.UserPermissionDenied, null},
 					{new AdminEntity(), new AdminEntityGraphQlRegistrationModel(), SecurityStringHelper.UserPermissionDenied, null},
 					{new ProtocolEntity(), new ProtocolEntityGraphQlRegistrationModel(), SecurityStringHelper.UserPermissionDenied, null},
 					{new UsherEntity(), new UsherEntityGraphQlRegistrationModel(), SecurityStringHelper.UserPermissionDenied, null},

@@ -29,11 +29,10 @@ import {
 } from 'Util/EntityUtils';
 import { VisitorsSeatsEntity } from 'Models/Security/Acl/VisitorsSeatsEntity';
 import { AdminSeatsEntity } from 'Models/Security/Acl/AdminSeatsEntity';
-import { MemberSeatsEntity } from 'Models/Security/Acl/MemberSeatsEntity';
-import { CategoryGroupLeaderSeatsEntity } from 'Models/Security/Acl/CategoryGroupLeaderSeatsEntity';
+import { MembersSeatsEntity } from 'Models/Security/Acl/MembersSeatsEntity';
+import { CategoryLeadersSeatsEntity } from 'Models/Security/Acl/CategoryLeadersSeatsEntity';
 import { UsherSeatsEntity } from 'Models/Security/Acl/UsherSeatsEntity';
 import { ProtocolSeatsEntity } from 'Models/Security/Acl/ProtocolSeatsEntity';
-import { GroupCategorySeatsEntity } from 'Models/Security/Acl/GroupCategorySeatsEntity';
 import * as Enums from '../Enums';
 import { EntityFormMode } from 'Views/Components/Helpers/Common';
 import {SuperAdministratorScheme} from '../Security/Acl/SuperAdministratorScheme';
@@ -57,11 +56,10 @@ export default class SeatsEntity extends Model implements ISeatsEntityAttributes
 		new SuperAdministratorScheme(),
 		new VisitorsSeatsEntity(),
 		new AdminSeatsEntity(),
-		new MemberSeatsEntity(),
-		new CategoryGroupLeaderSeatsEntity(),
+		new MembersSeatsEntity(),
+		new CategoryLeadersSeatsEntity(),
 		new UsherSeatsEntity(),
 		new ProtocolSeatsEntity(),
-		new GroupCategorySeatsEntity(),
 		// % protected region % [Add any further ACL entries here] off begin
 		// % protected region % [Add any further ACL entries here] end
 	];

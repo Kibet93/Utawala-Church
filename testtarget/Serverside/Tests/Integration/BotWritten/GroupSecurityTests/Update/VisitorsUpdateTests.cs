@@ -45,9 +45,9 @@ namespace ServersideTests.Tests.Integration.BotWritten.GroupSecurityTests.Update
 				var data = new TheoryData<IAbstractModel, string,string>
 				{
 					// % protected region % [Configure entity theory data for Visitors here] off begin
-					{new AccountabilityGroupEntity(), SecurityStringHelper.UserPermissionDenied, "Visitors"},
-					{new NoOfServiceEntity(), SecurityStringHelper.UserPermissionDenied, "Visitors"},
+					{new AccountabilityGroupsEntity(), SecurityStringHelper.UserPermissionDenied, "Visitors"},
 					{new AttendanceEntity(), SecurityStringHelper.UserPermissionDenied, "Visitors"},
+					{new NoOfServiceEntity(), SecurityStringHelper.UserPermissionDenied, "Visitors"},
 					{new HomeFellowshipEntity(), SecurityStringHelper.UserPermissionDenied, "Visitors"},
 					{new SeatsEntity(), SecurityStringHelper.UserPermissionDenied, "Visitors"},
 					{new ServicesEntity(), SecurityStringHelper.UserPermissionDenied, "Visitors"},
@@ -55,8 +55,8 @@ namespace ServersideTests.Tests.Integration.BotWritten.GroupSecurityTests.Update
 					{new WorkflowStateEntity(), SecurityStringHelper.NoApplicableSchemes, "Visitors"},
 					{new WorkflowTransitionEntity(), SecurityStringHelper.NoApplicableSchemes, "Visitors"},
 					{new WorkflowVersionEntity(), SecurityStringHelper.NoApplicableSchemes, "Visitors"},
-					{new MemberSubmissionEntity(), null, "Visitors"},
-					{new MemberEntityFormTileEntity(), SecurityStringHelper.UserPermissionDenied, "Visitors"},
+					{new AttendanceSubmissionEntity(), null, "Visitors"},
+					{new AttendanceEntityFormTileEntity(), SecurityStringHelper.UserPermissionDenied, "Visitors"},
 					// % protected region % [Configure entity theory data for Visitors here] end
 				};
 				// % protected region % [Add any extra theory data here] off begin
